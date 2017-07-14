@@ -834,55 +834,6 @@ section {
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://sheltonWu.com/2017/07/14/8/"/>
-    <id>http://sheltonWu.com/2017/07/14/8/</id>
-    <published>2017-07-14T12:12:30.000Z</published>
-    <updated>2017-07-14T12:12:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>title: HTML加载速度<br>tags: [HTML]<br>categories: 页面优化</p>
-<p>##1.加快页面的加载速度##</p>
-<ol>
-<li>页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script和css移到外部文件，可以使用HTML Tidy来给HTML减肥，还可以使用一些压缩工具来给JavaScript减肥</li>
-<li>减少文件数量。减少页面上引用的文件数量可以减少HTTP连接数。许多JavaScript、CSS文件可以合并最好合并，人家财帮子都把自己的JavaScript. functions和Prototype.js合并到一个base.js文件里去了</li>
-<li>减少域名查询。DNS查询和解析域名也是消耗时间的，所以要减少对外部JavaScript、CSS、图片等资源的引用，不同域名的使用越少越好</li>
-<li>缓存重用数据。使用缓存吧</li>
-<li>优化页面元素加载顺序。首先加载页面最初显示的内容和与之相关的JavaScript和CSS，然后加载DHTML相关的东西，像什么不是最初显示相关的图片、flash、视频等很肥的资源就最后加载</li>
-<li>减少inline JavaScript的数量。浏览器parser会假设inline JavaScript会改变页面结构，所以使用inline JavaScript开销较大，不要使用document.write()这种输出内容的方法，使用现代W3C DOM方法来为现代浏览器处理页面内容</li>
-<li>使用现代CSS和合法的标签。使用现代CSS来减少标签和图像，例如使用现代CSS+文字完全可以替代一些只有文字的图片，使用合法的标签避免浏览器解析HTML时做“error correction”等操作，还可以被HTML Tidy来给HTML减肥</li>
-<li>Chunk your content。不要使用嵌套tables</li>
-<li>指定图像和tables的大小。如果浏览器可以立即决定图像或tables的大小，那么它就可以马上显示页面而不要重新做一些布局安排的工作，这不仅加快了页面的显示，也预防了页面完成加载后布局的一些不当的改变。</li>
-<li>根据用户浏览器明智的选择策略。IE、Firefox、Safari等等等等</li>
-<li>页面结构的例子</li>
-</ol>
-<h1 id="HTML页面加载和解析流程"><a href="#HTML页面加载和解析流程" class="headerlink" title="HTML页面加载和解析流程"></a>HTML页面加载和解析流程</h1><ol>
-<li>用户输入网址（假设是个html页面，并且是第一次访问），浏览器向服务器发出请求，服务器返回html文件；</li>
-<li>浏览器开始载入html代码，发现＜head＞标签内有一个＜link＞标签引用外部CSS文件；</li>
-<li>浏览器又发出CSS文件的请求，服务器返回这个CSS文件；</li>
-<li>浏览器继续载入html中＜body＞部分的代码，并且CSS文件已经拿到手了，可以开始渲染页面了；</li>
-<li>浏览器在代码中发现一个＜img＞标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码；</li>
-<li>服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码；</li>
-<li>浏览器发现了一个包含一行Javascript代码的＜script＞标签，赶快运行它；</li>
-<li>Javascript脚本执行了这条语句，它命令浏览器隐藏掉代码中的某个＜div＞ （style.display=”none”）。杯具啊，突然就少了这么一个元素，浏览器不得不重新渲染这部分代码；</li>
-<li>终于等到了＜/html＞的到来，浏览器泪流满面……</li>
-<li>等等，还没完，用户点了一下界面中的“换肤”按钮，Javascript让浏览器换了一下＜link＞标签的CSS路径；</li>
-<li>浏览器召集了在座的各位＜div＞＜span＞＜ul＞＜li＞们，“大伙儿收拾收拾行李，咱得重新来过……”，浏览器向服务器请求了新的CSS文件，重新渲染页面。</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;title: HTML加载速度&lt;br&gt;tags: [HTML]&lt;br&gt;categories: 页面优化&lt;/p&gt;
-&lt;p&gt;##1.加快页面的加载速度##&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>JS常见问题总结</title>
     <link href="http://sheltonWu.com/2017/07/14/7/"/>
     <id>http://sheltonWu.com/2017/07/14/7/</id>
@@ -1093,6 +1044,55 @@ agentMethod();
     
     
       <category term="JS" scheme="http://sheltonWu.com/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://sheltonWu.com/2017/07/14/8/"/>
+    <id>http://sheltonWu.com/2017/07/14/8/</id>
+    <published>2017-07-14T12:12:30.000Z</published>
+    <updated>2017-07-14T12:12:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>title: HTML加载速度<br>tags: [HTML]<br>categories: 页面优化</p>
+<p>##1.加快页面的加载速度##</p>
+<ol>
+<li>页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script和css移到外部文件，可以使用HTML Tidy来给HTML减肥，还可以使用一些压缩工具来给JavaScript减肥</li>
+<li>减少文件数量。减少页面上引用的文件数量可以减少HTTP连接数。许多JavaScript、CSS文件可以合并最好合并，人家财帮子都把自己的JavaScript. functions和Prototype.js合并到一个base.js文件里去了</li>
+<li>减少域名查询。DNS查询和解析域名也是消耗时间的，所以要减少对外部JavaScript、CSS、图片等资源的引用，不同域名的使用越少越好</li>
+<li>缓存重用数据。使用缓存吧</li>
+<li>优化页面元素加载顺序。首先加载页面最初显示的内容和与之相关的JavaScript和CSS，然后加载DHTML相关的东西，像什么不是最初显示相关的图片、flash、视频等很肥的资源就最后加载</li>
+<li>减少inline JavaScript的数量。浏览器parser会假设inline JavaScript会改变页面结构，所以使用inline JavaScript开销较大，不要使用document.write()这种输出内容的方法，使用现代W3C DOM方法来为现代浏览器处理页面内容</li>
+<li>使用现代CSS和合法的标签。使用现代CSS来减少标签和图像，例如使用现代CSS+文字完全可以替代一些只有文字的图片，使用合法的标签避免浏览器解析HTML时做“error correction”等操作，还可以被HTML Tidy来给HTML减肥</li>
+<li>Chunk your content。不要使用嵌套tables</li>
+<li>指定图像和tables的大小。如果浏览器可以立即决定图像或tables的大小，那么它就可以马上显示页面而不要重新做一些布局安排的工作，这不仅加快了页面的显示，也预防了页面完成加载后布局的一些不当的改变。</li>
+<li>根据用户浏览器明智的选择策略。IE、Firefox、Safari等等等等</li>
+<li>页面结构的例子</li>
+</ol>
+<h1 id="HTML页面加载和解析流程"><a href="#HTML页面加载和解析流程" class="headerlink" title="HTML页面加载和解析流程"></a>HTML页面加载和解析流程</h1><ol>
+<li>用户输入网址（假设是个html页面，并且是第一次访问），浏览器向服务器发出请求，服务器返回html文件；</li>
+<li>浏览器开始载入html代码，发现＜head＞标签内有一个＜link＞标签引用外部CSS文件；</li>
+<li>浏览器又发出CSS文件的请求，服务器返回这个CSS文件；</li>
+<li>浏览器继续载入html中＜body＞部分的代码，并且CSS文件已经拿到手了，可以开始渲染页面了；</li>
+<li>浏览器在代码中发现一个＜img＞标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码；</li>
+<li>服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码；</li>
+<li>浏览器发现了一个包含一行Javascript代码的＜script＞标签，赶快运行它；</li>
+<li>Javascript脚本执行了这条语句，它命令浏览器隐藏掉代码中的某个＜div＞ （style.display=”none”）。杯具啊，突然就少了这么一个元素，浏览器不得不重新渲染这部分代码；</li>
+<li>终于等到了＜/html＞的到来，浏览器泪流满面……</li>
+<li>等等，还没完，用户点了一下界面中的“换肤”按钮，Javascript让浏览器换了一下＜link＞标签的CSS路径；</li>
+<li>浏览器召集了在座的各位＜div＞＜span＞＜ul＞＜li＞们，“大伙儿收拾收拾行李，咱得重新来过……”，浏览器向服务器请求了新的CSS文件，重新渲染页面。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;title: HTML加载速度&lt;br&gt;tags: [HTML]&lt;br&gt;categories: 页面优化&lt;/p&gt;
+&lt;p&gt;##1.加快页面的加载速度##&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script
+    
+    </summary>
+    
     
   </entry>
   
