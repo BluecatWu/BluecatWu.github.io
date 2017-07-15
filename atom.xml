@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  
+  <title>SheltonWu</title>
+  <subtitle>个人博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://sheltonWu.com/"/>
-  <updated>2017-07-14T12:37:58.000Z</updated>
+  <updated>2017-07-15T02:11:37.000Z</updated>
   <id>http://sheltonWu.com/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试用例</title>
+    <link href="http://sheltonWu.com/2017/07/14/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/"/>
+    <id>http://sheltonWu.com/2017/07/14/测试用例/</id>
+    <published>2017-07-14T15:05:53.000Z</published>
+    <updated>2017-07-15T02:11:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="什么是Markdown"><a href="#什么是Markdown" class="headerlink" title="什么是Markdown?"></a>什么是Markdown?</h3><p><code>Markdown</code> 是一种文本格式。你可以用它来控制文档的显示。使用 markdown，你可以创建粗体的文字，斜体的文字，添加图片，并且创建列表 等等。基本上来讲，Markdown 就是普通的文字加上 <code>#</code> 或者 <code>*</code> 等符号</p>
+<h3 id="语法说明"><a href="#语法说明" class="headerlink" title="语法说明"></a>语法说明</h3><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 这是 &lt;h1&gt; 一级标题</div><div class="line">## 这是 &lt;h2&gt; 二级标题</div><div class="line">### 这是 &lt;h3&gt; 三级标题</div><div class="line">#### 这是 &lt;h4&gt; 四级标题</div><div class="line">##### 这是 &lt;h5&gt; 五级标题</div><div class="line">###### 这是 &lt;h6&gt; 六级标题</div></pre></td></tr></table></figure>
+<div class="tip"><br>    预处理器很强大，但它只是编写 CSS 的辅助工具。出于对扩展和维护等方面的考虑，在大型项目中有必要使用预处理器构建 CSS；但是对于小型项目，原生的 CSS 可能是一种更好的选择。不要肆意使用预处理器！<br></div>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 这个标题拥有 1 个 id &#123;#id1&#125;</div><div class="line"># 这个标题有 2 个 classes &#123;.class1 .class2&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;什么是Markdown&quot;&gt;&lt;a href=&quot;#什么是Markdown&quot; class=&quot;headerlink&quot; title=&quot;什么是Markdown?&quot;&gt;&lt;/a&gt;什么是Markdown?&lt;/h3&gt;&lt;p&gt;&lt;code&gt;Markdown&lt;/code&gt; 是一种文本格式。你可
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -36,6 +60,761 @@
     <summary type="html">
     
       &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JS常见问题总结</title>
+    <link href="http://sheltonWu.com/2017/07/14/7/"/>
+    <id>http://sheltonWu.com/2017/07/14/7/</id>
+    <published>2017-07-14T12:12:30.000Z</published>
+    <updated>2017-07-14T12:12:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li><p>Q：解释下事件代理。</p>
+<p>A: 当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。</p>
+</li>
+</ul>
+<a id="more"></a>
+<pre><code>var delegate = function(client, clientMethod) {
+    return function() {
+        return clientMethod.apply(client, arguments);
+    }
+}
+
+var agentMethod = delegate (client, clientMethod);
+agentMethod();
+</code></pre><p>  相关阅读：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/owenChen/archive/2013/02/18/2915521.html" target="_blank" rel="external">JavaScript事件代理和委托（Delegation）</a></li>
+<li><a href="http://www.cnblogs.com/owenChen/archive/2013/02/18/2915521.html" target="_blank" rel="external">事件代理</a></li>
+<li><a href="http://tangram.baidu.com/article/138" target="_blank" rel="external">事件代理的应用</a></li>
+</ul>
+<ul>
+<li>Q: 解释下 JavaScript 中 <code>this</code> 是如何工作的。</li>
+</ul>
+<p>  A: <code>this</code> 在 JavaScript 中主要由以下五种使用场景。</p>
+<ul>
+<li>作为函数调用，<code>this</code> 绑定全局对象，浏览器环境全局对象为 window 。<ul>
+<li>内部函数内部函数的 <code>this</code> 也绑定全局对象，应该绑定到其外层函数对应的对象上，这是 JavaScript的缺陷，用<code>that</code>替换。</li>
+</ul>
+</li>
+<li>作为构造函数使用，<code>this</code> 绑定到新创建的对象。</li>
+<li>作为对象方法使用，<code>this</code> 绑定到该对象。</li>
+<li><p>使用<code>apply</code>或<code>call</code>调用 <code>this</code> 将会被显式设置为函数调用的第一个参数。</p>
+<p>参考阅读：</p>
+<ul>
+<li><a href="http://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/#ibm-pcon" target="_blank" rel="external">深入浅出 JavaScript 中的 this</a></li>
+<li><a href="http://bonsaiden.github.io/JavaScript-Garden/zh/#function.this" target="_blank" rel="external">this 的工作原理</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Q: 解释下原型继承的原理。</p>
+<p>A:原型继承的基础是原型链查找。<br>原型链查找基本概念：</p>
+<ol>
+<li>每一个函数 F 都有一个原型对象（prototype）F.prototype</li>
+<li>每一个函数都可以通过 new 关键字化身成为一个类构造函数，new F 会产生一个对象 O</li>
+<li>在调用对象的某个属性或者方法，比如 <a href="http://O.xxx" target="_blank" rel="external">http://O.xxx</a> 的时候，会首先查找对象自身是否有这个方法或者属性，如果没找到就会去对象的构造函数的原型对象中查找（注意有两个定语），也就是查找 O 的构造函数 F 的原型对象 <a href="http://F.prototype.xxx" target="_blank" rel="external">http://F.prototype.xxx</a></li>
+<li>F.prototype 也是一个对象，查找 <a href="http://F.prototype.xxx" target="_blank" rel="external">http://F.prototype.xxx</a> 的时候会重复第 3 步的过程</li>
+</ol>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.jianshu.com/p/d2742610ec30#" target="_blank" rel="external">深入理解javascript原型继承</a></li>
+<li><a href="http://www.ituring.com.cn/article/56184" target="_blank" rel="external">JavaScript原型继承工作原理</a></li>
+<li><a href="http://javascript.crockford.com/prototypal.html" target="_blank" rel="external">Prototypal Inheritance in JavaScript</a></li>
+</ul>
+</li>
+<li><p>Q: 你是如何测试JavaScript代码的？</p>
+</li>
+<li><p>A: AMD vs. CommonJS？</p>
+<p>Q: 可参考: <a href="http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs" target="_blank" rel="external">http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs</a></p>
+</li>
+<li><p>Q: 什么是哈希表？</p>
+<p>A: 哈希表是根据关键字（Key value）而直接访问在内存存储位置的数据结构。也就是说，它通过把键值通过一个函数的计算，映射到表中一个位置来访问记录，这加快了查找速度。这个映射函数称做散列函数，存放记录的数组称做散列表。</p>
+</li>
+<li><p>Q: 解释下为什么接下来这段代码不是 IIFE(立即调用的函数表达式)：<code>function foo(){ }();</code>.</p>
+<ul>
+<li>要做哪些改动使它变成 IIFE?</li>
+</ul>
+<p>A: 可参考 <a href="http://roshanca.com/2014/web-develop-styleguide-javascript/" target="_blank" rel="external">前端编码风格规范之 JavaScript 规范</a></p>
+<p>总是将代码包裹成一个 IIFE(Immediately-Invoked Function Expression)，用以创建独立隔绝的定义域。这一举措可防止全局命名空间被污染。</p>
+<p>IIFE 还可确保你的代码不会轻易被其它全局命名空间里的代码所修改（i.e. 第三方库，window 引用，被覆盖的未定义的关键字等等）。</p>
+<p>  不推荐</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var x = 10,</div><div class="line">    y = 100;</div><div class="line"></div><div class="line">// Declaring variables in the global scope is resulting in global scope pollution. All variables declared like this</div><div class="line">// will be stored in the window object. This is very unclean and needs to be avoided.</div><div class="line">console.log(window.x + &apos; &apos; + window.y);</div></pre></td></tr></table></figure>
+<p>  推荐</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// We declare a IIFE and pass parameters into the function that we will use from the global space</div><div class="line">(function(log, w, undefined)&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  var x = 10,</div><div class="line">      y = 100;</div><div class="line"></div><div class="line">  // Will output &apos;true true&apos;</div><div class="line">  log((w.x === undefined) + &apos; &apos; + (w.y === undefined));</div><div class="line"></div><div class="line">&#125;(window.console.log, window));</div></pre></td></tr></table></figure>
+<p>  IIFE（立即执行的函数表达式）:无论何时，想要创建一个新的封闭的定义域，那就用 IIFE。它不仅避免了干扰，也使得内存在执行完后立即释放。</p>
+<p>  所有脚本文件建议都从 IIFE 开始。</p>
+<p>  立即执行的函数表达式的执行括号应该写在外包括号内。虽然写在内还是写在外都是有效的，但写在内使得整个表达式看起来更像一个整体，因此推荐这么做。</p>
+<p>  不推荐</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;&#125;)();</div></pre></td></tr></table></figure>
+<p>  推荐</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;&#125;());</div></pre></td></tr></table></figure>
+<p>  so，用下列写法来格式化你的 IIFE 代码：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  // Code goes here</div><div class="line"></div><div class="line">&#125;());</div></pre></td></tr></table></figure>
+<p>  如果你想引用全局变量或者是外层 IIFE 的变量，可以通过下列方式传参：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(function($, w, d)&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  $(function() &#123;</div><div class="line">    w.alert(d.querySelectorAll(&apos;div&apos;).length);</div><div class="line">  &#125;);</div><div class="line">&#125;(jQuery, window, document));</div></pre></td></tr></table></figure>
+</li>
+<li><p>Q: 描述以下变量的区别：<code>null</code>，<code>undefined</code> 或 <code>undeclared</code>？</p>
+<ul>
+<li>该如何检测它们？</li>
+</ul>
+</li>
+</ul>
+<p>  A: <code>undefined</code>是Js语言类型，而<code>undeclared</code>是一种Js语法错误。在JavaScript中，有两个表示‘空’的值<code>undefined</code>和<code>null</code>，<code>undefined</code>是一个值为<code>undefined</code> 的类型。JavaScript语言也定义了一个全局变量，它的值是 <code>undefined</code>，这个变量也被称为<code>undefined</code>。 但是这个变量不是一个常量，也不是一个关键字。这意味着它的值可以轻易被覆盖。为了避免可能对<code>undefined</code>值的改变，一个常用的技巧是使用一个传递到匿名包装器的额外参数。在调用时，这个参数不会获取任何值。如下例子：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var undefined = 123;</div><div class="line">(function(something, foo, undefined) &#123;</div><div class="line">// 局部作用域里的 undefined 变量重新获得了 `undefined` 值</div><div class="line">&#125;)(&apos;Hello World&apos;, 42);</div></pre></td></tr></table></figure>
+<pre><code>待修改。
+</code></pre><ul>
+<li><a href="http://stackoverflow.com/questions/6429225/javascript-null-or-undefined" target="_blank" rel="external">http://stackoverflow.com/questions/6429225/javascript-null-or-undefined</a></li>
+<li><a href="http://www.zhihu.com/question/19966545" target="_blank" rel="external">http://www.zhihu.com/question/19966545</a></li>
+</ul>
+<ul>
+<li><p>什么是闭包，如何使用它，为什么要使用它？</p>
+</li>
+<li><p>请举出一个匿名函数的典型用例？</p>
+</li>
+<li><p>解释 “JavaScript 模块模式” 以及你在何时使用它。</p>
+<ul>
+<li>如果有提到无污染的命名空间，可以考虑加分。</li>
+<li>如果你的模块没有自己的命名空间会怎么样？</li>
+</ul>
+</li>
+<li><p>你是如何组织自己的代码？是使用模块模式，还是使用经典继承的方法？</p>
+</li>
+<li><p>Q: 请指出 JavaScript 宿主对象和原生对象的区别？</p>
+<p> A: 宿主对象是指DOM和BOM。原生对象是Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、Math等对象。</p>
+</li>
+<li><p>Q:指出下列代码的区别：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> person = Person();</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
+<p>A: 第一行是定义了一个函数 Person()；第二行代码是执行函数 Person() 并将其返回值复制给变量 person，如果 Person() 是一个构造器函数的话，新的对象将不会被创建，并且 this 将被绑定到全局对象上；第三行代码是用构造函数 Person() 构造一个实例对象 person。</p>
+</li>
+</ul>
+<ul>
+<li><p>Q:<code>.call</code> 和 <code>.apply</code> 的区别是什么？</p>
+<p>A: <a href="http://www.cnblogs.com/fighting_cp/archive/2010/09/20/1831844.html" target="_blank" rel="external">关于javascript中apply()和call()方法的区别</a></p>
+</li>
+<li><p>请解释 <code>Function.prototype.bind</code> 的作用？</p>
+</li>
+<li><p>你何时优化自己的代码？</p>
+</li>
+<li><p>你能解释一下 JavaScript 中的继承是如何工作的吗？</p>
+</li>
+<li><p>在什么时候你会使用 <code>document.write()</code>？</p>
+<ul>
+<li>大多数生成的广告代码依旧使用 <code>document.write()</code>，虽然这种用法会让人很不爽。</li>
+</ul>
+</li>
+<li><p>请指出浏览器特性检测，特性推断和浏览器 UA 字符串嗅探的区别？</p>
+</li>
+<li><p>请尽可能详尽的解释 AJAX 的工作原理。</p>
+<p>Q: Ajax 全称为 Asynchronous JavaScript and XML（异步 JavaScript 和 XML），是一种创建交互式网页应用的网页开发技术。<br>  Ajax 的原理简单来说通过 XmlHttpRequest 对象来向服务器发异步请求，从服务器获得数据，然后用 JavaScript来操作 DOM 而更新页面。这其中最关键的一步就是从服务器获得请求数据。</p>
+<p>  以往我们浏览网页的原理是由 Client 向 Server 提交页面申请，再由 Server 将申请通过 HTTP 传回给 Client 生成浏览页面：</p>
+<p>  <img src="http://yianbin.qiniudn.com/fe-ajax-a.png" alt="Ajax 原理图"></p>
+<p>  使用 Ajax 后的工作原理如下图，可见通过 Ajax 在用户交互方面有了很大改进，用户可以不用为提交了 Form 而长时间等待服务器应答，而且通过 Ajax 也可以开发出华丽的 Web 交互页面。</p>
+<p>  <img src="http://yianbin.qiniudn.com/fe-ajax-b.png" alt="Ajax 原理图"></p>
+<p>  转自：<a href="https://github.com/infp/Front-end-Interview/blob/master/source/javascript.md#21%E8%AF%B7%E5%B0%BD%E5%8F%AF%E8%83%BD%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%A7%A3%E9%87%8A-ajax-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86" target="_blank" rel="external">AJAX 的工作原理</a></p>
+</li>
+<li><p>请解释 JSONP 的工作原理，以及它为什么不是真正的 AJAX。</p>
+</li>
+<li><p>你使用过 JavaScript 模板系统吗？</p>
+<ul>
+<li>如有使用过，请谈谈你都使用过哪些库，比如 Mustache.js，Handlebars 等等。</li>
+</ul>
+</li>
+<li><p>请解释变量声明提升。</p>
+</li>
+<li><p>请描述下事件冒泡机制。</p>
+</li>
+<li><p>“attribute” 和 “property” 的区别是什么？</p>
+</li>
+<li><p>为什么扩展 JavaScript 内置对象不是好的做法？</p>
+</li>
+<li><p>为什么扩展 JavaScript 内置对象是好的做法？</p>
+</li>
+<li><p>请指出 document load 和 document ready 两个事件的区别。</p>
+</li>
+<li><p>Q: <code>==</code> 和 <code>===</code> 有什么不同？</p>
+<p>A: <code>==</code>（相等运算法），<code>===</code>（严格相等运算符） JavaScript 对象的比较是引用的比较，非值的比较，对象和其本身相等，和其他任何对象不相等。 <code>===</code> 首先计算其操作数的值，然后比较，比较过程无任何类型转换。 <code>==</code> 如果两个操作数不是同一类型的，则相等运算符进行一些类型转换进行比较。 <code>==</code> 这里截取 <a href="http://dorey.github.io/JavaScript-Equality-Table" target="_blank" rel="external">JavaScript 相等表格</a>上的的两张图片让大家更为直观的感受下。</p>
+<p><img src="http://paddingme.qiniudn.com/1396461120383-2.png" alt=""></p>
+<p><img src="http://paddingme.qiniudn.com/1396464279990-1.png" alt=""></p>
+<p>引用下<a href="http://weibo.com/wintercn" target="_blank" rel="external">温特大大</a>的总结就是：<strong>只要记住 <code>null</code> 只和<code>undefined</code> 相等，有 <code>number</code> 都转 <code>number</code>，有 <code>boolean</code> 也转 <code>number</code>，有 <code>string</code> 都转 <code>string</code>，对象互相不等，<code>NaN</code> 互相不等就可以了</strong>。</p>
+</li>
+<li><p>你如何从浏览器的 URL 中获取查询字符串参数。</p>
+</li>
+<li><p>请解释一下 JavaScript 的同源策略。</p>
+</li>
+<li><p>请描述一下 JavaScript 的继承模式。</p>
+</li>
+<li><p>如何实现下列代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].duplicator(); <span class="comment">// [1,2,3,4,5,1,2,3,4,5]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>描述一种 JavaScript 中实现 memoization(避免重复运算)的策略。</p>
+</li>
+<li><p>什么是三元表达式？“三元” 表示什么意思？</p>
+</li>
+<li><p>函数的参数元是什么？</p>
+</li>
+<li><p>什么是 <code>&quot;use strict&quot;;</code> ? 使用它的好处和坏处分别是什么？</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Q：解释下事件代理。&lt;/p&gt;
+&lt;p&gt;A: 当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="JS" scheme="http://sheltonWu.com/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css常见问题总结</title>
+    <link href="http://sheltonWu.com/2017/07/14/6/"/>
+    <id>http://sheltonWu.com/2017/07/14/6/</id>
+    <published>2017-07-14T12:12:30.000Z</published>
+    <updated>2017-07-14T12:12:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li><p>Q：描述下 “reset” CSS 文件的作用和使用它的好处。</p>
+<a id="more"></a>
+<p>A：</p>
+<ul>
+<li>作用以及好处：因为各个浏览器默认对CSS的渲染有差异，”reset” CSS 通过重新定义标签样式，对浏览器进行默认样式“清零”重置，样式保持一致。</li>
+<li><p>不足:</p>
+<ul>
+<li>css文件大小增加；</li>
+<li>许多样式本身就需要重置，多此一举；</li>
+<li>增加浏览器对CSS 的渲染。</li>
+</ul>
+<p>可以阅读以下文章增强了解：</p>
+</li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2010/04/css-reset%E7%9A%84%E9%87%8D%E6%96%B0%E5%AE%A1%E8%A7%86-%E9%81%BF%E5%85%8D%E6%A0%B7%E5%BC%8F%E9%87%8D%E7%BD%AE/" target="_blank" rel="external">CSS reset的重新审视 – 避免样式重置</a></li>
+<li><a href="http://www.cnblogs.com/dolphinx/p/3509515.html" target="_blank" rel="external">常见标签的默认属性值及相互作用——关于CSS reset的思考</a></li>
+<li><a href="http://baike.baidu.com/view/5186496.htm" target="_blank" rel="external">reset.css</a></li>
+<li><a href="http://handyxuefeng.blog.163.com/blog/static/454521722013111714040259/" target="_blank" rel="external">前端面试问题</a></li>
+</ul>
+</li>
+<li><p>Q: 解释下浮动和它的工作原理。</p>
+<p>A: 浮动出现的最开始出现的意义是用来让文字环绕图片而已。<code>float</code>可以自动包裹元素。<code>float</code>会导致高度塌陷。<code>float</code>为什么会导致高度塌陷：元素含有浮动属性 –&gt; 破坏<code>inline box</code> –&gt; 破坏<code>line box</code>高度 –&gt; 没有高度 –&gt; 塌陷。什么时候会塌陷：当标签里面的元素只要样子没有实际高度时会塌陷。浮动会脱离文档流。产生自己的块级格式化上下文。</p>
+<p>  可以阅读以下文章增加理解：</p>
+<ul>
+<li><a href="http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/" target="_blank" rel="external">CSS float浮动的深入研究、详解及拓展(一)</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%BA%8C/" target="_blank" rel="external">CSS float浮动的深入研究、详解及拓展(二)</a></li>
+<li><a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">那些年我们一起清除过的浮动</a></li>
+<li>《CSS权威指南》</li>
+</ul>
+</li>
+<li><p>列举不同的清除浮动的技巧，并指出它们各自适用的使用场景。</p>
+<ul>
+<li><p>直接把<figure class="highlight plain"><figcaption><span>style="clear:both;">```放到当作最后一个子标签放到父标签那儿，此方法兼容性强，使用方便，但是浪费了一个标签，而且只能使用一次，而且有时候如果不注意中间多了个空格会产生一段空白高度。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  - 优点：通俗易懂，容易掌握；</div><div class="line">  - 缺点：可以想象通过此方法，会添加多少无意义的空标签，有违结构与表现的分离，在后期维护中将是噩梦。</div><div class="line">+ 如下:</div></pre></td></tr></table></figure></p>
+<p>.clearfix{overflow:hidden; zoom:1;}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  此方法优点在于代码简洁，涵盖所有浏览器，可是对于`overflow:hidden;`要是里面的元素要是想来个`margin`负值定位或是负的绝对定位，岂不是直接被裁掉了，所以此方法是有不小的局限性的。</div><div class="line">  - 优点：不存在结构和语义化问题，代码量极少；</div><div class="line">  - 缺点：内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素。</div><div class="line">+ 如下：</div></pre></td></tr></table></figure>
+<p>.fix{zoom:1;}<br>.fix:after{</p>
+<pre><code>display:block;
+content:&apos;.&apos;;
+clear:both;
+line-height:0;
+visibility:hidden;}
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    `line-height:0`写成`height:0`也是可以的。不会影响任何其他样式，通用性强，覆盖面广，我很推荐哦。</div><div class="line">  + 父元素也浮动：</div><div class="line">    - 优点：不存在结构和语义化问题，代码量极少</div><div class="line">    - 缺点：使得与父元素相邻的元素的布局会受到影响，不可能一直浮动到body，不推荐使用</div><div class="line"></div><div class="line">  总结：</div><div class="line">    + 其一，通过在浮动元素的末尾添加一个空元素，设置 `clear：both`属性，`after`伪元素其实也是通过 `content` 在元素的后面生成了内容为一个点的块级元素；</div><div class="line">    + 其二，通过设置父元素 `overflow` 或者`display：table` 属性来闭合浮动，这里的原理涉及到BFC，不再赘述。</div><div class="line"></div><div class="line">   同样请参考上一题给出的参考文章进行阅读加以理解。</div><div class="line"></div><div class="line"></div><div class="line">* Q: 解释下 CSS sprites，以及你要如何在页面或网站中使用它。</div><div class="line"></div><div class="line">  A: CSS Sprites就是把网页中一些小图片整合到一张图片文件中，再利用CSS的`background-image`，`background- repeat`，`background-position`的组合进行背景定位，`background-position`可以用数字能精确的定位出背景图片的位置。可以减少http请求。</div><div class="line"></div><div class="line"></div><div class="line">* Q: 你最喜欢的图片替换方法是什么，你如何选择使用。</div><div class="line"></div><div class="line">  A:</div><div class="line">    - 一些图标是使用before和after伪元素;</div><div class="line">    - 还有一些使用iconfont;</div><div class="line">    - 使用sprite图;</div><div class="line">    - 用背景图片代替图片。</div><div class="line"></div><div class="line">    举个栗子：</div></pre></td></tr></table></figure>
+<p>  </p><h1 class="nir">[content]</h1><p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<p>.nir {<br>   height: 100px; /<em> height of replacement image </em>/<br>   padding: 0;<br>   margin: 0;<br>   overflow: hidden;<br>}</p>
+<p>.nir:before {</p>
+<pre><code>content: url(image.gif);
+display: block;
+</code></pre><p>  }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    详细可阅读：[CSS image replacement with pseudo-elements](http://nicolasgallagher.com/css-image-replacement-with-pseudo-elements/)</div><div class="line"></div><div class="line">* Q：讨论CSS hacks，条件引用或者其他。</div><div class="line"></div><div class="line">  A: CSS主要由三种方法：</div><div class="line"></div><div class="line">    - 属性前缀法(即类内部Hack)：例如 IE6能识别下划线&quot;\_&quot;和星号&quot; \* &quot;，IE7能识别星号&quot; \* &quot;，但不能识别下划线&quot;\_&quot;，IE6~IE10都认识&quot;\9&quot;，但firefox前述三个都不能认识。</div><div class="line">    - 选择器前缀法(即选择器Hack)：例如 IE6能识别`*html .class&#123;&#125;`，IE7能识别`*+html .class&#123;&#125;`或者`*:first-child+html .class&#123;&#125;`。</div><div class="line">    - IE条件注释法(即HTML条件注释Hack)：针对所有IE(注：IE10+已经不再支持条件注释)： &lt;!--[if IE]&gt;IE浏览器显示的内容 &lt;![endif]--&gt;，针对IE6及以下版本： &lt;!--[if lt IE 6]&gt;只在IE6-显示的内容 &lt;![endif]--&gt;。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效。</div></pre></td></tr></table></figure>
+<p>&lt;!DOCTYPE html&gt;<br><html><br><head></head></html></p>
+<pre><code>&lt;title&gt;Css Hack&lt;/title&gt;
+&lt;style&gt;
+#test
+{
+    width:300px;
+    height:300px;
+
+    background-color:blue;      /*firefox*/
+    background-color:red\9;      /*all ie*/
+    background-color:yellow\0;    /*ie8*/
+    +background-color:pink;        /*ie7*/
+    _background-color:orange;       /*ie6*/
+}
+:root #test { background-color:purple\9; }  /*ie9*/
+@media all and (min-width:0px){ #test {background-color:black\0;} }  /*opera*/
+@media screen and (-webkit-min-device-pixel-ratio:0){ #test {background-color:gray;} }  /*chrome and safari*/
+&lt;/style&gt;
+</code></pre><p><br><body></body></p>
+<pre><code>&lt;div id=&quot;test&quot;&gt;test&lt;/div&gt;
+</code></pre><p><br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">  想要更多的了解CSS hack 方面的知识可以参考：</div><div class="line"></div><div class="line">    - [史上最全的CSS hack方式一览](http://blog.csdn.net/freshlover/article/details/12132801)</div><div class="line">    - [史上最全的css hack](http://www.cnblogs.com/wuqiang/archive/2011/08/23/2150240.html)</div><div class="line"></div><div class="line">* Q: 如何为有功能限制的浏览器提供网页？</div><div class="line">  * Q: 你会使用哪些技术和处理方法？</div><div class="line"></div><div class="line">   A: 功能限制的浏览器，比如 IE 低版本、手机浏览器、奇葩国内浏览器，会在很多功能上不符合 Web 标准，而应对的方式有这么几种：</div><div class="line"></div><div class="line">    - 只提供符合 Web 标准的页面；</div><div class="line">    - 提供另一个符合那些浏览器标准的页面(例如说移动端一套css,电脑端一套css);</div><div class="line">    - 兼容：这里有两种思路，一个是渐进增强，一个优雅降级。</div><div class="line">      渐进增强的思路就是提供一个可用的原型，后来再为高级浏览器提供优化。优雅降级的思路是根据高级浏览器提供一个版本，然后有功能限制的浏览器只需要一个刚好能用的版本。当然，工作中的标准都是尽量满足设计，如果不能满足的话就尽量贴近，不得已（性能之类的问题）才会砍掉某个浏览器版本上的需求。</div><div class="line"></div><div class="line">    相关技术:</div><div class="line">    - Media Query</div><div class="line">    - CSS hack</div><div class="line">    - 条件判断 `&lt;!--[if !IE]&gt;&lt;!--&gt;除IE外都可识别 &lt;!--&lt;![endif]--&gt;`</div><div class="line"></div><div class="line">* Q： 有哪些的隐藏内容的方法（如果同时还要保证屏幕阅读器可用呢？）</div><div class="line"></div><div class="line">  A: `display:none`看不见也摸不着，屏幕阅读器更会忽略其内容；而`visibility:hidden`虽然看得见但是摸不着，占据了一定的物理空间，屏幕阅读器也会忽略。如果想要在读屏设备中让这些内容可见。解决方案的基本思路都是将这些内容放到屏幕、视线意外的地方，或者就是将大小设置成 0。比如 `text-indent: -9999em;`、`overflow: hidden;`、`height: 0`。</div></pre></td></tr></table></figure>
+<p>  .texthidden {</p>
+<pre><code>display:block;/*统一转化为块级元素*/
+overflow: hidden;
+width: 0;
+height: 0;
+</code></pre><p>   }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">更详细的方法可以参考这篇文章[HIDING CONTENT FOR ACCESSIBILITY](http://snook.ca/archives/html_and_css/hiding-content-for-accessibility)</div><div class="line"></div><div class="line">不过既然这是了读屏而优化的，那么可以用 media query 来完成，media speech 用于语音输出的读屏设备。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>@media speech {</p>
+<pre><code>/* media-specify rules */
+</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">  以上转自[Witcher42](http://witcher42.github.io/2014/06/06/what-are-the-different-ways-to-visually-hide-content-and-make-it-available-only-for-screen-readers/)给出的答案。</div><div class="line"></div><div class="line">* Q：你用过栅格系统吗？如果使用过，你最喜欢哪种？</div><div class="line"></div><div class="line">  A：使用过bootstarp。易于上手，学习成本低，还能做出比较大方美观的页面。</div><div class="line"></div><div class="line">  可阅读[栅格系统延续美学](http://mux.baidu.com/?p=1550)。</div><div class="line"></div><div class="line">* Q: 你用过媒体查询，或针对移动端的布局/CSS 吗？</div><div class="line"></div><div class="line">  A:</div></pre></td></tr></table></figure>
+<p>  @media screen and (min-width:600px) {</p>
+<pre><code>nav {
+  float: left;
+  width: 25%;
+}
+section {
+  margin-left: 25%;
+}
+</code></pre><p>  }<br>  @media screen and (max-width:599px) {</p>
+<pre><code>nav li {
+  display: inline;
+}
+</code></pre><p>  }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    可参考：</div><div class="line">    - [CSS媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)</div><div class="line">    - [使用 CSS 媒体查询创建响应式网站](http://www.ibm.com/developerworks/cn/web/wa-cssqueries/)</div><div class="line">* Q:你熟悉 SVG 样式的书写吗？</div><div class="line"></div><div class="line">  A:</div></pre></td></tr></table></figure>
+<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><br/> <circle cx="40" cy="40" r="24" style="stroke:#006600; fill:#00cc00"/><br/> <text x="250" y="150" font-family="Verdana" font-size="10px" fill="blue">Hello, out there</text><br/> <defs><style type="text/css"> &lt;![CDATA[.sample{stroke:blue;fill:#0080FF;opacity:1;}]]&gt;</style></defs><br/> <use xlink:href="#sample1" class="sample"/><br/> </svg><br>```</p>
+<p>教程参考: <a href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial" target="_blank" rel="external">SVG教程</a></p>
+</li>
+<li><p>Q: 如何优化网页的打印样式？</p>
+<p>A:</p>
+<p><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;xxx.css&quot; /&gt;</code></p>
+<p>其中media指定的属性就是设备，显示器上就是screen，打印机则是print，电视是tv，投影仪是projection。</p>
+<p><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;print&quot; href=&quot;yyy.css&quot; /&gt;</code></p>
+<p>但打印样式表也应有些注意事项：</p>
+<p>1 打印样式表中最好不要用背景图片，因为打印机不能打印CSS中的背景。如要显示图片，请使用html插入到页面中。<br>2 最好不要使用像素作为单位，因为打印样式表要打印出来的会是实物，所以建议使用pt和cm。<br>3 隐藏掉不必要的内容。（<code>@print div{display:none;}</code>）<br>4 打印样式表中最好少用浮动属性，因为它们会消失。<br>如果想要知道打印样式表的效果如何，直接在浏览器上选择打印预览就可以了。</p>
+</li>
+<li><p>Q: 书写高效 CSS 时会有哪些问题需要考虑？</p>
+<p>A:</p>
+<ul>
+<li>样式是：从右向左的解析一个选择器</li>
+<li>ID最快，Universal最慢 有四种类型的key selector，解析速度由快到慢依次是：ID、class、tag和universal</li>
+<li>不要tag-qualify （永远不要这样做 ul#main-navigation { } ID已经是唯一的，不需要Tag来标识，这样做会让选择器变慢。）</li>
+<li>后代选择器最糟糕（换句话说，下面这个选择器是很低效的： html body ul li a { }）</li>
+<li>想清楚你为什么这样写</li>
+<li>CSS3的效率问题（CSS3选择器（比如 :nth-child）能够漂亮的定位我们想要的元素，又能保证我们的CSS整洁易读。但是这些神奇的选择器会浪费很多的浏览器资源。）</li>
+<li>我们知道#ID速度是最快的，那么我们都用ID，是不是很快。但是我们不应该为了效率而牺牲可读性和可维护性`</li>
+</ul>
+<p>可参考： <a href="http://blog.jobbole.com/55067/" target="_blank" rel="external">http://blog.jobbole.com/55067/</a></p>
+<p>等我重写这道题答案。=。=</p>
+</li>
+<li><p>使用 CSS 预处理器的优缺点有哪些？(SASS，Compass，Stylus，LESS)</p>
+<ul>
+<li>描述下你曾经使用过的 CSS 预处理的优缺点。</li>
+</ul>
+</li>
+<li><p>如果设计中使用了非标准的字体，你该如何去实现？</p>
+<ul>
+<li>Webfonts (字体服务例如：Google Webfonts，Typekit 等等。)</li>
+</ul>
+</li>
+<li><p>解释下浏览器是如何判断元素是否匹配某个 CSS 选择器？</p>
+</li>
+<li><p>解释一下你对盒模型的理解，以及如何在 CSS 中告诉浏览器使用不同的盒模型来渲染你的布局。</p>
+</li>
+<li><p>请解释一下 <code>* { box-sizing: border-box; }</code> 的作用, 并且说明使用它有什么好处？</p>
+</li>
+<li><p>请罗列出你所知道的 display 属性的全部值</p>
+</li>
+<li><p>请解释一下 inline 和 inline-block 的区别？</p>
+</li>
+<li><p>请解释一下 relative、fixed、absolute 和 static 元素的区别</p>
+</li>
+<li><p>你目前在使用哪一套CSS框架，或者在产品线上使用过哪一套？(Bootstrap, PureCSS, Foundation 等等)</p>
+<ul>
+<li>如果有，请问是哪一套？如果可以，你如何改善CSS框架？</li>
+</ul>
+</li>
+<li><p>请问你有使用过 CSS Flexbox 或者 Grid specs 吗？</p>
+<ul>
+<li>如果有，请问在性能和效率的方面你是怎么看的？</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Q：描述下 “reset” CSS 文件的作用和使用它的好处。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="css" scheme="http://sheltonWu.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML常见问题总结</title>
+    <link href="http://sheltonWu.com/2017/07/14/5/"/>
+    <id>http://sheltonWu.com/2017/07/14/5/</id>
+    <published>2017-07-14T12:12:30.000Z</published>
+    <updated>2017-07-14T12:12:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li><p>Q: <code>doctype</code>（文档类型）的作用是什么？</p>
+<a id="more"></a>
+<p>A: 在HTML中 <code>doctype</code> 有两个主要目的。</p>
+<ul>
+<li><p>对文档进行有效性验证:</p>
+<p>它告诉用户代理和校验器这个文档是按照什么DTD 写的。这个动作是被动的，每次页面加载时，浏览器并不会下载DTD 并检查合法性，只有当手动校验页面时才启用。</p>
+</li>
+<li><p>决定浏览器的呈现模式:</p>
+<p>对于实际操作，通知浏览器读取文档时用哪种解析算法。如果没有写，则浏览器则根据自身的规则对代码进行解析，可能会严重影响HTML 排版布局。浏览器有三种方式解析HTML文档。</p>
+<ul>
+<li>非怪异（标准）模式</li>
+<li>怪异模式</li>
+<li>部分怪异（近乎标准）模式</li>
+</ul>
+</li>
+</ul>
+<p>关于IE浏览器的文档模式，浏览器模式，严格模式，怪异模式，DOCTYPE标签，可详细阅读<a href="http://padding.me/blog/2014/07/04/mode-or-standard/" target="_blank" rel="external">模式？标准！</a>的内容。</p>
+</li>
+<li><p>Q: 浏览器标准模式和怪异模式之间的区别是什么？</p>
+<p>A: 在“标准模式”(Standards Mode) 页面按照 HTML 与 CSS 的定义渲染，而在“怪异模式”(Quirks Mode)就是浏览器为了兼容很早之前针对旧版本浏览器设计、并未严格遵循 W3C 标准的网页而产生的一种页面渲染模式。浏览器基于页面中文件类型描述的存在以决定采用哪种渲染模式；如果存在一个完整的<code>DOCTYPE</code>则浏览器将会采用标准模式，而如果它缺失则浏览器将会采用怪异模式。</p>
+<p>强烈建议阅读加深理解：<a href="http://www.ibm.com/developerworks/cn/web/1310_shatao_quirks/" target="_blank" rel="external">怪异模式（Quirks Mode）对 HTML 页面的影响</a>，这里列下浏览器标准模式和怪异模式的区别：</p>
+<ol>
+<li><p>盒模型：</p>
+<p>在怪异模式下，盒模型为IE盒模型而非标准模式下的W3C 盒模型：在 IE 盒模型中，<br>box width = content width + padding left + padding right + border left + border right，<br>box height = content height + padding top + padding bottom + border top + border bottom。<br>而在 W3C 标准的盒模型中，box 的大小就是 content 的大小。</p>
+</li>
+<li><p>图片元素的垂直对齐方式:</p>
+<p>对于<code>inline</code>元素和<code>table-cell</code>元素，在 IE Standards Mode 下 vertical-align 属性默认取值为<code>baseline</code>。而当<code>inline</code>元素的内容只有图片时，如<code>table</code>的单元格<code>table-cell</code>。在 IE Quirks Mode 下，<code>table</code>单元格中的图片的 <code>vertical-align</code> 属性默认为<code>bottom</code>，因此，在图片底部会有几像素的空间。</p>
+</li>
+<li><p><code>&lt;table&gt;</code>元素中的字体:</p>
+<p>CSS 中，描述<code>font</code>的属性有<code>font-family</code>，<code>font-size</code>，<code>font-style</code>，<code>font-weigh</code>,上述属性都是可以继承的。而在 IE Quirks Mode 下，对于<code>table</code> 元素，字体的某些属性将不会从<code>body</code>或其他封闭元素继承到<code>table</code>中，特别是 <code>font-size</code>属性。</p>
+</li>
+<li><p>内联元素的尺寸:</p>
+<p>在 IE Standards Mode 下，non-replaced inline 元素无法自定义大小，而在 IE Quirks Mode 下，定义这些元素的<code>width</code>和<code>height</code> 属性，能够影响该元素显示的大小尺寸。</p>
+</li>
+<li><p>元素的百分比高度:</p>
+<p>CSS 中对于元素的百分比高度规定如下，百分比为元素包含块的高度，不可为负值。如果包含块的高度没有显式给出，该值等同于“auto”（即取决于内容的高度）。所以百分比的高度必须在父元素有声明高度时使用。</p>
+<p>当一个元素使用百分比高度时，在 IE Standards Mode 下，高度取决于内容的变化，而在 Quirks Mode 下，百分比高度则被正确应用。</p>
+</li>
+<li><p>元素溢出的处理：</p>
+<p>在 IE Standard Mode 下，<code>overflow</code>取默认值 <code>visible</code>，即溢出可见，这种情况下，溢出内容不会被裁剪，呈现在元素框外。而在 Quirks Mode 下，该溢出被当做扩展<code>box</code>来对待，即元素的大小由其内容决定，溢出不会被裁剪，元素框自动调整，包含溢出内容。</p>
+</li>
+</ol>
+<p>另可参考阅读：<a href="https://www.cs.tut.fi/~jkorpela/quirks-mode.html" target="_blank" rel="external">https://www.cs.tut.fi/~jkorpela/quirks-mode.html</a></p>
+</li>
+</ul>
+<ul>
+<li><p>Q: 使用 XHTML 的局限有哪些？</p>
+<ul>
+<li><p>如果页面使用 ‘application/xhtml+xml’ 会有什么问题吗？</p>
+<p>A: xhtml 语法要求严格，必须有<code>head</code>、<code>body</code> 每个dom 必须要闭合。空标签也必须闭合。例如<code>&lt;img /&gt;</code>, <code>&lt;br/&gt;</code>, <code>&lt;input /&gt;</code>等。另外要在属性值上使用双引号。一旦遇到错误，立刻停止解析，并显示错误信息。<br>如果页面使用’application/xhtml+xml’,一些老的浏览器会不兼容。</p>
+</li>
+</ul>
+</li>
+<li><p>Q: 如果网页内容需要支持多语言，你会怎么做？</p>
+<ul>
+<li><p>在设计和开发多语言网站时，有哪些问题你必须要考虑？</p>
+<p>A: 编码使用<code>UTF-8</code>，空间域名需要支持多浏览地址,准备多套模板。<br>在设计和开发多语言网站时，需要考虑</p>
+<ul>
+<li>应用字符集的选择</li>
+<li>语言书写习惯&amp;导航结构</li>
+<li>数据库驱动型网站</li>
+<li>css 盒子会因为内容尺寸不一样出现不对齐偏移</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Q: <code>data-</code>属性的作用是什么？</p>
+<p>A: <code>data-</code>为前端开发者提供自定义的属性，这些属性集可以通过对象的<code>dataset</code>属性获取，不支持该属性的浏览器可以通过<code>getAttribute</code>方法获取:</p>
+<p><code>&lt;div data-author=&quot;david&quot; data-time=&quot;2011-06-20&quot; data-comment-num=&quot;10&quot;&gt;...&lt;/div&gt;</code></p>
+<p><code>div.dataset.commentNum; // 10</code></p>
+<p>需要注意的是，<code>data-</code>之后的以连字符分割的多个单词组成的属性，获取的时候使用驼峰风格。并不是所有的浏览器都支持.<code>dataset</code>属性，测试的浏览器中只有Chrome 和Opera 支持。</p>
+<p>即：当没有合适的属性和元素时，自定义的 data 属性是能够存储页面或 App 的私有的自定义数据。</p>
+<blockquote>
+<p>Custom data attributes are intended to store custom data private to the page or application, for which there are no more appropriate attributes or elements.</p>
+</blockquote>
+</li>
+<li><p>Q:如果把 HTML5 看作做一个开放平台，那它的构建模块有哪些？</p>
+<p>A: 开放网络平台:</p>
+<blockquote>
+<p>The Open Web Platform is the collection of open (royalty-free) technologies which enables the Web. Using the Open Web Platform, everyone has the right to implement a software component of the Web without requiring any approvals or waiving license fees.</p>
+</blockquote>
+<p>开放网络平台（Open Web Platform）是一些开放的（免版权）技术的集合，这些技术激活了互联网。使用开放网络平台时，每个人都有权实现 Web 上的一个组件，而不用向任何人索取许可和证书。</p>
+</li>
+</ul>
+<p>  将 HTML5 看做开放网络平台，那它的构建模块有哪些？我想，所谓构建模块，指的应该是开放网络平台这个技术集合中的技术。</p>
+<ul>
+<li>HTML</li>
+<li>DOM</li>
+<li>CSS</li>
+<li>SVG</li>
+<li>MathML</li>
+<li><p>Web APIs</p>
+<ul>
+<li>Canvas WebGL</li>
+<li>Audio</li>
+<li>Web Storage</li>
+<li>File, File System</li>
+<li>History, contentEditable, Drag &amp; Drop, HTML Editing Commands</li>
+<li>Web Sockets</li>
+<li>Web Workers</li>
+<li>Server-Send Events</li>
+<li>XMLHttpRequest</li>
+<li>Geolocation, Device Orientation</li>
+<li>DOM Events, Touch Events, Progress Events</li>
+<li>Custom application development</li>
+<li>Clipboard and events</li>
+<li>Web Notifications, Web Messaging</li>
+<li>Offine Web Applications</li>
+<li>Media Capture API</li>
+<li>Timing control for script-based animations, Page Visibility, Navigation + Timing, Resource Timing</li>
+<li>Selectors</li>
+<li>DOM Traversal, DOM XPath, Element Traversal</li>
+<li>EcmaScript / JavaScript</li>
+<li>HTTP</li>
+<li>URI</li>
+<li>Media Accessibility Checklist</li>
+</ul>
+<p>该答案引自: <a href="http://witcher42.github.io/2014/06/03/open-web-platform/" target="_blank" rel="external">http://witcher42.github.io/2014/06/03/open-web-platform/</a></p>
+</li>
+</ul>
+<ul>
+<li><p>Q: 请描述一下 cookies，sessionStorage 和 localStorage 的区别？</p>
+<p>A: sessionStorage 和 localStorage 是HTML5 Web Storage API 提供的，可以方便的在web请求之间保存数据。有了本地数据，就可以避免数据在浏览器和服务器间不必要地来回传递。</p>
+<p>sessionStorage、localStorage、cookie都是在浏览器端存储的数据，其中sessionStorage 的概念很特别，引入了一个“浏览器窗口”的概念。sessionStorage 是在同源的同窗口（或tab）中，始终存在的数据。也就是说只要这个浏览器窗口没有关闭，即使刷新页面或进入同源另一页面，数据仍然存在。关闭窗口后，sessionStorage 即被销毁。同时“独立”打开的不同窗口，即使是同一页面，sessionStorage 对象也是不同的</p>
+<p>cookies会发送到服务器端。其余两个不会。</p>
+<p>Microsoft 指出 Internet Explorer 8 增加cookie 限制为每个域名50个，但IE7 似乎也允许每个域名50个cookie。Firefox 每个域名cookie 限制为50个。Opera每个域名cookie 限制为30个。Firefox 和Safari 允许cookie 多达4097个字节，包括名（name）、值（value）和等号。Opera 许cookie 多达4096个字节，包括：名（name）、值（value）和等号。Internet Explorer 允许cookie 多达4095个字节，包括：名（name）、值（value）和等号。</p>
+<ul>
+<li>Cookie<ul>
+<li>每个域名存储量比较小（各浏览器不同，大致4K）</li>
+<li>所有域名的存储量有限制（各浏览器不同，大致4K）</li>
+<li>有个数限制（各浏览器不同）</li>
+<li>会随请求发送到服务器</li>
+</ul>
+</li>
+<li>LocalStorage<ul>
+<li>永久存储</li>
+<li>单个域名存储量比较大（推荐5MB，各浏览器不同）</li>
+<li>总体数量无限制</li>
+</ul>
+</li>
+<li>SessionStorage<ul>
+<li>只在 Session 内有效</li>
+<li>存储量更大（推荐没有限制，但是实际上各浏览器也不同）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>请描述一下 <code>GET</code> 和 <code>POST</code> 的区别?</p>
+<p>A: 区别如下：</p>
+<ul>
+<li>get 向指定的资源请求数据,请求的数据会附在URL 之后,就是把数据放置在请求行（request line）中），以?分割URL和传输数据，多个参数用&amp;连接；</li>
+<li><p>post 向指定的资源提交要被处理的数据。get 方法，查询请求是在url中显示的，有长度限制，get 方法是安全幂等的。而post 方法请求是封装在http 消息包体中</p>
+<p>&amp;|get|post<br>—|—|—-<br>后退/刷新|无害|请求重新提交<br>书签|可做书签|不可做<br>缓存|可被缓存|不能被缓存<br>历史|保留在浏览器记录里|不保留<br>对数据长度限制|限制（2048字符）|不限制<br>安全性|url中暴露数据|相对安全<br>可见性|url中可见|不可见</p>
+</li>
+</ul>
+<p>总结：</p>
+<ul>
+<li>对于get 来说，是向服务器端请求数据，其请求在url 中可见，其长度有限制（2048字符）个体方法是安全幂等，这里的安全是指用于获取信息而非修改信息，幂等是指每次请求得到的结果都一样。</li>
+<li>对于post 来说，是向服务器端提交数据，每次刷新或者后退都会重新提交，post 请求的数据封装在http 请求的首部里。</li>
+</ul>
+</li>
+</ul>
+<p>tips: 以上部分答案参考自：</p>
+<ul>
+<li><a href="http://padding.me" target="_blank" rel="external">paddingme</a></li>
+<li><a href="http://witcher42.github.io/" target="_blank" rel="external">Witcher42</a></li>
+<li><a href="http://camnpr.com/" target="_blank" rel="external">郑州网建</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Q: &lt;code&gt;doctype&lt;/code&gt;（文档类型）的作用是什么？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="HTML" scheme="http://sheltonWu.com/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML常见问题总结</title>
+    <link href="http://sheltonWu.com/2017/07/14/2/"/>
+    <id>http://sheltonWu.com/2017/07/14/2/</id>
+    <published>2017-07-14T12:12:30.000Z</published>
+    <updated>2017-07-14T12:12:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li><p>Q: <code>&lt;keygen&gt;</code> 是正确的HTML5标签吗？</p>
+<a id="more"></a>
+<p> A: 是。</p>
+<p> <code>&lt;keygen&gt;</code> 标签规定用于表单的密钥对生成器字段。当提交表单时，私钥存储在本地，公钥发送到服务器。是HTML5 标签。</p>
+</li>
+</ol>
+<ol>
+<li><p>Q: <code>&lt;bdo&gt;</code> 标签是否可以改变文本方向？</p>
+<p> A: 可以。</p>
+<p> <code>&lt;bdo&gt;</code>标签覆盖默认的文本方向。</p>
+</li>
+</ol>
+<pre><code>&lt;bdo dir=&quot;rtl&quot;&gt;Here is some text&lt;/bdo&gt;
+</code></pre><ol>
+<li>Q: 下列HTML代码是否正确？</li>
+</ol>
+<pre><code>&lt;figure&gt;
+    &lt;img src=&quot;myimage.jpg&quot; alt=&quot;My image&quot;&gt;
+    &lt;figcaption&gt;
+        &lt;p&gt;This is my self portrait.&lt;/p&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+A: 正确
+
+ `&lt;figure&gt;` 标签规定独立的流内容（图像、图表、照片、代码等等）。`figure` 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。使用`&lt;figcaption&gt;`元素为`figure`添加标题（caption）。
+</code></pre><ol>
+<li><p>Q: 哪种情况下应该使用<code>small</code>标签？当你想在<code>h1</code> 标题后创建副标题？还是当在<code>footer</code>里面增加版权信息？</p>
+<p> A: <code>small</code>标签一般使用场景是在版权信息和法律文本里使用，也可以在标题里使用标注附加信息（bootstrap中可见），但不可以用来创建副标题。</p>
+<blockquote>
+<p>The HTML Small Element (<code>&lt;small&gt;</code>) makes the text font size one size smaller (for example, from large to medium, or from small to x-small) down to the browser’s minimum font size.  In HTML5, this element is repurposed to represent side-comments and small print, including copyright and legal text, independent of its styled presentation.</p>
+</blockquote>
+</li>
+<li><p>Q: 在一个结构良好的web网页里，多个<code>h1</code>标签会不利于SEO吗？</p>
+<p> A: 不影响。</p>
+<blockquote>
+<p>According to Matt Cutts (lead of Google’s webspam team and the de facto expert on these things), using multiple <code>&lt;h1&gt;</code> tags is fine, as long as you’re not abusing it (like sticking your whole page in an <code>&lt;h1&gt;</code> and using CSS to style it back to normal size). That would likely have no effect, and might trigger a penalty, as it looks spammy.</p>
+<p>If you have multiple headings and it would be natural to use multiple <code>&lt;h1&gt;</code>‘s, then go for it.</p>
+</blockquote>
+<p> 摘自：<a href="http://www.quora.com/Does-using-multiple-h1-tags-on-a-page-affect-search-engine-rankings" target="_blank" rel="external">http://www.quora.com/Does-using-multiple-h1-tags-on-a-page-affect-search-engine-rankings</a></p>
+</li>
+<li><p>Q: 如果你有一个搜索结果页面，你想高亮搜索的关键词。什么HTML 标签可以使用?</p>
+<p> A:<code>&lt;mark&gt;</code> 标签表现高亮文本。</p>
+<blockquote>
+<p>The HTML <code>&lt;mark&gt;</code> Element represents highlighted text, i.e., a run of text marked for reference purpose, due to its relevance in a particular context. For example it can be used in a page showing search results to highlight every instance of the searched for word.</p>
+</blockquote>
+</li>
+<li><p>Q: 下列代码中<code>scope</code> 属性是做什么的？</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;article&gt;</div><div class="line">    &lt;h1&gt;Hello World&lt;/h1&gt;</div><div class="line">    &lt;style scoped&gt;</div><div class="line">        p &#123;</div><div class="line">            color: #FF0;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;p&gt;This is my text&lt;/p&gt;</div><div class="line">&lt;/article&gt;</div><div class="line"></div><div class="line">&lt;article&gt;</div><div class="line">    &lt;h1&gt;This is awesome&lt;/h1&gt;</div><div class="line">    &lt;p&gt;I am some other text&lt;/p&gt;</div><div class="line">&lt;/article&gt;</div></pre></td></tr></table></figure>
+<p> A: <code>scoped</code> 属性是一个布尔属性。如果使用该属性，则样式仅仅应用到 style 元素的父元素及其子元素。</p>
+</li>
+<li><p>HTML5 支持块级超链接吗？例如：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;article&gt;</div><div class="line">    &lt;a href=&quot;#&quot;&gt;</div><div class="line">        &lt;h1&gt;Hello&lt;/h1&gt;</div><div class="line">        &lt;p&gt;I am some text&lt;/p&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">&lt;/article&gt;</div></pre></td></tr></table></figure>
+<p> A: 支持。</p>
+<p> HTML5中<code>&lt;a&gt;</code> 元素表现为一个超链接，支持任何行内元素和块级元素。</p>
+</li>
+<li><p>Q: 当下列的HTML代码加载时会触发新的HTTP请求吗？</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;mypic.jpg&quot; style=&quot;visibility: hidden&quot; alt=&quot;My picture&quot;&gt;</div></pre></td></tr></table></figure>
+<p> A: 会哇</p>
+</li>
+<li><p>Q: 当下列的HTML代码加载时会触发新的HTTP请求吗？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;display: none;&quot;&gt;</div><div class="line">    &lt;img src=&quot;mypic.jpg&quot; alt=&quot;My photo&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>A: 会！</p>
+</li>
+<li><p><code>main1.css</code>一定会在<code>alert(&#39;Hello world&#39;)</code>被加载和编译吗?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    &lt;link href=&quot;main1.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        alert(&apos;Hello World&apos;);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+<p>A: 是！</p>
+</li>
+<li><p>Q: 在<code>main2.css</code>获取前<code>main1</code>一定必须被下载解析吗？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    &lt;link href=&quot;main1.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">    &lt;link href=&quot;main2.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+<p>A: no!</p>
+</li>
+<li><p>Q: 在<code>Paragraph 1</code>加载后<code>main2.css</code>才会被加载编译吗？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    &lt;link href=&quot;main1.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;p&gt;Paragraph 1&lt;/p&gt;</div><div class="line">    &lt;p&gt;Paragraph 2&lt;/p&gt;</div><div class="line">    &lt;link href=&quot;main2.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>A: yes!</p>
+</li>
+</ol>
+<h2 id="知识点总结："><a href="#知识点总结：" class="headerlink" title="知识点总结："></a>知识点总结：</h2><ul>
+<li><p>浏览器如何渲染，可以查阅如下文章：</p>
+<ul>
+<li><a href="http://coolshell.cn/articles/9666.html" target="_blank" rel="external">浏览器的渲染原理简介</a></li>
+<li><a href="http://developer.51cto.com/art/201311/418133.htm" target="_blank" rel="external">专题：浏览器:渲染重绘、重排两三事</a></li>
+<li><a href="http://www.nowamagic.net/academy/detail/48110160" target="_blank" rel="external">浏览器加载和渲染HTML的顺序以及Gzip的问题</a></li>
+<li><a href="http://div.io/topic/609" target="_blank" rel="external">从FE的角度上再看输入url后都发生了什么</a></li>
+</ul>
+</li>
+<li><p>HTML5 方便的资料可阅读：</p>
+<ul>
+<li><a href="http://www.html5cn.org/article-6180-1.html" target="_blank" rel="external">你需要知道的五个HTML5新功能</a></li>
+<li><a href="http://camnpr.com/archives/must-know-the-seven-html5-features.html" target="_blank" rel="external">必须知道的七个HTML5新特性</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Q: &lt;code&gt;&amp;lt;keygen&amp;gt;&lt;/code&gt; 是正确的HTML5标签吗？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="HTML" scheme="http://sheltonWu.com/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://sheltonWu.com/2017/07/14/8/"/>
+    <id>http://sheltonWu.com/2017/07/14/8/</id>
+    <published>2017-07-14T12:12:30.000Z</published>
+    <updated>2017-07-14T12:12:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>title: HTML加载速度<br>tags: [HTML]<br>categories: 页面优化</p>
+<p>##1.加快页面的加载速度##</p>
+<ol>
+<li>页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script和css移到外部文件，可以使用HTML Tidy来给HTML减肥，还可以使用一些压缩工具来给JavaScript减肥</li>
+<li>减少文件数量。减少页面上引用的文件数量可以减少HTTP连接数。许多JavaScript、CSS文件可以合并最好合并，人家财帮子都把自己的JavaScript. functions和Prototype.js合并到一个base.js文件里去了</li>
+<li>减少域名查询。DNS查询和解析域名也是消耗时间的，所以要减少对外部JavaScript、CSS、图片等资源的引用，不同域名的使用越少越好</li>
+<li>缓存重用数据。使用缓存吧</li>
+<li>优化页面元素加载顺序。首先加载页面最初显示的内容和与之相关的JavaScript和CSS，然后加载DHTML相关的东西，像什么不是最初显示相关的图片、flash、视频等很肥的资源就最后加载</li>
+<li>减少inline JavaScript的数量。浏览器parser会假设inline JavaScript会改变页面结构，所以使用inline JavaScript开销较大，不要使用document.write()这种输出内容的方法，使用现代W3C DOM方法来为现代浏览器处理页面内容</li>
+<li>使用现代CSS和合法的标签。使用现代CSS来减少标签和图像，例如使用现代CSS+文字完全可以替代一些只有文字的图片，使用合法的标签避免浏览器解析HTML时做“error correction”等操作，还可以被HTML Tidy来给HTML减肥</li>
+<li>Chunk your content。不要使用嵌套tables</li>
+<li>指定图像和tables的大小。如果浏览器可以立即决定图像或tables的大小，那么它就可以马上显示页面而不要重新做一些布局安排的工作，这不仅加快了页面的显示，也预防了页面完成加载后布局的一些不当的改变。</li>
+<li>根据用户浏览器明智的选择策略。IE、Firefox、Safari等等等等</li>
+<li>页面结构的例子</li>
+</ol>
+<h1 id="HTML页面加载和解析流程"><a href="#HTML页面加载和解析流程" class="headerlink" title="HTML页面加载和解析流程"></a>HTML页面加载和解析流程</h1><ol>
+<li>用户输入网址（假设是个html页面，并且是第一次访问），浏览器向服务器发出请求，服务器返回html文件；</li>
+<li>浏览器开始载入html代码，发现＜head＞标签内有一个＜link＞标签引用外部CSS文件；</li>
+<li>浏览器又发出CSS文件的请求，服务器返回这个CSS文件；</li>
+<li>浏览器继续载入html中＜body＞部分的代码，并且CSS文件已经拿到手了，可以开始渲染页面了；</li>
+<li>浏览器在代码中发现一个＜img＞标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码；</li>
+<li>服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码；</li>
+<li>浏览器发现了一个包含一行Javascript代码的＜script＞标签，赶快运行它；</li>
+<li>Javascript脚本执行了这条语句，它命令浏览器隐藏掉代码中的某个＜div＞ （style.display=”none”）。杯具啊，突然就少了这么一个元素，浏览器不得不重新渲染这部分代码；</li>
+<li>终于等到了＜/html＞的到来，浏览器泪流满面……</li>
+<li>等等，还没完，用户点了一下界面中的“换肤”按钮，Javascript让浏览器换了一下＜link＞标签的CSS路径；</li>
+<li>浏览器召集了在座的各位＜div＞＜span＞＜ul＞＜li＞们，“大伙儿收拾收拾行李，咱得重新来过……”，浏览器向服务器请求了新的CSS文件，重新渲染页面。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;title: HTML加载速度&lt;br&gt;tags: [HTML]&lt;br&gt;categories: 页面优化&lt;/p&gt;
+&lt;p&gt;##1.加快页面的加载速度##&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script
     
     </summary>
     
@@ -280,6 +1059,50 @@ HTML，CSS都对大小写不敏感，但为了更好的可读性和团队协作�
   </entry>
   
   <entry>
+    <title>我的第一篇测试文--Markdown 常用语法</title>
+    <link href="http://sheltonWu.com/2017/07/14/testpage/"/>
+    <id>http://sheltonWu.com/2017/07/14/testpage/</id>
+    <published>2017-07-14T12:12:30.000Z</published>
+    <updated>2017-07-14T12:12:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#这里是正文，用markdown写</p>
+<hr>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定义为标题，只要在这段文字前加 # 号即可。</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><hr>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>熟悉 HTML 的同学肯定知道有序列表与无序列表的区别，在 Markdown 下，列表的显示只需要在文字前加上 - 或 * 即可变为无序列表，<br>有序列表则直接在文字前加1. 2. 3. 符号要和文字之间加上一个字符的空格。</p>
+<p><img src="http://ww4.sinaimg.cn/large/6aee7dbbgw1effew5aftij20d80bz3yw.jpg" alt="img" title="Optional title"></p>
+<hr>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>如果你需要引用一小段别处的句子，那么就要用引用的格式。</p>
+<p>只需要在文本前加入 &gt; 这种尖括号（大于号）即可</p>
+<blockquote>
+<p>这是一段引用</p>
+</blockquote>
+<hr>
+<h2 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h2><p>插入链接与插入图片的语法很像，区别在一个 !号</p>
+<p><img src="http://ww2.sinaimg.cn/large/6aee7dbbgw1efffa67voyj20ix0ctq3n.jpg" alt="img"></p>
+<hr>
+<h2 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h2><p>Markdown 的粗体和斜体也非常简单，用两个星号包含一段文本就是粗体的语法，用一个星号包含一段文本就是斜体的语法。</p>
+<hr>
+<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a>代码框</h2><p>如果你是个程序猿，需要在文章里优雅的引用代码框，在 Markdown下实现也非常简单，只需要用两个 ` 把中间的代码包裹起来。图例：<br><img src="http://ww3.sinaimg.cn/large/6aee7dbbgw1effg1lsa97j20lt0a8dgs.jpg" alt="img"></p>
+<p><code>congsole.log(&quot;Hello World&quot;)</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#这里是正文，用markdown写&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h2&gt;&lt;p&gt;标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定
+    
+    </summary>
+    
+      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="博客，文章" scheme="http://sheltonWu.com/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E6%96%87%E7%AB%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title></title>
     <link href="http://sheltonWu.com/2017/07/14/11/"/>
     <id>http://sheltonWu.com/2017/07/14/11/</id>
@@ -338,805 +1161,6 @@ HTML，CSS都对大小写不敏感，但为了更好的可读性和团队协作�
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>HTML常见问题总结</title>
-    <link href="http://sheltonWu.com/2017/07/14/2/"/>
-    <id>http://sheltonWu.com/2017/07/14/2/</id>
-    <published>2017-07-14T12:12:30.000Z</published>
-    <updated>2017-07-14T12:12:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol>
-<li><p>Q: <code>&lt;keygen&gt;</code> 是正确的HTML5标签吗？</p>
-<a id="more"></a>
-<p> A: 是。</p>
-<p> <code>&lt;keygen&gt;</code> 标签规定用于表单的密钥对生成器字段。当提交表单时，私钥存储在本地，公钥发送到服务器。是HTML5 标签。</p>
-</li>
-</ol>
-<ol>
-<li><p>Q: <code>&lt;bdo&gt;</code> 标签是否可以改变文本方向？</p>
-<p> A: 可以。</p>
-<p> <code>&lt;bdo&gt;</code>标签覆盖默认的文本方向。</p>
-</li>
-</ol>
-<pre><code>&lt;bdo dir=&quot;rtl&quot;&gt;Here is some text&lt;/bdo&gt;
-</code></pre><ol>
-<li>Q: 下列HTML代码是否正确？</li>
-</ol>
-<pre><code>&lt;figure&gt;
-    &lt;img src=&quot;myimage.jpg&quot; alt=&quot;My image&quot;&gt;
-    &lt;figcaption&gt;
-        &lt;p&gt;This is my self portrait.&lt;/p&gt;
-    &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-
-A: 正确
-
- `&lt;figure&gt;` 标签规定独立的流内容（图像、图表、照片、代码等等）。`figure` 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。使用`&lt;figcaption&gt;`元素为`figure`添加标题（caption）。
-</code></pre><ol>
-<li><p>Q: 哪种情况下应该使用<code>small</code>标签？当你想在<code>h1</code> 标题后创建副标题？还是当在<code>footer</code>里面增加版权信息？</p>
-<p> A: <code>small</code>标签一般使用场景是在版权信息和法律文本里使用，也可以在标题里使用标注附加信息（bootstrap中可见），但不可以用来创建副标题。</p>
-<blockquote>
-<p>The HTML Small Element (<code>&lt;small&gt;</code>) makes the text font size one size smaller (for example, from large to medium, or from small to x-small) down to the browser’s minimum font size.  In HTML5, this element is repurposed to represent side-comments and small print, including copyright and legal text, independent of its styled presentation.</p>
-</blockquote>
-</li>
-<li><p>Q: 在一个结构良好的web网页里，多个<code>h1</code>标签会不利于SEO吗？</p>
-<p> A: 不影响。</p>
-<blockquote>
-<p>According to Matt Cutts (lead of Google’s webspam team and the de facto expert on these things), using multiple <code>&lt;h1&gt;</code> tags is fine, as long as you’re not abusing it (like sticking your whole page in an <code>&lt;h1&gt;</code> and using CSS to style it back to normal size). That would likely have no effect, and might trigger a penalty, as it looks spammy.</p>
-<p>If you have multiple headings and it would be natural to use multiple <code>&lt;h1&gt;</code>‘s, then go for it.</p>
-</blockquote>
-<p> 摘自：<a href="http://www.quora.com/Does-using-multiple-h1-tags-on-a-page-affect-search-engine-rankings" target="_blank" rel="external">http://www.quora.com/Does-using-multiple-h1-tags-on-a-page-affect-search-engine-rankings</a></p>
-</li>
-<li><p>Q: 如果你有一个搜索结果页面，你想高亮搜索的关键词。什么HTML 标签可以使用?</p>
-<p> A:<code>&lt;mark&gt;</code> 标签表现高亮文本。</p>
-<blockquote>
-<p>The HTML <code>&lt;mark&gt;</code> Element represents highlighted text, i.e., a run of text marked for reference purpose, due to its relevance in a particular context. For example it can be used in a page showing search results to highlight every instance of the searched for word.</p>
-</blockquote>
-</li>
-<li><p>Q: 下列代码中<code>scope</code> 属性是做什么的？</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;article&gt;</div><div class="line">    &lt;h1&gt;Hello World&lt;/h1&gt;</div><div class="line">    &lt;style scoped&gt;</div><div class="line">        p &#123;</div><div class="line">            color: #FF0;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;p&gt;This is my text&lt;/p&gt;</div><div class="line">&lt;/article&gt;</div><div class="line"></div><div class="line">&lt;article&gt;</div><div class="line">    &lt;h1&gt;This is awesome&lt;/h1&gt;</div><div class="line">    &lt;p&gt;I am some other text&lt;/p&gt;</div><div class="line">&lt;/article&gt;</div></pre></td></tr></table></figure>
-<p> A: <code>scoped</code> 属性是一个布尔属性。如果使用该属性，则样式仅仅应用到 style 元素的父元素及其子元素。</p>
-</li>
-<li><p>HTML5 支持块级超链接吗？例如：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;article&gt;</div><div class="line">    &lt;a href=&quot;#&quot;&gt;</div><div class="line">        &lt;h1&gt;Hello&lt;/h1&gt;</div><div class="line">        &lt;p&gt;I am some text&lt;/p&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">&lt;/article&gt;</div></pre></td></tr></table></figure>
-<p> A: 支持。</p>
-<p> HTML5中<code>&lt;a&gt;</code> 元素表现为一个超链接，支持任何行内元素和块级元素。</p>
-</li>
-<li><p>Q: 当下列的HTML代码加载时会触发新的HTTP请求吗？</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;mypic.jpg&quot; style=&quot;visibility: hidden&quot; alt=&quot;My picture&quot;&gt;</div></pre></td></tr></table></figure>
-<p> A: 会哇</p>
-</li>
-<li><p>Q: 当下列的HTML代码加载时会触发新的HTTP请求吗？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;display: none;&quot;&gt;</div><div class="line">    &lt;img src=&quot;mypic.jpg&quot; alt=&quot;My photo&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<p>A: 会！</p>
-</li>
-<li><p><code>main1.css</code>一定会在<code>alert(&#39;Hello world&#39;)</code>被加载和编译吗?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    &lt;link href=&quot;main1.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        alert(&apos;Hello World&apos;);</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
-<p>A: 是！</p>
-</li>
-<li><p>Q: 在<code>main2.css</code>获取前<code>main1</code>一定必须被下载解析吗？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    &lt;link href=&quot;main1.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">    &lt;link href=&quot;main2.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
-<p>A: no!</p>
-</li>
-<li><p>Q: 在<code>Paragraph 1</code>加载后<code>main2.css</code>才会被加载编译吗？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    &lt;link href=&quot;main1.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;p&gt;Paragraph 1&lt;/p&gt;</div><div class="line">    &lt;p&gt;Paragraph 2&lt;/p&gt;</div><div class="line">    &lt;link href=&quot;main2.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<p>A: yes!</p>
-</li>
-</ol>
-<h2 id="知识点总结："><a href="#知识点总结：" class="headerlink" title="知识点总结："></a>知识点总结：</h2><ul>
-<li><p>浏览器如何渲染，可以查阅如下文章：</p>
-<ul>
-<li><a href="http://coolshell.cn/articles/9666.html" target="_blank" rel="external">浏览器的渲染原理简介</a></li>
-<li><a href="http://developer.51cto.com/art/201311/418133.htm" target="_blank" rel="external">专题：浏览器:渲染重绘、重排两三事</a></li>
-<li><a href="http://www.nowamagic.net/academy/detail/48110160" target="_blank" rel="external">浏览器加载和渲染HTML的顺序以及Gzip的问题</a></li>
-<li><a href="http://div.io/topic/609" target="_blank" rel="external">从FE的角度上再看输入url后都发生了什么</a></li>
-</ul>
-</li>
-<li><p>HTML5 方便的资料可阅读：</p>
-<ul>
-<li><a href="http://www.html5cn.org/article-6180-1.html" target="_blank" rel="external">你需要知道的五个HTML5新功能</a></li>
-<li><a href="http://camnpr.com/archives/must-know-the-seven-html5-features.html" target="_blank" rel="external">必须知道的七个HTML5新特性</a></li>
-</ul>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Q: &lt;code&gt;&amp;lt;keygen&amp;gt;&lt;/code&gt; 是正确的HTML5标签吗？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="HTML" scheme="http://sheltonWu.com/tags/HTML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML常见问题总结</title>
-    <link href="http://sheltonWu.com/2017/07/14/5/"/>
-    <id>http://sheltonWu.com/2017/07/14/5/</id>
-    <published>2017-07-14T12:12:30.000Z</published>
-    <updated>2017-07-14T12:12:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li><p>Q: <code>doctype</code>（文档类型）的作用是什么？</p>
-<a id="more"></a>
-<p>A: 在HTML中 <code>doctype</code> 有两个主要目的。</p>
-<ul>
-<li><p>对文档进行有效性验证:</p>
-<p>它告诉用户代理和校验器这个文档是按照什么DTD 写的。这个动作是被动的，每次页面加载时，浏览器并不会下载DTD 并检查合法性，只有当手动校验页面时才启用。</p>
-</li>
-<li><p>决定浏览器的呈现模式:</p>
-<p>对于实际操作，通知浏览器读取文档时用哪种解析算法。如果没有写，则浏览器则根据自身的规则对代码进行解析，可能会严重影响HTML 排版布局。浏览器有三种方式解析HTML文档。</p>
-<ul>
-<li>非怪异（标准）模式</li>
-<li>怪异模式</li>
-<li>部分怪异（近乎标准）模式</li>
-</ul>
-</li>
-</ul>
-<p>关于IE浏览器的文档模式，浏览器模式，严格模式，怪异模式，DOCTYPE标签，可详细阅读<a href="http://padding.me/blog/2014/07/04/mode-or-standard/" target="_blank" rel="external">模式？标准！</a>的内容。</p>
-</li>
-<li><p>Q: 浏览器标准模式和怪异模式之间的区别是什么？</p>
-<p>A: 在“标准模式”(Standards Mode) 页面按照 HTML 与 CSS 的定义渲染，而在“怪异模式”(Quirks Mode)就是浏览器为了兼容很早之前针对旧版本浏览器设计、并未严格遵循 W3C 标准的网页而产生的一种页面渲染模式。浏览器基于页面中文件类型描述的存在以决定采用哪种渲染模式；如果存在一个完整的<code>DOCTYPE</code>则浏览器将会采用标准模式，而如果它缺失则浏览器将会采用怪异模式。</p>
-<p>强烈建议阅读加深理解：<a href="http://www.ibm.com/developerworks/cn/web/1310_shatao_quirks/" target="_blank" rel="external">怪异模式（Quirks Mode）对 HTML 页面的影响</a>，这里列下浏览器标准模式和怪异模式的区别：</p>
-<ol>
-<li><p>盒模型：</p>
-<p>在怪异模式下，盒模型为IE盒模型而非标准模式下的W3C 盒模型：在 IE 盒模型中，<br>box width = content width + padding left + padding right + border left + border right，<br>box height = content height + padding top + padding bottom + border top + border bottom。<br>而在 W3C 标准的盒模型中，box 的大小就是 content 的大小。</p>
-</li>
-<li><p>图片元素的垂直对齐方式:</p>
-<p>对于<code>inline</code>元素和<code>table-cell</code>元素，在 IE Standards Mode 下 vertical-align 属性默认取值为<code>baseline</code>。而当<code>inline</code>元素的内容只有图片时，如<code>table</code>的单元格<code>table-cell</code>。在 IE Quirks Mode 下，<code>table</code>单元格中的图片的 <code>vertical-align</code> 属性默认为<code>bottom</code>，因此，在图片底部会有几像素的空间。</p>
-</li>
-<li><p><code>&lt;table&gt;</code>元素中的字体:</p>
-<p>CSS 中，描述<code>font</code>的属性有<code>font-family</code>，<code>font-size</code>，<code>font-style</code>，<code>font-weigh</code>,上述属性都是可以继承的。而在 IE Quirks Mode 下，对于<code>table</code> 元素，字体的某些属性将不会从<code>body</code>或其他封闭元素继承到<code>table</code>中，特别是 <code>font-size</code>属性。</p>
-</li>
-<li><p>内联元素的尺寸:</p>
-<p>在 IE Standards Mode 下，non-replaced inline 元素无法自定义大小，而在 IE Quirks Mode 下，定义这些元素的<code>width</code>和<code>height</code> 属性，能够影响该元素显示的大小尺寸。</p>
-</li>
-<li><p>元素的百分比高度:</p>
-<p>CSS 中对于元素的百分比高度规定如下，百分比为元素包含块的高度，不可为负值。如果包含块的高度没有显式给出，该值等同于“auto”（即取决于内容的高度）。所以百分比的高度必须在父元素有声明高度时使用。</p>
-<p>当一个元素使用百分比高度时，在 IE Standards Mode 下，高度取决于内容的变化，而在 Quirks Mode 下，百分比高度则被正确应用。</p>
-</li>
-<li><p>元素溢出的处理：</p>
-<p>在 IE Standard Mode 下，<code>overflow</code>取默认值 <code>visible</code>，即溢出可见，这种情况下，溢出内容不会被裁剪，呈现在元素框外。而在 Quirks Mode 下，该溢出被当做扩展<code>box</code>来对待，即元素的大小由其内容决定，溢出不会被裁剪，元素框自动调整，包含溢出内容。</p>
-</li>
-</ol>
-<p>另可参考阅读：<a href="https://www.cs.tut.fi/~jkorpela/quirks-mode.html" target="_blank" rel="external">https://www.cs.tut.fi/~jkorpela/quirks-mode.html</a></p>
-</li>
-</ul>
-<ul>
-<li><p>Q: 使用 XHTML 的局限有哪些？</p>
-<ul>
-<li><p>如果页面使用 ‘application/xhtml+xml’ 会有什么问题吗？</p>
-<p>A: xhtml 语法要求严格，必须有<code>head</code>、<code>body</code> 每个dom 必须要闭合。空标签也必须闭合。例如<code>&lt;img /&gt;</code>, <code>&lt;br/&gt;</code>, <code>&lt;input /&gt;</code>等。另外要在属性值上使用双引号。一旦遇到错误，立刻停止解析，并显示错误信息。<br>如果页面使用’application/xhtml+xml’,一些老的浏览器会不兼容。</p>
-</li>
-</ul>
-</li>
-<li><p>Q: 如果网页内容需要支持多语言，你会怎么做？</p>
-<ul>
-<li><p>在设计和开发多语言网站时，有哪些问题你必须要考虑？</p>
-<p>A: 编码使用<code>UTF-8</code>，空间域名需要支持多浏览地址,准备多套模板。<br>在设计和开发多语言网站时，需要考虑</p>
-<ul>
-<li>应用字符集的选择</li>
-<li>语言书写习惯&amp;导航结构</li>
-<li>数据库驱动型网站</li>
-<li>css 盒子会因为内容尺寸不一样出现不对齐偏移</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Q: <code>data-</code>属性的作用是什么？</p>
-<p>A: <code>data-</code>为前端开发者提供自定义的属性，这些属性集可以通过对象的<code>dataset</code>属性获取，不支持该属性的浏览器可以通过<code>getAttribute</code>方法获取:</p>
-<p><code>&lt;div data-author=&quot;david&quot; data-time=&quot;2011-06-20&quot; data-comment-num=&quot;10&quot;&gt;...&lt;/div&gt;</code></p>
-<p><code>div.dataset.commentNum; // 10</code></p>
-<p>需要注意的是，<code>data-</code>之后的以连字符分割的多个单词组成的属性，获取的时候使用驼峰风格。并不是所有的浏览器都支持.<code>dataset</code>属性，测试的浏览器中只有Chrome 和Opera 支持。</p>
-<p>即：当没有合适的属性和元素时，自定义的 data 属性是能够存储页面或 App 的私有的自定义数据。</p>
-<blockquote>
-<p>Custom data attributes are intended to store custom data private to the page or application, for which there are no more appropriate attributes or elements.</p>
-</blockquote>
-</li>
-<li><p>Q:如果把 HTML5 看作做一个开放平台，那它的构建模块有哪些？</p>
-<p>A: 开放网络平台:</p>
-<blockquote>
-<p>The Open Web Platform is the collection of open (royalty-free) technologies which enables the Web. Using the Open Web Platform, everyone has the right to implement a software component of the Web without requiring any approvals or waiving license fees.</p>
-</blockquote>
-<p>开放网络平台（Open Web Platform）是一些开放的（免版权）技术的集合，这些技术激活了互联网。使用开放网络平台时，每个人都有权实现 Web 上的一个组件，而不用向任何人索取许可和证书。</p>
-</li>
-</ul>
-<p>  将 HTML5 看做开放网络平台，那它的构建模块有哪些？我想，所谓构建模块，指的应该是开放网络平台这个技术集合中的技术。</p>
-<ul>
-<li>HTML</li>
-<li>DOM</li>
-<li>CSS</li>
-<li>SVG</li>
-<li>MathML</li>
-<li><p>Web APIs</p>
-<ul>
-<li>Canvas WebGL</li>
-<li>Audio</li>
-<li>Web Storage</li>
-<li>File, File System</li>
-<li>History, contentEditable, Drag &amp; Drop, HTML Editing Commands</li>
-<li>Web Sockets</li>
-<li>Web Workers</li>
-<li>Server-Send Events</li>
-<li>XMLHttpRequest</li>
-<li>Geolocation, Device Orientation</li>
-<li>DOM Events, Touch Events, Progress Events</li>
-<li>Custom application development</li>
-<li>Clipboard and events</li>
-<li>Web Notifications, Web Messaging</li>
-<li>Offine Web Applications</li>
-<li>Media Capture API</li>
-<li>Timing control for script-based animations, Page Visibility, Navigation + Timing, Resource Timing</li>
-<li>Selectors</li>
-<li>DOM Traversal, DOM XPath, Element Traversal</li>
-<li>EcmaScript / JavaScript</li>
-<li>HTTP</li>
-<li>URI</li>
-<li>Media Accessibility Checklist</li>
-</ul>
-<p>该答案引自: <a href="http://witcher42.github.io/2014/06/03/open-web-platform/" target="_blank" rel="external">http://witcher42.github.io/2014/06/03/open-web-platform/</a></p>
-</li>
-</ul>
-<ul>
-<li><p>Q: 请描述一下 cookies，sessionStorage 和 localStorage 的区别？</p>
-<p>A: sessionStorage 和 localStorage 是HTML5 Web Storage API 提供的，可以方便的在web请求之间保存数据。有了本地数据，就可以避免数据在浏览器和服务器间不必要地来回传递。</p>
-<p>sessionStorage、localStorage、cookie都是在浏览器端存储的数据，其中sessionStorage 的概念很特别，引入了一个“浏览器窗口”的概念。sessionStorage 是在同源的同窗口（或tab）中，始终存在的数据。也就是说只要这个浏览器窗口没有关闭，即使刷新页面或进入同源另一页面，数据仍然存在。关闭窗口后，sessionStorage 即被销毁。同时“独立”打开的不同窗口，即使是同一页面，sessionStorage 对象也是不同的</p>
-<p>cookies会发送到服务器端。其余两个不会。</p>
-<p>Microsoft 指出 Internet Explorer 8 增加cookie 限制为每个域名50个，但IE7 似乎也允许每个域名50个cookie。Firefox 每个域名cookie 限制为50个。Opera每个域名cookie 限制为30个。Firefox 和Safari 允许cookie 多达4097个字节，包括名（name）、值（value）和等号。Opera 许cookie 多达4096个字节，包括：名（name）、值（value）和等号。Internet Explorer 允许cookie 多达4095个字节，包括：名（name）、值（value）和等号。</p>
-<ul>
-<li>Cookie<ul>
-<li>每个域名存储量比较小（各浏览器不同，大致4K）</li>
-<li>所有域名的存储量有限制（各浏览器不同，大致4K）</li>
-<li>有个数限制（各浏览器不同）</li>
-<li>会随请求发送到服务器</li>
-</ul>
-</li>
-<li>LocalStorage<ul>
-<li>永久存储</li>
-<li>单个域名存储量比较大（推荐5MB，各浏览器不同）</li>
-<li>总体数量无限制</li>
-</ul>
-</li>
-<li>SessionStorage<ul>
-<li>只在 Session 内有效</li>
-<li>存储量更大（推荐没有限制，但是实际上各浏览器也不同）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>请描述一下 <code>GET</code> 和 <code>POST</code> 的区别?</p>
-<p>A: 区别如下：</p>
-<ul>
-<li>get 向指定的资源请求数据,请求的数据会附在URL 之后,就是把数据放置在请求行（request line）中），以?分割URL和传输数据，多个参数用&amp;连接；</li>
-<li><p>post 向指定的资源提交要被处理的数据。get 方法，查询请求是在url中显示的，有长度限制，get 方法是安全幂等的。而post 方法请求是封装在http 消息包体中</p>
-<p>&amp;|get|post<br>—|—|—-<br>后退/刷新|无害|请求重新提交<br>书签|可做书签|不可做<br>缓存|可被缓存|不能被缓存<br>历史|保留在浏览器记录里|不保留<br>对数据长度限制|限制（2048字符）|不限制<br>安全性|url中暴露数据|相对安全<br>可见性|url中可见|不可见</p>
-</li>
-</ul>
-<p>总结：</p>
-<ul>
-<li>对于get 来说，是向服务器端请求数据，其请求在url 中可见，其长度有限制（2048字符）个体方法是安全幂等，这里的安全是指用于获取信息而非修改信息，幂等是指每次请求得到的结果都一样。</li>
-<li>对于post 来说，是向服务器端提交数据，每次刷新或者后退都会重新提交，post 请求的数据封装在http 请求的首部里。</li>
-</ul>
-</li>
-</ul>
-<p>tips: 以上部分答案参考自：</p>
-<ul>
-<li><a href="http://padding.me" target="_blank" rel="external">paddingme</a></li>
-<li><a href="http://witcher42.github.io/" target="_blank" rel="external">Witcher42</a></li>
-<li><a href="http://camnpr.com/" target="_blank" rel="external">郑州网建</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Q: &lt;code&gt;doctype&lt;/code&gt;（文档类型）的作用是什么？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="HTML" scheme="http://sheltonWu.com/tags/HTML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css常见问题总结</title>
-    <link href="http://sheltonWu.com/2017/07/14/6/"/>
-    <id>http://sheltonWu.com/2017/07/14/6/</id>
-    <published>2017-07-14T12:12:30.000Z</published>
-    <updated>2017-07-14T12:12:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li><p>Q：描述下 “reset” CSS 文件的作用和使用它的好处。</p>
-<a id="more"></a>
-<p>A：</p>
-<ul>
-<li>作用以及好处：因为各个浏览器默认对CSS的渲染有差异，”reset” CSS 通过重新定义标签样式，对浏览器进行默认样式“清零”重置，样式保持一致。</li>
-<li><p>不足:</p>
-<ul>
-<li>css文件大小增加；</li>
-<li>许多样式本身就需要重置，多此一举；</li>
-<li>增加浏览器对CSS 的渲染。</li>
-</ul>
-<p>可以阅读以下文章增强了解：</p>
-</li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2010/04/css-reset%E7%9A%84%E9%87%8D%E6%96%B0%E5%AE%A1%E8%A7%86-%E9%81%BF%E5%85%8D%E6%A0%B7%E5%BC%8F%E9%87%8D%E7%BD%AE/" target="_blank" rel="external">CSS reset的重新审视 – 避免样式重置</a></li>
-<li><a href="http://www.cnblogs.com/dolphinx/p/3509515.html" target="_blank" rel="external">常见标签的默认属性值及相互作用——关于CSS reset的思考</a></li>
-<li><a href="http://baike.baidu.com/view/5186496.htm" target="_blank" rel="external">reset.css</a></li>
-<li><a href="http://handyxuefeng.blog.163.com/blog/static/454521722013111714040259/" target="_blank" rel="external">前端面试问题</a></li>
-</ul>
-</li>
-<li><p>Q: 解释下浮动和它的工作原理。</p>
-<p>A: 浮动出现的最开始出现的意义是用来让文字环绕图片而已。<code>float</code>可以自动包裹元素。<code>float</code>会导致高度塌陷。<code>float</code>为什么会导致高度塌陷：元素含有浮动属性 –&gt; 破坏<code>inline box</code> –&gt; 破坏<code>line box</code>高度 –&gt; 没有高度 –&gt; 塌陷。什么时候会塌陷：当标签里面的元素只要样子没有实际高度时会塌陷。浮动会脱离文档流。产生自己的块级格式化上下文。</p>
-<p>  可以阅读以下文章增加理解：</p>
-<ul>
-<li><a href="http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%B8%80/" target="_blank" rel="external">CSS float浮动的深入研究、详解及拓展(一)</a></li>
-<li><a href="http://www.zhangxinxu.com/wordpress/2010/01/css-float%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6%E3%80%81%E8%AF%A6%E8%A7%A3%E5%8F%8A%E6%8B%93%E5%B1%95%E4%BA%8C/" target="_blank" rel="external">CSS float浮动的深入研究、详解及拓展(二)</a></li>
-<li><a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">那些年我们一起清除过的浮动</a></li>
-<li>《CSS权威指南》</li>
-</ul>
-</li>
-<li><p>列举不同的清除浮动的技巧，并指出它们各自适用的使用场景。</p>
-<ul>
-<li><p>直接把<figure class="highlight plain"><figcaption><span>style="clear:both;">```放到当作最后一个子标签放到父标签那儿，此方法兼容性强，使用方便，但是浪费了一个标签，而且只能使用一次，而且有时候如果不注意中间多了个空格会产生一段空白高度。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  - 优点：通俗易懂，容易掌握；</div><div class="line">  - 缺点：可以想象通过此方法，会添加多少无意义的空标签，有违结构与表现的分离，在后期维护中将是噩梦。</div><div class="line">+ 如下:</div></pre></td></tr></table></figure></p>
-<p>.clearfix{overflow:hidden; zoom:1;}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  此方法优点在于代码简洁，涵盖所有浏览器，可是对于`overflow:hidden;`要是里面的元素要是想来个`margin`负值定位或是负的绝对定位，岂不是直接被裁掉了，所以此方法是有不小的局限性的。</div><div class="line">  - 优点：不存在结构和语义化问题，代码量极少；</div><div class="line">  - 缺点：内容增多时候容易造成不会自动换行导致内容被隐藏掉，无法显示需要溢出的元素。</div><div class="line">+ 如下：</div></pre></td></tr></table></figure>
-<p>.fix{zoom:1;}<br>.fix:after{</p>
-<pre><code>display:block;
-content:&apos;.&apos;;
-clear:both;
-line-height:0;
-visibility:hidden;}
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    `line-height:0`写成`height:0`也是可以的。不会影响任何其他样式，通用性强，覆盖面广，我很推荐哦。</div><div class="line">  + 父元素也浮动：</div><div class="line">    - 优点：不存在结构和语义化问题，代码量极少</div><div class="line">    - 缺点：使得与父元素相邻的元素的布局会受到影响，不可能一直浮动到body，不推荐使用</div><div class="line"></div><div class="line">  总结：</div><div class="line">    + 其一，通过在浮动元素的末尾添加一个空元素，设置 `clear：both`属性，`after`伪元素其实也是通过 `content` 在元素的后面生成了内容为一个点的块级元素；</div><div class="line">    + 其二，通过设置父元素 `overflow` 或者`display：table` 属性来闭合浮动，这里的原理涉及到BFC，不再赘述。</div><div class="line"></div><div class="line">   同样请参考上一题给出的参考文章进行阅读加以理解。</div><div class="line"></div><div class="line"></div><div class="line">* Q: 解释下 CSS sprites，以及你要如何在页面或网站中使用它。</div><div class="line"></div><div class="line">  A: CSS Sprites就是把网页中一些小图片整合到一张图片文件中，再利用CSS的`background-image`，`background- repeat`，`background-position`的组合进行背景定位，`background-position`可以用数字能精确的定位出背景图片的位置。可以减少http请求。</div><div class="line"></div><div class="line"></div><div class="line">* Q: 你最喜欢的图片替换方法是什么，你如何选择使用。</div><div class="line"></div><div class="line">  A:</div><div class="line">    - 一些图标是使用before和after伪元素;</div><div class="line">    - 还有一些使用iconfont;</div><div class="line">    - 使用sprite图;</div><div class="line">    - 用背景图片代替图片。</div><div class="line"></div><div class="line">    举个栗子：</div></pre></td></tr></table></figure>
-<p>  </p><h1 class="nir">[content]</h1><p></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<p>.nir {<br>   height: 100px; /<em> height of replacement image </em>/<br>   padding: 0;<br>   margin: 0;<br>   overflow: hidden;<br>}</p>
-<p>.nir:before {</p>
-<pre><code>content: url(image.gif);
-display: block;
-</code></pre><p>  }</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    详细可阅读：[CSS image replacement with pseudo-elements](http://nicolasgallagher.com/css-image-replacement-with-pseudo-elements/)</div><div class="line"></div><div class="line">* Q：讨论CSS hacks，条件引用或者其他。</div><div class="line"></div><div class="line">  A: CSS主要由三种方法：</div><div class="line"></div><div class="line">    - 属性前缀法(即类内部Hack)：例如 IE6能识别下划线&quot;\_&quot;和星号&quot; \* &quot;，IE7能识别星号&quot; \* &quot;，但不能识别下划线&quot;\_&quot;，IE6~IE10都认识&quot;\9&quot;，但firefox前述三个都不能认识。</div><div class="line">    - 选择器前缀法(即选择器Hack)：例如 IE6能识别`*html .class&#123;&#125;`，IE7能识别`*+html .class&#123;&#125;`或者`*:first-child+html .class&#123;&#125;`。</div><div class="line">    - IE条件注释法(即HTML条件注释Hack)：针对所有IE(注：IE10+已经不再支持条件注释)： &lt;!--[if IE]&gt;IE浏览器显示的内容 &lt;![endif]--&gt;，针对IE6及以下版本： &lt;!--[if lt IE 6]&gt;只在IE6-显示的内容 &lt;![endif]--&gt;。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效。</div></pre></td></tr></table></figure>
-<p>&lt;!DOCTYPE html&gt;<br><html><br><head></head></html></p>
-<pre><code>&lt;title&gt;Css Hack&lt;/title&gt;
-&lt;style&gt;
-#test
-{
-    width:300px;
-    height:300px;
-
-    background-color:blue;      /*firefox*/
-    background-color:red\9;      /*all ie*/
-    background-color:yellow\0;    /*ie8*/
-    +background-color:pink;        /*ie7*/
-    _background-color:orange;       /*ie6*/
-}
-:root #test { background-color:purple\9; }  /*ie9*/
-@media all and (min-width:0px){ #test {background-color:black\0;} }  /*opera*/
-@media screen and (-webkit-min-device-pixel-ratio:0){ #test {background-color:gray;} }  /*chrome and safari*/
-&lt;/style&gt;
-</code></pre><p><br><body></body></p>
-<pre><code>&lt;div id=&quot;test&quot;&gt;test&lt;/div&gt;
-</code></pre><p><br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">  想要更多的了解CSS hack 方面的知识可以参考：</div><div class="line"></div><div class="line">    - [史上最全的CSS hack方式一览](http://blog.csdn.net/freshlover/article/details/12132801)</div><div class="line">    - [史上最全的css hack](http://www.cnblogs.com/wuqiang/archive/2011/08/23/2150240.html)</div><div class="line"></div><div class="line">* Q: 如何为有功能限制的浏览器提供网页？</div><div class="line">  * Q: 你会使用哪些技术和处理方法？</div><div class="line"></div><div class="line">   A: 功能限制的浏览器，比如 IE 低版本、手机浏览器、奇葩国内浏览器，会在很多功能上不符合 Web 标准，而应对的方式有这么几种：</div><div class="line"></div><div class="line">    - 只提供符合 Web 标准的页面；</div><div class="line">    - 提供另一个符合那些浏览器标准的页面(例如说移动端一套css,电脑端一套css);</div><div class="line">    - 兼容：这里有两种思路，一个是渐进增强，一个优雅降级。</div><div class="line">      渐进增强的思路就是提供一个可用的原型，后来再为高级浏览器提供优化。优雅降级的思路是根据高级浏览器提供一个版本，然后有功能限制的浏览器只需要一个刚好能用的版本。当然，工作中的标准都是尽量满足设计，如果不能满足的话就尽量贴近，不得已（性能之类的问题）才会砍掉某个浏览器版本上的需求。</div><div class="line"></div><div class="line">    相关技术:</div><div class="line">    - Media Query</div><div class="line">    - CSS hack</div><div class="line">    - 条件判断 `&lt;!--[if !IE]&gt;&lt;!--&gt;除IE外都可识别 &lt;!--&lt;![endif]--&gt;`</div><div class="line"></div><div class="line">* Q： 有哪些的隐藏内容的方法（如果同时还要保证屏幕阅读器可用呢？）</div><div class="line"></div><div class="line">  A: `display:none`看不见也摸不着，屏幕阅读器更会忽略其内容；而`visibility:hidden`虽然看得见但是摸不着，占据了一定的物理空间，屏幕阅读器也会忽略。如果想要在读屏设备中让这些内容可见。解决方案的基本思路都是将这些内容放到屏幕、视线意外的地方，或者就是将大小设置成 0。比如 `text-indent: -9999em;`、`overflow: hidden;`、`height: 0`。</div></pre></td></tr></table></figure>
-<p>  .texthidden {</p>
-<pre><code>display:block;/*统一转化为块级元素*/
-overflow: hidden;
-width: 0;
-height: 0;
-</code></pre><p>   }</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">更详细的方法可以参考这篇文章[HIDING CONTENT FOR ACCESSIBILITY](http://snook.ca/archives/html_and_css/hiding-content-for-accessibility)</div><div class="line"></div><div class="line">不过既然这是了读屏而优化的，那么可以用 media query 来完成，media speech 用于语音输出的读屏设备。</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>@media speech {</p>
-<pre><code>/* media-specify rules */
-</code></pre><p>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">  以上转自[Witcher42](http://witcher42.github.io/2014/06/06/what-are-the-different-ways-to-visually-hide-content-and-make-it-available-only-for-screen-readers/)给出的答案。</div><div class="line"></div><div class="line">* Q：你用过栅格系统吗？如果使用过，你最喜欢哪种？</div><div class="line"></div><div class="line">  A：使用过bootstarp。易于上手，学习成本低，还能做出比较大方美观的页面。</div><div class="line"></div><div class="line">  可阅读[栅格系统延续美学](http://mux.baidu.com/?p=1550)。</div><div class="line"></div><div class="line">* Q: 你用过媒体查询，或针对移动端的布局/CSS 吗？</div><div class="line"></div><div class="line">  A:</div></pre></td></tr></table></figure>
-<p>  @media screen and (min-width:600px) {</p>
-<pre><code>nav {
-  float: left;
-  width: 25%;
-}
-section {
-  margin-left: 25%;
-}
-</code></pre><p>  }<br>  @media screen and (max-width:599px) {</p>
-<pre><code>nav li {
-  display: inline;
-}
-</code></pre><p>  }</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    可参考：</div><div class="line">    - [CSS媒体查询](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)</div><div class="line">    - [使用 CSS 媒体查询创建响应式网站](http://www.ibm.com/developerworks/cn/web/wa-cssqueries/)</div><div class="line">* Q:你熟悉 SVG 样式的书写吗？</div><div class="line"></div><div class="line">  A:</div></pre></td></tr></table></figure>
-<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><br/> <circle cx="40" cy="40" r="24" style="stroke:#006600; fill:#00cc00"/><br/> <text x="250" y="150" font-family="Verdana" font-size="10px" fill="blue">Hello, out there</text><br/> <defs><style type="text/css"> &lt;![CDATA[.sample{stroke:blue;fill:#0080FF;opacity:1;}]]&gt;</style></defs><br/> <use xlink:href="#sample1" class="sample"/><br/> </svg><br>```</p>
-<p>教程参考: <a href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial" target="_blank" rel="external">SVG教程</a></p>
-</li>
-<li><p>Q: 如何优化网页的打印样式？</p>
-<p>A:</p>
-<p><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;xxx.css&quot; /&gt;</code></p>
-<p>其中media指定的属性就是设备，显示器上就是screen，打印机则是print，电视是tv，投影仪是projection。</p>
-<p><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;print&quot; href=&quot;yyy.css&quot; /&gt;</code></p>
-<p>但打印样式表也应有些注意事项：</p>
-<p>1 打印样式表中最好不要用背景图片，因为打印机不能打印CSS中的背景。如要显示图片，请使用html插入到页面中。<br>2 最好不要使用像素作为单位，因为打印样式表要打印出来的会是实物，所以建议使用pt和cm。<br>3 隐藏掉不必要的内容。（<code>@print div{display:none;}</code>）<br>4 打印样式表中最好少用浮动属性，因为它们会消失。<br>如果想要知道打印样式表的效果如何，直接在浏览器上选择打印预览就可以了。</p>
-</li>
-<li><p>Q: 书写高效 CSS 时会有哪些问题需要考虑？</p>
-<p>A:</p>
-<ul>
-<li>样式是：从右向左的解析一个选择器</li>
-<li>ID最快，Universal最慢 有四种类型的key selector，解析速度由快到慢依次是：ID、class、tag和universal</li>
-<li>不要tag-qualify （永远不要这样做 ul#main-navigation { } ID已经是唯一的，不需要Tag来标识，这样做会让选择器变慢。）</li>
-<li>后代选择器最糟糕（换句话说，下面这个选择器是很低效的： html body ul li a { }）</li>
-<li>想清楚你为什么这样写</li>
-<li>CSS3的效率问题（CSS3选择器（比如 :nth-child）能够漂亮的定位我们想要的元素，又能保证我们的CSS整洁易读。但是这些神奇的选择器会浪费很多的浏览器资源。）</li>
-<li>我们知道#ID速度是最快的，那么我们都用ID，是不是很快。但是我们不应该为了效率而牺牲可读性和可维护性`</li>
-</ul>
-<p>可参考： <a href="http://blog.jobbole.com/55067/" target="_blank" rel="external">http://blog.jobbole.com/55067/</a></p>
-<p>等我重写这道题答案。=。=</p>
-</li>
-<li><p>使用 CSS 预处理器的优缺点有哪些？(SASS，Compass，Stylus，LESS)</p>
-<ul>
-<li>描述下你曾经使用过的 CSS 预处理的优缺点。</li>
-</ul>
-</li>
-<li><p>如果设计中使用了非标准的字体，你该如何去实现？</p>
-<ul>
-<li>Webfonts (字体服务例如：Google Webfonts，Typekit 等等。)</li>
-</ul>
-</li>
-<li><p>解释下浏览器是如何判断元素是否匹配某个 CSS 选择器？</p>
-</li>
-<li><p>解释一下你对盒模型的理解，以及如何在 CSS 中告诉浏览器使用不同的盒模型来渲染你的布局。</p>
-</li>
-<li><p>请解释一下 <code>* { box-sizing: border-box; }</code> 的作用, 并且说明使用它有什么好处？</p>
-</li>
-<li><p>请罗列出你所知道的 display 属性的全部值</p>
-</li>
-<li><p>请解释一下 inline 和 inline-block 的区别？</p>
-</li>
-<li><p>请解释一下 relative、fixed、absolute 和 static 元素的区别</p>
-</li>
-<li><p>你目前在使用哪一套CSS框架，或者在产品线上使用过哪一套？(Bootstrap, PureCSS, Foundation 等等)</p>
-<ul>
-<li>如果有，请问是哪一套？如果可以，你如何改善CSS框架？</li>
-</ul>
-</li>
-<li><p>请问你有使用过 CSS Flexbox 或者 Grid specs 吗？</p>
-<ul>
-<li>如果有，请问在性能和效率的方面你是怎么看的？</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Q：描述下 “reset” CSS 文件的作用和使用它的好处。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="css" scheme="http://sheltonWu.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS常见问题总结</title>
-    <link href="http://sheltonWu.com/2017/07/14/7/"/>
-    <id>http://sheltonWu.com/2017/07/14/7/</id>
-    <published>2017-07-14T12:12:30.000Z</published>
-    <updated>2017-07-14T12:12:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li><p>Q：解释下事件代理。</p>
-<p>A: 当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。</p>
-</li>
-</ul>
-<a id="more"></a>
-<pre><code>var delegate = function(client, clientMethod) {
-    return function() {
-        return clientMethod.apply(client, arguments);
-    }
-}
-
-var agentMethod = delegate (client, clientMethod);
-agentMethod();
-</code></pre><p>  相关阅读：</p>
-<ul>
-<li><a href="http://www.cnblogs.com/owenChen/archive/2013/02/18/2915521.html" target="_blank" rel="external">JavaScript事件代理和委托（Delegation）</a></li>
-<li><a href="http://www.cnblogs.com/owenChen/archive/2013/02/18/2915521.html" target="_blank" rel="external">事件代理</a></li>
-<li><a href="http://tangram.baidu.com/article/138" target="_blank" rel="external">事件代理的应用</a></li>
-</ul>
-<ul>
-<li>Q: 解释下 JavaScript 中 <code>this</code> 是如何工作的。</li>
-</ul>
-<p>  A: <code>this</code> 在 JavaScript 中主要由以下五种使用场景。</p>
-<ul>
-<li>作为函数调用，<code>this</code> 绑定全局对象，浏览器环境全局对象为 window 。<ul>
-<li>内部函数内部函数的 <code>this</code> 也绑定全局对象，应该绑定到其外层函数对应的对象上，这是 JavaScript的缺陷，用<code>that</code>替换。</li>
-</ul>
-</li>
-<li>作为构造函数使用，<code>this</code> 绑定到新创建的对象。</li>
-<li>作为对象方法使用，<code>this</code> 绑定到该对象。</li>
-<li><p>使用<code>apply</code>或<code>call</code>调用 <code>this</code> 将会被显式设置为函数调用的第一个参数。</p>
-<p>参考阅读：</p>
-<ul>
-<li><a href="http://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/#ibm-pcon" target="_blank" rel="external">深入浅出 JavaScript 中的 this</a></li>
-<li><a href="http://bonsaiden.github.io/JavaScript-Garden/zh/#function.this" target="_blank" rel="external">this 的工作原理</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Q: 解释下原型继承的原理。</p>
-<p>A:原型继承的基础是原型链查找。<br>原型链查找基本概念：</p>
-<ol>
-<li>每一个函数 F 都有一个原型对象（prototype）F.prototype</li>
-<li>每一个函数都可以通过 new 关键字化身成为一个类构造函数，new F 会产生一个对象 O</li>
-<li>在调用对象的某个属性或者方法，比如 <a href="http://O.xxx" target="_blank" rel="external">http://O.xxx</a> 的时候，会首先查找对象自身是否有这个方法或者属性，如果没找到就会去对象的构造函数的原型对象中查找（注意有两个定语），也就是查找 O 的构造函数 F 的原型对象 <a href="http://F.prototype.xxx" target="_blank" rel="external">http://F.prototype.xxx</a></li>
-<li>F.prototype 也是一个对象，查找 <a href="http://F.prototype.xxx" target="_blank" rel="external">http://F.prototype.xxx</a> 的时候会重复第 3 步的过程</li>
-</ol>
-<p>参考：</p>
-<ul>
-<li><a href="http://www.jianshu.com/p/d2742610ec30#" target="_blank" rel="external">深入理解javascript原型继承</a></li>
-<li><a href="http://www.ituring.com.cn/article/56184" target="_blank" rel="external">JavaScript原型继承工作原理</a></li>
-<li><a href="http://javascript.crockford.com/prototypal.html" target="_blank" rel="external">Prototypal Inheritance in JavaScript</a></li>
-</ul>
-</li>
-<li><p>Q: 你是如何测试JavaScript代码的？</p>
-</li>
-<li><p>A: AMD vs. CommonJS？</p>
-<p>Q: 可参考: <a href="http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs" target="_blank" rel="external">http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs</a></p>
-</li>
-<li><p>Q: 什么是哈希表？</p>
-<p>A: 哈希表是根据关键字（Key value）而直接访问在内存存储位置的数据结构。也就是说，它通过把键值通过一个函数的计算，映射到表中一个位置来访问记录，这加快了查找速度。这个映射函数称做散列函数，存放记录的数组称做散列表。</p>
-</li>
-<li><p>Q: 解释下为什么接下来这段代码不是 IIFE(立即调用的函数表达式)：<code>function foo(){ }();</code>.</p>
-<ul>
-<li>要做哪些改动使它变成 IIFE?</li>
-</ul>
-<p>A: 可参考 <a href="http://roshanca.com/2014/web-develop-styleguide-javascript/" target="_blank" rel="external">前端编码风格规范之 JavaScript 规范</a></p>
-<p>总是将代码包裹成一个 IIFE(Immediately-Invoked Function Expression)，用以创建独立隔绝的定义域。这一举措可防止全局命名空间被污染。</p>
-<p>IIFE 还可确保你的代码不会轻易被其它全局命名空间里的代码所修改（i.e. 第三方库，window 引用，被覆盖的未定义的关键字等等）。</p>
-<p>  不推荐</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var x = 10,</div><div class="line">    y = 100;</div><div class="line"></div><div class="line">// Declaring variables in the global scope is resulting in global scope pollution. All variables declared like this</div><div class="line">// will be stored in the window object. This is very unclean and needs to be avoided.</div><div class="line">console.log(window.x + &apos; &apos; + window.y);</div></pre></td></tr></table></figure>
-<p>  推荐</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// We declare a IIFE and pass parameters into the function that we will use from the global space</div><div class="line">(function(log, w, undefined)&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  var x = 10,</div><div class="line">      y = 100;</div><div class="line"></div><div class="line">  // Will output &apos;true true&apos;</div><div class="line">  log((w.x === undefined) + &apos; &apos; + (w.y === undefined));</div><div class="line"></div><div class="line">&#125;(window.console.log, window));</div></pre></td></tr></table></figure>
-<p>  IIFE（立即执行的函数表达式）:无论何时，想要创建一个新的封闭的定义域，那就用 IIFE。它不仅避免了干扰，也使得内存在执行完后立即释放。</p>
-<p>  所有脚本文件建议都从 IIFE 开始。</p>
-<p>  立即执行的函数表达式的执行括号应该写在外包括号内。虽然写在内还是写在外都是有效的，但写在内使得整个表达式看起来更像一个整体，因此推荐这么做。</p>
-<p>  不推荐</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;&#125;)();</div></pre></td></tr></table></figure>
-<p>  推荐</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;&#125;());</div></pre></td></tr></table></figure>
-<p>  so，用下列写法来格式化你的 IIFE 代码：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  // Code goes here</div><div class="line"></div><div class="line">&#125;());</div></pre></td></tr></table></figure>
-<p>  如果你想引用全局变量或者是外层 IIFE 的变量，可以通过下列方式传参：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(function($, w, d)&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  $(function() &#123;</div><div class="line">    w.alert(d.querySelectorAll(&apos;div&apos;).length);</div><div class="line">  &#125;);</div><div class="line">&#125;(jQuery, window, document));</div></pre></td></tr></table></figure>
-</li>
-<li><p>Q: 描述以下变量的区别：<code>null</code>，<code>undefined</code> 或 <code>undeclared</code>？</p>
-<ul>
-<li>该如何检测它们？</li>
-</ul>
-</li>
-</ul>
-<p>  A: <code>undefined</code>是Js语言类型，而<code>undeclared</code>是一种Js语法错误。在JavaScript中，有两个表示‘空’的值<code>undefined</code>和<code>null</code>，<code>undefined</code>是一个值为<code>undefined</code> 的类型。JavaScript语言也定义了一个全局变量，它的值是 <code>undefined</code>，这个变量也被称为<code>undefined</code>。 但是这个变量不是一个常量，也不是一个关键字。这意味着它的值可以轻易被覆盖。为了避免可能对<code>undefined</code>值的改变，一个常用的技巧是使用一个传递到匿名包装器的额外参数。在调用时，这个参数不会获取任何值。如下例子：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var undefined = 123;</div><div class="line">(function(something, foo, undefined) &#123;</div><div class="line">// 局部作用域里的 undefined 变量重新获得了 `undefined` 值</div><div class="line">&#125;)(&apos;Hello World&apos;, 42);</div></pre></td></tr></table></figure>
-<pre><code>待修改。
-</code></pre><ul>
-<li><a href="http://stackoverflow.com/questions/6429225/javascript-null-or-undefined" target="_blank" rel="external">http://stackoverflow.com/questions/6429225/javascript-null-or-undefined</a></li>
-<li><a href="http://www.zhihu.com/question/19966545" target="_blank" rel="external">http://www.zhihu.com/question/19966545</a></li>
-</ul>
-<ul>
-<li><p>什么是闭包，如何使用它，为什么要使用它？</p>
-</li>
-<li><p>请举出一个匿名函数的典型用例？</p>
-</li>
-<li><p>解释 “JavaScript 模块模式” 以及你在何时使用它。</p>
-<ul>
-<li>如果有提到无污染的命名空间，可以考虑加分。</li>
-<li>如果你的模块没有自己的命名空间会怎么样？</li>
-</ul>
-</li>
-<li><p>你是如何组织自己的代码？是使用模块模式，还是使用经典继承的方法？</p>
-</li>
-<li><p>Q: 请指出 JavaScript 宿主对象和原生对象的区别？</p>
-<p> A: 宿主对象是指DOM和BOM。原生对象是Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、Math等对象。</p>
-</li>
-<li><p>Q:指出下列代码的区别：</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> person = Person();</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
-<p>A: 第一行是定义了一个函数 Person()；第二行代码是执行函数 Person() 并将其返回值复制给变量 person，如果 Person() 是一个构造器函数的话，新的对象将不会被创建，并且 this 将被绑定到全局对象上；第三行代码是用构造函数 Person() 构造一个实例对象 person。</p>
-</li>
-</ul>
-<ul>
-<li><p>Q:<code>.call</code> 和 <code>.apply</code> 的区别是什么？</p>
-<p>A: <a href="http://www.cnblogs.com/fighting_cp/archive/2010/09/20/1831844.html" target="_blank" rel="external">关于javascript中apply()和call()方法的区别</a></p>
-</li>
-<li><p>请解释 <code>Function.prototype.bind</code> 的作用？</p>
-</li>
-<li><p>你何时优化自己的代码？</p>
-</li>
-<li><p>你能解释一下 JavaScript 中的继承是如何工作的吗？</p>
-</li>
-<li><p>在什么时候你会使用 <code>document.write()</code>？</p>
-<ul>
-<li>大多数生成的广告代码依旧使用 <code>document.write()</code>，虽然这种用法会让人很不爽。</li>
-</ul>
-</li>
-<li><p>请指出浏览器特性检测，特性推断和浏览器 UA 字符串嗅探的区别？</p>
-</li>
-<li><p>请尽可能详尽的解释 AJAX 的工作原理。</p>
-<p>Q: Ajax 全称为 Asynchronous JavaScript and XML（异步 JavaScript 和 XML），是一种创建交互式网页应用的网页开发技术。<br>  Ajax 的原理简单来说通过 XmlHttpRequest 对象来向服务器发异步请求，从服务器获得数据，然后用 JavaScript来操作 DOM 而更新页面。这其中最关键的一步就是从服务器获得请求数据。</p>
-<p>  以往我们浏览网页的原理是由 Client 向 Server 提交页面申请，再由 Server 将申请通过 HTTP 传回给 Client 生成浏览页面：</p>
-<p>  <img src="http://yianbin.qiniudn.com/fe-ajax-a.png" alt="Ajax 原理图"></p>
-<p>  使用 Ajax 后的工作原理如下图，可见通过 Ajax 在用户交互方面有了很大改进，用户可以不用为提交了 Form 而长时间等待服务器应答，而且通过 Ajax 也可以开发出华丽的 Web 交互页面。</p>
-<p>  <img src="http://yianbin.qiniudn.com/fe-ajax-b.png" alt="Ajax 原理图"></p>
-<p>  转自：<a href="https://github.com/infp/Front-end-Interview/blob/master/source/javascript.md#21%E8%AF%B7%E5%B0%BD%E5%8F%AF%E8%83%BD%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%A7%A3%E9%87%8A-ajax-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86" target="_blank" rel="external">AJAX 的工作原理</a></p>
-</li>
-<li><p>请解释 JSONP 的工作原理，以及它为什么不是真正的 AJAX。</p>
-</li>
-<li><p>你使用过 JavaScript 模板系统吗？</p>
-<ul>
-<li>如有使用过，请谈谈你都使用过哪些库，比如 Mustache.js，Handlebars 等等。</li>
-</ul>
-</li>
-<li><p>请解释变量声明提升。</p>
-</li>
-<li><p>请描述下事件冒泡机制。</p>
-</li>
-<li><p>“attribute” 和 “property” 的区别是什么？</p>
-</li>
-<li><p>为什么扩展 JavaScript 内置对象不是好的做法？</p>
-</li>
-<li><p>为什么扩展 JavaScript 内置对象是好的做法？</p>
-</li>
-<li><p>请指出 document load 和 document ready 两个事件的区别。</p>
-</li>
-<li><p>Q: <code>==</code> 和 <code>===</code> 有什么不同？</p>
-<p>A: <code>==</code>（相等运算法），<code>===</code>（严格相等运算符） JavaScript 对象的比较是引用的比较，非值的比较，对象和其本身相等，和其他任何对象不相等。 <code>===</code> 首先计算其操作数的值，然后比较，比较过程无任何类型转换。 <code>==</code> 如果两个操作数不是同一类型的，则相等运算符进行一些类型转换进行比较。 <code>==</code> 这里截取 <a href="http://dorey.github.io/JavaScript-Equality-Table" target="_blank" rel="external">JavaScript 相等表格</a>上的的两张图片让大家更为直观的感受下。</p>
-<p><img src="http://paddingme.qiniudn.com/1396461120383-2.png" alt=""></p>
-<p><img src="http://paddingme.qiniudn.com/1396464279990-1.png" alt=""></p>
-<p>引用下<a href="http://weibo.com/wintercn" target="_blank" rel="external">温特大大</a>的总结就是：<strong>只要记住 <code>null</code> 只和<code>undefined</code> 相等，有 <code>number</code> 都转 <code>number</code>，有 <code>boolean</code> 也转 <code>number</code>，有 <code>string</code> 都转 <code>string</code>，对象互相不等，<code>NaN</code> 互相不等就可以了</strong>。</p>
-</li>
-<li><p>你如何从浏览器的 URL 中获取查询字符串参数。</p>
-</li>
-<li><p>请解释一下 JavaScript 的同源策略。</p>
-</li>
-<li><p>请描述一下 JavaScript 的继承模式。</p>
-</li>
-<li><p>如何实现下列代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].duplicator(); <span class="comment">// [1,2,3,4,5,1,2,3,4,5]</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>描述一种 JavaScript 中实现 memoization(避免重复运算)的策略。</p>
-</li>
-<li><p>什么是三元表达式？“三元” 表示什么意思？</p>
-</li>
-<li><p>函数的参数元是什么？</p>
-</li>
-<li><p>什么是 <code>&quot;use strict&quot;;</code> ? 使用它的好处和坏处分别是什么？</p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Q：解释下事件代理。&lt;/p&gt;
-&lt;p&gt;A: 当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="JS" scheme="http://sheltonWu.com/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://sheltonWu.com/2017/07/14/8/"/>
-    <id>http://sheltonWu.com/2017/07/14/8/</id>
-    <published>2017-07-14T12:12:30.000Z</published>
-    <updated>2017-07-14T12:12:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>title: HTML加载速度<br>tags: [HTML]<br>categories: 页面优化</p>
-<p>##1.加快页面的加载速度##</p>
-<ol>
-<li>页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script和css移到外部文件，可以使用HTML Tidy来给HTML减肥，还可以使用一些压缩工具来给JavaScript减肥</li>
-<li>减少文件数量。减少页面上引用的文件数量可以减少HTTP连接数。许多JavaScript、CSS文件可以合并最好合并，人家财帮子都把自己的JavaScript. functions和Prototype.js合并到一个base.js文件里去了</li>
-<li>减少域名查询。DNS查询和解析域名也是消耗时间的，所以要减少对外部JavaScript、CSS、图片等资源的引用，不同域名的使用越少越好</li>
-<li>缓存重用数据。使用缓存吧</li>
-<li>优化页面元素加载顺序。首先加载页面最初显示的内容和与之相关的JavaScript和CSS，然后加载DHTML相关的东西，像什么不是最初显示相关的图片、flash、视频等很肥的资源就最后加载</li>
-<li>减少inline JavaScript的数量。浏览器parser会假设inline JavaScript会改变页面结构，所以使用inline JavaScript开销较大，不要使用document.write()这种输出内容的方法，使用现代W3C DOM方法来为现代浏览器处理页面内容</li>
-<li>使用现代CSS和合法的标签。使用现代CSS来减少标签和图像，例如使用现代CSS+文字完全可以替代一些只有文字的图片，使用合法的标签避免浏览器解析HTML时做“error correction”等操作，还可以被HTML Tidy来给HTML减肥</li>
-<li>Chunk your content。不要使用嵌套tables</li>
-<li>指定图像和tables的大小。如果浏览器可以立即决定图像或tables的大小，那么它就可以马上显示页面而不要重新做一些布局安排的工作，这不仅加快了页面的显示，也预防了页面完成加载后布局的一些不当的改变。</li>
-<li>根据用户浏览器明智的选择策略。IE、Firefox、Safari等等等等</li>
-<li>页面结构的例子</li>
-</ol>
-<h1 id="HTML页面加载和解析流程"><a href="#HTML页面加载和解析流程" class="headerlink" title="HTML页面加载和解析流程"></a>HTML页面加载和解析流程</h1><ol>
-<li>用户输入网址（假设是个html页面，并且是第一次访问），浏览器向服务器发出请求，服务器返回html文件；</li>
-<li>浏览器开始载入html代码，发现＜head＞标签内有一个＜link＞标签引用外部CSS文件；</li>
-<li>浏览器又发出CSS文件的请求，服务器返回这个CSS文件；</li>
-<li>浏览器继续载入html中＜body＞部分的代码，并且CSS文件已经拿到手了，可以开始渲染页面了；</li>
-<li>浏览器在代码中发现一个＜img＞标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码；</li>
-<li>服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码；</li>
-<li>浏览器发现了一个包含一行Javascript代码的＜script＞标签，赶快运行它；</li>
-<li>Javascript脚本执行了这条语句，它命令浏览器隐藏掉代码中的某个＜div＞ （style.display=”none”）。杯具啊，突然就少了这么一个元素，浏览器不得不重新渲染这部分代码；</li>
-<li>终于等到了＜/html＞的到来，浏览器泪流满面……</li>
-<li>等等，还没完，用户点了一下界面中的“换肤”按钮，Javascript让浏览器换了一下＜link＞标签的CSS路径；</li>
-<li>浏览器召集了在座的各位＜div＞＜span＞＜ul＞＜li＞们，“大伙儿收拾收拾行李，咱得重新来过……”，浏览器向服务器请求了新的CSS文件，重新渲染页面。</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;title: HTML加载速度&lt;br&gt;tags: [HTML]&lt;br&gt;categories: 页面优化&lt;/p&gt;
-&lt;p&gt;##1.加快页面的加载速度##&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>我的第一篇测试文--Markdown 常用语法</title>
-    <link href="http://sheltonWu.com/2017/07/14/testpage/"/>
-    <id>http://sheltonWu.com/2017/07/14/testpage/</id>
-    <published>2017-07-14T12:12:30.000Z</published>
-    <updated>2017-07-14T12:12:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>#这里是正文，用markdown写</p>
-<hr>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定义为标题，只要在这段文字前加 # 号即可。</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><hr>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>熟悉 HTML 的同学肯定知道有序列表与无序列表的区别，在 Markdown 下，列表的显示只需要在文字前加上 - 或 * 即可变为无序列表，<br>有序列表则直接在文字前加1. 2. 3. 符号要和文字之间加上一个字符的空格。</p>
-<p><img src="http://ww4.sinaimg.cn/large/6aee7dbbgw1effew5aftij20d80bz3yw.jpg" alt="img" title="Optional title"></p>
-<hr>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>如果你需要引用一小段别处的句子，那么就要用引用的格式。</p>
-<p>只需要在文本前加入 &gt; 这种尖括号（大于号）即可</p>
-<blockquote>
-<p>这是一段引用</p>
-</blockquote>
-<hr>
-<h2 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h2><p>插入链接与插入图片的语法很像，区别在一个 !号</p>
-<p><img src="http://ww2.sinaimg.cn/large/6aee7dbbgw1efffa67voyj20ix0ctq3n.jpg" alt="img"></p>
-<hr>
-<h2 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h2><p>Markdown 的粗体和斜体也非常简单，用两个星号包含一段文本就是粗体的语法，用一个星号包含一段文本就是斜体的语法。</p>
-<hr>
-<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a>代码框</h2><p>如果你是个程序猿，需要在文章里优雅的引用代码框，在 Markdown下实现也非常简单，只需要用两个 ` 把中间的代码包裹起来。图例：<br><img src="http://ww3.sinaimg.cn/large/6aee7dbbgw1effg1lsa97j20lt0a8dgs.jpg" alt="img"></p>
-<p><code>congsole.log(&quot;Hello World&quot;)</code></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;#这里是正文，用markdown写&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h2&gt;&lt;p&gt;标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定
-    
-    </summary>
-    
-      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="博客，文章" scheme="http://sheltonWu.com/tags/%E5%8D%9A%E5%AE%A2%EF%BC%8C%E6%96%87%E7%AB%A0/"/>
     
   </entry>
   
