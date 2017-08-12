@@ -1,213 +1,35 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> css常见问题总结 · SheltonWu</title><meta name="description" content="css常见问题总结 - John Doe"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://sheltonWu.com/atom.xml" title="SheltonWu"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">主页</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="https://bluecatwu.github.io/resume/" target="_blank" class="nav-list-link">个人简历</a></li><li class="nav-list-item"><a href="https://github.com/BluecatWu" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">css常见问题总结</h1><div class="post-info">Jul 14, 2017</div><div class="post-content"><ol>
-<li>Q: CSS 属性是否区分大小写？</li>
-</ol>
-<pre><code>ul {
-    MaRGin: 10px;
-}
-
-
-A: 不区分。
-
-HTML，CSS都对大小写不敏感，但为了更好的可读性和团队协作一般都小写，而在XHTML 中元素名称和属性是必须小写的。
-</code></pre><a id="more"></a>
-<ol>
-<li><p>Q: 行内(inline)元素 设置<code>margin-top</code>和<code>margin-bottom</code> 是否起作用？</p>
-<p> A: 不起作用。(答案是起作用，个人觉得不对。)</p>
-<p> html 里的元素分为替换元素（replaced element）和非替换元素（non-replaced element）。</p>
-<ul>
-<li>替换元素是指用作为其他内容占位符的一个元素。最典型的就是<code>img</code>，它只是指向一个图像文件。以及大多数表单元素也是替换，例如<code>input</code>等。</li>
-<li><p>非替换元素是指内容包含在文档中的元素。例如，如果一个段落的文本内容都放在该元素本身之内，则这个段落就是一个非替换元素。</p>
-<p>讨论<code>margin-top</code>和<code>margin-bottom</code>对行内元素是否起作用，则要对行内替换元素和行内非替换元素分别讨论。</p>
-<p>首先我们应该明确外边距可以应用到行内元素，规范中是允许的，不过由于在向一个行内非替换元素应用外边距，对行高(line-height)没有任何影响。由于外边距实际上是透明的。所以对声明<code>margin-top</code>和<code>margin-bottom</code>没有任何视觉效果。其原因就在于行内非替换元素的外边距不会改变一个元素的行高。而对于行内非替换元素的左右边距则不是这样，是有影响的。</p>
-<p>而为替换元素设置的外边距会影响行高，可能会使行高增加或减少，这取决于上下外边距的值。行内替换元素的左右边距与非替换元素的左右边距的作用一样。来看看demo:</p>
-<p><a href="http://codepen.io/paddingme/pen/JwCDF" target="_blank" rel="external">http://codepen.io/paddingme/pen/JwCDF</a></p>
-</li>
-</ul>
-</li>
-<li><p>Q: 对内联元素设置<code>padding-top</code>和<code>padding-bottom</code>是否会增加它的高度？（原题是Does setting padding-top and padding-bottom on an inline element add to its dimensions?）</p>
-<p> A: 答案是不会。同上题比较纠结，不太明白这里的 dimensions指的是到底是什么意思？放置一边，咱们来分析下。对于行内元素，设置左右内边距，左右内边距将是可见的。而设置上下内边距，设置背景颜色后可以看见内边距区域有增加，对于行内非替换元素，不会影响其行高，不会撑开父元素。而对于替换元素，则撑开了父元素。看下demo，更好的理解下：</p>
-<p> <a href="http://codepen.io/paddingme/pen/CnFpa" target="_blank" rel="external">http://codepen.io/paddingme/pen/CnFpa</a></p>
-</li>
-<li><p>Q: 设置<code>p</code>的<code>font-size:10rem</code>，当用户重置或拖曳浏览器窗口时，文本大小是否会也随着变化？</p>
-<p> A: 不会。</p>
-<p> <code>rem</code>是以<code>html</code>根元素中<code>font-size</code>的大小为基准的相对度量单位，文本的大小不会随着窗口的大小改变而改变。</p>
-</li>
-<li><p>Q: 伪类选择器<code>:checked</code>将作用与<code>input</code>类型为<code>radio</code>或者<code>checkbox</code>,不会作用于<code>option</code>。</p>
-<p> A: 不对。</p>
-<p> 伪类选择器<code>checked</code>的定义很明显:</p>
-<blockquote>
-<p>The :checked CSS pseudo-class selector represents any radio (<code>&lt;input type=&quot;radio&quot;&gt;</code>), checkbox (<code>&lt;input type=&quot;checkbox&quot;&gt;</code>) or option (<code>&lt;option&gt;</code>in a <code>&lt;select&gt;</code>) element that is checked or toggled to an on state. The user can change this state by clicking on the element, or selecting a different value, in which case the :checked pseudo-class no longer applies to this element, but will to the relevant one.</p>
-</blockquote>
-</li>
-<li><p>Q: 在HTML文本中，伪类<code>:root</code>总是指向<code>html</code>元素？</p>
-<p> A: 不是（答案中给出了是 ==||）。以下摘自知乎<a href="http://www.zhihu.com/question/20312140" target="_blank" rel="external">:root 与 html 在 CSS3 中指的是同一个元素吗？</a>的答案：</p>
-<blockquote>
-<p>单指创建的根。这个根可能不是 html ，如果是片段html，没有创建根，则为片段的根。把这下面 URL 打到支持 data URL 的瀏覽器看看（Firefox, Chrome, Safari, Opera），可见一斑：</p>
-</blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:application/xhtml+xml,&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;style&gt;:root &#123; background: green; &#125; html &#123; background: red !important; &#125;&lt;/style&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Q:<code>translate()</code>方法能移动一个元素在z轴上的位置？</p>
-<p> A: 不能。<code>translate()</code>方法只能改变x轴，y轴上的位移。</p>
-</li>
-</ol>
-<ol>
-<li><p>Q: 如下代码中文本“Sausage”的颜色是?</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</div><div class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</div><div class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ul &#123;color:red;&#125;</div><div class="line">li &#123;color:blue;&#125;</div></pre></td></tr></table></figure>
-<p> A: blue。</p>
-</li>
-<li><p>Q: 如下代码中文本“Sausage”的颜色是?</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</div><div class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</div><div class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ul &#123;color:red;&#125;</div><div class="line">#must-buy &#123;color:blue;&#125;</div></pre></td></tr></table></figure>
-<p> A: blue。</p>
-</li>
-<li><p>Q: 如下代码中文本“Sausage”的颜色是?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</div><div class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</div><div class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.shopping-list .favorite &#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div><div class="line">#must-buy &#123;</div><div class="line">    color: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>A: blue。</p>
-</li>
-<li><p>Q: 如下代码中文本“Sausage”的颜色是?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</div><div class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</div><div class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ul#awesome &#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div><div class="line">ul.shopping-list li.favorite span &#123;</div><div class="line">    color: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>A: blue。</p>
-</li>
-<li><p>Q: 如下代码中文本“Sausage”的颜色是?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</div><div class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</div><div class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ul#awesome #must-buy &#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div><div class="line">.favorite span &#123;</div><div class="line">    color: blue!important;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>A: blue。</p>
-</li>
-<li><p>Q: 如下代码中文本“Sausage”的颜色是?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</div><div class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</div><div class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ul.shopping-list li .highlight &#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div><div class="line">ul.shopping-list li .highlight:nth-of-type(odd) &#123;</div><div class="line">    color: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>A: blue。</p>
-</li>
-<li><p>Q: 如下代码中文本“Sausage”的颜色是?</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;shopping-list&quot; id=&quot;awesome&quot;&gt;</div><div class="line">    &lt;li&gt;&lt;span&gt;Milk&lt;/span&gt;&lt;/li&gt;</div><div class="line">    &lt;li class=&quot;favorite&quot; id=&quot;must-buy&quot;&gt;&lt;span class=&quot;highlight&quot;&gt;Sausage&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#awesome .favorite:not(#awesome) .highlight &#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div><div class="line">#awesome .highlight:nth-of-type(1):nth-last-of-type(1) &#123;</div><div class="line">    color: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>A: blue。</p>
-</li>
-<li><p>Q:<code>#example</code>位置如何变化：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;example&quot;&gt;Hello&lt;/p&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#example &#123;margin-bottom: -5px;&#125;</div></pre></td></tr></table></figure>
-<p>A: 向上移动5px。</p>
-</li>
-<li><p>Q: <code>#example</code>位置如何变化：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;example&quot;&gt;Hello&lt;/p&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#example &#123;margin-left: -5px;&#125;</div></pre></td></tr></table></figure>
-<p>A: 向左移动5px。</p>
-</li>
-<li><p><code>#i-am-useless</code> 会被浏览器加载吗？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;test1&quot;&gt;</div><div class="line">    &lt;span id=&quot;test2&quot;&gt;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#i-am-useless &#123;background-image: url(&apos;mypic.jpg&apos;);&#125;</div></pre></td></tr></table></figure>
-<p>A: 不会</p>
-</li>
-<li><p><code>mypic.jpg</code> 会被浏览器加载吗？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;test1&quot;&gt;</div><div class="line">    &lt;span id=&quot;test2&quot;&gt;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#test2 &#123;</div><div class="line">    background-image: url(&apos;mypic.jpg&apos;);</div><div class="line">    display: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>A: 会被下载。</p>
-</li>
-<li><p><code>mypic.jpg</code> 会被浏览器加载吗？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;test1&quot;&gt;</div><div class="line">    &lt;span id=&quot;test2&quot;&gt;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#test1 &#123;</div><div class="line">    display: none;</div><div class="line">&#125;</div><div class="line">#test2 &#123;</div><div class="line">    background-image: url(&apos;mypic.jpg&apos;);</div><div class="line">    visibility: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>A: 不会被下载。</p>
-</li>
-</ol>
-<ol>
-<li><p>Q: <code>only</code> 选择器的作用是？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-width: 1024px) &#123;argin: 0;&#125;</div></pre></td></tr></table></figure>
-<p>A：停止旧版本浏览器解析选择器的其余部分。</p>
-<p>only 用来定某种特定的媒体类型，可以用来排除不支持媒体查询的浏览器。其实only很多时候是用来对那些不支持Media Query 但却支持Media Type 的设备隐藏样式表的。其主要有：支持媒体特性（Media Queries）的设备，正常调用样式，此时就当only 不存在；对于不支持媒体特性(Media Queries)但又支持媒体类型(Media Type)的设备，这样就会不读了样式，因为其先读only 而不是screen；另外不支持Media Qqueries 的浏览器，不论是否支持only，样式都不会被采用。</p>
-</li>
-<li><p>Q:<code>overfloa:hidden</code> 是否形成新的块级格式化上下文？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">    &lt;p&gt;I am floated&lt;/p&gt;</div><div class="line">    &lt;p&gt;So am I&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">div &#123;overflow: hidden;&#125;</div><div class="line">p &#123;float: left;&#125;</div></pre></td></tr></table></figure>
-<p>A：会形成。</p>
-<p>会触发BFC的条件有：</p>
-<ul>
-<li>float的值不为none。</li>
-<li>overflow的值不为visible。</li>
-<li>display的值为table-cell, table-caption, inline-block 中的任何一个。</li>
-<li>position的值不为relative 和static。</li>
-</ul>
-</li>
-<li><p>Q: <code>screen</code>关键词是指设备物理屏幕的大小还是指浏览器的视窗？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-width: 1024px) &#123;margin: 0;&#125;</div></pre></td></tr></table></figure>
-<p>A: 浏览器视窗</p>
-</li>
-</ol>
-<h2 id="知识点总结："><a href="#知识点总结：" class="headerlink" title="知识点总结："></a>知识点总结：</h2><p>tips:根据以上考点总结下如下知识点，后期会写文章进行总结，这里只挑出重点进行解析。</p>
-<ul>
-<li><p>关于CSS选择器以及优先级的知识可查阅如下文章：</p>
-<ul>
-<li><a href="http://www.w3school.com.cn/cssref/css_selectors.asp" target="_blank" rel="external">CSS 选择器参考手册</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2009/03/css_selectors.html" target="_blank" rel="external">CSS选择器笔记</a></li>
-<li><a href="http://blog.fity.cn/post/421/" target="_blank" rel="external">高级CSS样式选择器</a></li>
-<li><a href="http://www.qianduan.net/taming-advanced-css-selectors.html" target="_blank" rel="external">征服高级CSS选择器</a></li>
-<li><a href="http://developer.51cto.com/art/201009/226852.htm" target="_blank" rel="external">详解CSS选择器、优先级与匹配原理</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity" target="_blank" rel="external">优先级</a></li>
-<li><a href="http://peiwen.lu/css-selectors-must-memorize/#post__title" target="_blank" rel="external">牢记 31 种 CSS 选择器用法</a></li>
-</ul>
-</li>
-<li><p>如何计算优先级：</p>
-<blockquote>
-<p>那么你如何计算指定选择器的优先级？如果你考虑到将优先级表示为用逗号隔开的四个数字就会相当简单，比如：1, 1, 1, 1 或0, 2, 0, 1</p>
-<ul>
-<li>第一个数字(a)通常就是0，除非在标签上使用style属性；</li>
-<li>第二个数字(b)是该选择器上的id的数量的总和；</li>
-<li>第三个数字(c)是用在该选择器上的其它属性选择器和伪类的总和。这里包括class (.example) 和属性选择器(比如 <code>li[id=red]</code>)；</li>
-<li>第四个数字(d)计算元素(就像table、p、div等等)和伪元素(就像:first-line等)；</li>
-<li>通用选择器(*)是0优先级；</li>
-<li>如果两个选择器有同样的优先级，在样式表中后面的那个起作用。</li>
-</ul>
-</blockquote>
-</li>
-<li><p>浏览器CSS匹配顺序：</p>
-<p>浏览器CSS匹配不是从左到右进行查找，而是从右到左进行查找。比如<code>#divBox p span.red{color:red;}</code>，浏览器的查找顺序如下：先查找html中所有class=’red’的span元素，找到后，再查找其父辈元素中是否有p元素，再判断p的父元素中是否有id为divBox的div元素，如果都存在则匹配上。浏览器从右到左进行查找的好处是为了尽早过滤掉一些无关的样式规则和元素。</p>
-</li>
-<li><p><code>display:none</code> 和<code>visibilty:hidden</code>的区别：</p>
-<p>可参考：</p>
-<ul>
-<li><a href="http://stackoverflow.com/questions/133051/what-is-the-difference-between-visibilityhidden-and-displaynone" target="_blank" rel="external">What is the difference between visibility:hidden and display:none?</a></li>
-<li><a href="http://bbs.blueidea.com/thread-2942695-1-1.html" target="_blank" rel="external">display:none和visibility:hidden的区别！</a></li>
-</ul>
-<blockquote>
-<p><code>display:none</code>和<code>visibility:hidden</code>都是把网页上某个元素隐藏起来的功能，但两者有所区别，经过亲自实验，我发现使用<code>` visibility:hidden</code>属性会使对象不可见，但该对象在网页所占的空间没有改变（看不见但摸得到），等于留出了一块空白区域，而 <code>display:none</code>属性会使这个对象彻底消失（看不见也摸不到）</p>
-<p><code>display:none</code> means that the the tag in question will not appear on the page at all (although you can still interact with it through the dom). There will be no space allocated for it between the other tags. visibility:hidden means that unlike display:none, the tag is not visible, but space is allocated for it on the page. so for example:</p>
-</blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span&gt;test&lt;/span&gt; | &lt;span&gt;Appropriate style in this tag&lt;/span&gt; | &lt;span&gt;test&lt;/span&gt;</div></pre></td></tr></table></figure>
-<blockquote>
-<p><code>display:none</code> would be:</p>
-<p>test |   | test</p>
-<p><code>visibility:hidden</code> would be:</p>
-<p>test |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| test</p>
-<p>In visibility:hidden the tag is rendered, it just isn’t seen on the page.</p>
-</blockquote>
-</li>
-<li><p>浏览器如何渲染，可以查阅如下文章：</p>
-<ul>
-<li><a href="http://coolshell.cn/articles/9666.html" target="_blank" rel="external">浏览器的渲染原理简介</a></li>
-<li><a href="http://developer.51cto.com/art/201311/418133.htm" target="_blank" rel="external">专题：浏览器:渲染重绘、重排两三事</a></li>
-<li><a href="http://www.nowamagic.net/academy/detail/48110160" target="_blank" rel="external">浏览器加载和渲染HTML的顺序以及Gzip的问题</a></li>
-<li><a href="http://div.io/topic/609" target="_blank" rel="external">从FE的角度上再看输入url后都发生了什么</a></li>
-</ul>
-</li>
-<li><p>BFC( block formatting contexts ) 块级格式上下文</p>
-<ul>
-<li><a href="http://www.w3cplus.com/css/understanding-bfc-and-margin-collapse.html" target="_blank" rel="external">深入理解BFC和Margin Collapse</a></li>
-<li><a href="http://www.aliued.cn/2012/12/31/css%E5%B8%83%E5%B1%80%E4%B8%AD%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%BA%94%E7%94%A8bfc%E7%9A%84%E4%BE%8B%E5%AD%90.html" target="_blank" rel="external">CSS布局中一个简单的应用BFC的例子</a></li>
-<li><a href="http://jqc.me/?p=68" target="_blank" rel="external">理解BFC(Block Formatting Context)</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>margin，padding相关的知识可以参考查阅《CSS权威指南》</li>
-</ul>
-</div></article></div></main><footer><div class="paginator"><a href="/2017/07/14/2/" class="prev">PREV</a><a href="/2017/07/14/6/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
-var disqus_identifier = '2017/07/14/1/';
-var disqus_title = 'css常见问题总结';
-var disqus_url = 'http://sheltonWu.com/2017/07/14/1/';
-(function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();</script><script id="dsq-count-scr" src="//seansun.disqus.com/count.js" async></script><div class="copyright"><p>© 2015 - 2017 <a href="http://sheltonWu.com">John Doe</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>SheltonWu</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  <!-- Import lsloader -->
+  <script>!function(){var e="http://"+location.host+"/combo?combo=";window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},lsloader.load=function(e,t,s){s=s||function(){};var n;if(n=this.getLS(e),!/\/\*codestartv1\*\//.test(n))return this.removeLS(e),void this.requestResource(e,t,s);if(n){var a=n.split("/*codestartv1*/")[0];if(a!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,s);n=n.split("/*codestartv1*/")[1],/\.js?.+$/.test(a)?(this.jsRunSequence.push({name:e,code:n}),this.runjs(t,e,n)):(document.getElementById(e).appendChild(document.createTextNode(n)),s())}else this.requestResource(e,t,s)},lsloader.requestResource=function(e,t,s){var n=this;/\.js?.+$/.test(t)?this.iojs(t,e,function(e,t,s){n.setLS(t,e+"/*codestartv1*/"+s),n.runjs(e,t,s)}):/\.css?.+$/.test(t)&&this.iocss(t,e,function(s){document.getElementById(e).appendChild(document.createTextNode(s)),n.setLS(e,t+"/*codestartv1*/"+s)},s)},lsloader.iojs=function(e,t,s){var n=this;n.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void s(e,t,a.response);n.jsfallback(e,t)}},a.send(null)}catch(s){n.jsfallback(e,t)}},lsloader.iocss=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.iofonts=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.runjs=function(e,t,s){if(t&&s)for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code=s);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs()}else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var u=this,a=document.createElement("script");a.src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){u.jsRunSequence.shift(),u.jsRunSequence.length>0&&u.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code="",this.jsRunSequence[s].status="failed",this.jsRunSequence[s].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,s){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var n=document.createElement("link");n.type="text/css",n.href=e,n.rel="stylesheet",n.onload=n.onerror=s;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)}},lsloader.runInlineScript=function(e,t){var s=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:s}),this.runjs()},lsloader.loadCombo=function(t){var s="",n={};for(var a in t){var u=this.getLS(t[a].name);if(u)var o=u.split("/*codestartv1*/")[0],c=u.split("/*codestartv1*/")[1];else var o="";o==t[a].path?this.jsRunSequence.push({name:t[a].name,code:c,path:t[a].path}):(this.jsRunSequence.push({name:t[a].name,code:null,path:t[a].path,status:"comboloading"}),n[t[a].name]=!0,s+=(""==s?"":";")+t[a].path)}var i=this;if(s){var r=new XMLHttpRequest;r.open("get",e+s,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void i.runCombo(r.response,n)}else{for(var e in i.jsRunSequence)n[i.jsRunSequence[e].name]&&(i.jsRunSequence[e].status="failed");i.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){e=e.split("/*combojs*/"),e.shift();for(var s in this.jsRunSequence)t[this.jsRunSequence[s].name]&&e[0]&&(this.jsRunSequence[s].status="comboJS",this.jsRunSequence[s].code=e[0],this.setLS(this.jsRunSequence[s].name,this.jsRunSequence[s].path+"/*codestartv1*/"+e[0]),e.shift());this.runjs()}}();</script>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="text/javascript">
+    window.rootUrl = "/"
+    window.one = {"site":{"title":"SheltonWu","subtitle":"个人博客","description":"技术交流总结","author":"SheltonWu","language":"ZH-CN","timezone":null,"url":"http://sheltonWu.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"one","deploy":{"type":"git","repo":"git@github.com:BluecatWu/BluecatWu.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":0,"yearly":false,"monthly":false,"daily":false},"live2d":{"model":"Epsilon2.1","bottom":-60,"right":-100,"width":300,"height":600},"category_generator":{"per_page":10},"feed":{"type":"atom","limit":20,"hub":"","content":true,"path":"atom.xml"},"sitemap":{"path":"sitemap.xml"},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true}},"theme":{"title":"SheltonWu","subtitle":"个人博客","description":"技术交流总结","author":"SheltonWu","language":"ZH-CN","timezone":null,"url":"http://sheltonWu.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":10,"pagination_dir":"page","theme":"one","deploy":{"type":"git","repo":"git@github.com:BluecatWu/BluecatWu.github.io.git","branch":"master"},"ignore":[],"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":0,"yearly":false,"monthly":false,"daily":false},"live2d":{"model":"Epsilon2.1","bottom":-60,"right":-100,"width":300,"height":600},"category_generator":{"per_page":10},"feed":{"type":"atom","limit":20,"hub":"","content":true,"path":"atom.xml"},"sitemap":{"path":"sitemap.xml"},"tag_generator":{"per_page":10},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"head":{"favicon":"https://q1.qlogo.cn/headimg_dl?bs=1106996185&dst_uin=1106996185&spec=100&url_enc=0&referer=bu_interface&term_type=PC"},"img":{"avatar":"/img/avatar.gif","left_pic":["/img/top_left.jpg"],"right_pic":["/img/top_right.jpg"],"post_thumbnail":["/img/post.jpg","/img/post1.jpg","/img/post2.jpg","/img/post3.jpg","/img/post4.jpg","/img/post5.jpg","/img/post6.jpg","/img/post7.jpg","/img/post8.jpg","/img/post9.jpg","/img/post10.jpg","/img/post11.jpg"],"drawerHeaderBg":["/img/drawerCover.jpg"]},"uiux":{"slogan":"作为一个码农,我当然很无趣！","defaultPrimaryColor":"blue","defaultAccentColor":"red"},"comment":{"disqus":{"shortName":"xxx"}},"Drawer":[{"title":"首页","type":"sitelink","href":"/","icon":"home"},{"title":"hr","type":"hr"},{"title":"关于我","type":"page","name":"关于我","icon":"account_circle"},{"title":"搜索","type":"sitelink","href":"/search/","icon":"search"},{"title":"联系我","icon":"contact_phone","nested":[{"title":"Email","type":"link","href":"mailto:cneyhn@email.com","icon":"mail_outline"},{"title":"Github","type":"link","href":"https://github.com/EYHN","icon":{"type":"svg","date":"<path d=\"M941.714 512q0 143.433-83.712 258.011t-216.283 158.574q-15.433 2.853-22.565-3.986t-7.131-17.152v-120.576q0-55.442-29.696-81.152 32.585-3.438 58.587-10.277t53.723-22.272 46.299-37.998 30.281-60.014 11.703-86.016q0-69.157-45.129-117.723 21.138-52.005-4.571-116.553-16.018-5.157-46.299 6.29t-52.553 25.161l-21.723 13.714q-53.138-14.848-109.714-14.848t-109.714 14.848q-9.143-6.29-24.283-15.433t-47.726-22.016-49.152-7.717q-25.161 64.585-3.986 116.553-45.129 48.567-45.129 117.723 0 48.567 11.703 85.723t29.989 60.014 46.007 38.29 53.723 22.272 58.587 10.277q-22.857 20.553-28.014 58.843-11.995 5.705-25.71 8.558t-32.585 2.853-37.413-12.288-31.707-35.73q-10.862-18.286-27.721-29.696t-28.27-13.714l-11.447-1.719q-11.995 0-16.567 2.56t-2.853 6.583 5.157 8.009 7.424 6.839l3.986 2.853q12.581 5.705 24.869 21.723t17.993 29.147l5.705 13.129q7.424 21.723 25.161 35.145t38.29 17.152 39.717 3.986 31.707-2.011l13.129-2.304q0 21.723 0.293 50.871t0.293 30.866q0 10.277-7.424 17.152t-22.857 3.986q-132.571-43.995-216.283-158.574t-83.712-258.011q0-119.442 58.843-220.27t159.707-159.707 220.27-58.843 220.27 58.843 159.707 159.707 58.843 220.27z\" p-id=\"997\"></path>","viewBox":"0 0 1024 1024"}},{"title":"QQ","type":"link","href":"http://wpa.qq.com/msgrd?v=3&uin=1106996185&site=qq&menu=yes","icon":{"type":"svg","style":{"height":"20px","width":"20px","margin":"14px"},"date":"<path d=\"M971.464704 668.658688 968.998912 651.020288 965.843968 633.814016 963.337216 624.9728 960.917504 615.569408 957.71648 606.598144 954.430464 596.612096 950.668288 587.208704 946.562048 577.545216 939.254784 561.765376 932.769792 547.8656 926.285824 535.437312 920.62208 523.848704 914.138112 513.301504 909.382656 503.616512 899.309568 489.15456 886.64064 469.894144 883.70176 465.138688 882.707456 463.107072 882.707456 461.50656 884.825088 455.000064 887.763968 449.207296 890.314752 437.772288 891.742208 431.869952 891.742208 425.77408 892.478464 420.867072 892.478464 415.93856 891.742208 410.27584 890.92096 405.649408 889.061376 396.26752 886.64064 387.145728 884.435968 378.779648 880.97792 370.651136 877.08672 363.864064 874.015744 357.487616 870.601728 351.413248 865.240064 342.463488 863.25248 339.28704 862.646272 336.520192 860.182528 319.161344 858.58304 307.725312 856.767488 293.567488 853.957632 278.93248 849.547264 262.158336 847.040512 252.754944 845.049856 244.799488 842.284032 235.547648 839.171072 225.712128 836.058112 216.590336 832.079872 206.77632 823.953408 187.817984 819.15392 178.84672 813.359104 168.557568 807.913472 159.73888 802.465792 149.751808 794.769408 140.498944 788.286464 131.52768 780.374016 122.27584 772.332544 113.88928 764.203008 105.783296 754.562048 97.373184 749.504512 94.348288 744.706048 90.153984 734.329856 82.783232 722.312192 74.806272 710.032384 67.586048 697.365504 61.079552 683.531264 55.135232 670.560256 49.492992 657.027072 44.56448 642.24256 40.521728 628.7104 36.912128 614.31296 33.75616 600.694784 30.427136 585.996288 28.827648 571.597824 27.076608 557.246464 25.19552 542.416896 25.19552 528.106496 25.19552 514.271232 25.19552 499.70176 26.039296 486.040576 27.940864 472.421376 29.821952 458.587136 32.135168 444.88192 34.750464 431.911936 37.927936 418.941952 42.121216 406.880256 46.31552 394.81856 50.357248 382.712832 56.301568 371.299328 61.079552 361.182208 66.873344 350.63296 73.37984 340.90496 80.167936 331.308032 87.819264 323.396608 94.930944 310.9888 106.626048 300.698624 117.49888 290.8416 128.048128 281.8048 138.770432 273.332224 149.751808 265.895936 160.451584 258.676736 171.15136 255.304704 175.929344 252.191744 181.722112 245.446656 191.860736 240.086016 201.977856 235.33056 211.530752 231.179264 221.648896 227.115008 230.899712 223.742976 239.5904 220.63104 248.841216 217.474048 257.380352 213.279744 272.858112 210.210816 287.753216 208.525312 300.203008 206.795776 310.925312 206.795776 319.161344 206.795776 325.818368 206.795776 331.741184 203.855872 334.941184 201.17504 339.28704 199.057408 343.177216 197.240832 347.370496 194.950144 356.493312 192.442368 364.880896 191.62112 372.381696 191.058944 377.893888 191.058944 383.816704 185.265152 392.225792 181.157888 400.613376 178.045952 408.697856 175.75424 415.93856 173.98272 422.878208 172.296192 429.405184 172.296192 434.875392 172.296192 440.971264 172.296192 446.0288 173.290496 450.071552 174.716928 457.464832 176.489472 463.107072 173.290496 465.570816 164.210688 472.358912 152.236032 483.339264 144.88576 489.846784 137.709568 496.223232 132.781056 501.303296 128.7168 505.778176 119.983104 515.180544 111.68256 524.583936 105.197568 532.690944 97.415168 544.407552 89.979904 554.954752 82.629632 566.693888 76.447744 577.545216 71.303168 589.089792 65.855488 599.810048 61.877248 610.36032 57.683968 621.362176 54.571008 632.061952 51.501056 643.064832 48.77824 652.619776 47.263744 662.888448 45.57824 672.421888 44.150784 681.695232 43.287552 699.766784 43.287552 716.540928 43.287552 724.063232 44.150784 731.456512 46.44352 744.0384 47.263744 749.572096 48.77824 755.190784 50.6368 760.510464 52.366336 764.269568 55.133184 771.23072 57.25184 772.658176 58.548224 775.597056 60.191744 776.288256 61.186048 776.288256 61.877248 776.288256 69.097472 775.597056 76.447744 773.696512 82.629632 771.23072 89.114624 767.03744 95.03744 763.14624 100.39808 758.044672 106.191872 752.72704 111.077376 747.235328 115.745792 741.010432 119.983104 735.388672 123.961344 730.722304 126.425088 725.36064 131.267584 716.540928 132.781056 712.930304 133.645312 710.769664 134.076416 708.304896 135.201792 706.27328 136.066048 705.841152 137.709568 704.974848 138.74688 704.974848 139.179008 705.841152 140.000256 705.841152 140.822528 706.27328 143.545344 718.270464 146.485248 727.955456 150.419456 738.11456 154.396672 747.235328 157.72672 756.31616 162.871296 764.269568 166.631424 772.658176 170.86976 780.352512 175.75424 787.009536 179.472384 793.409536 189.329408 805.254144 197.933056 815.804416 206.2336 824.018944 214.40512 831.412224 221.495296 837.204992 232.044544 846.58688 236.281856 848.661504 237.707264 850.650112 237.707264 851.644416 236.713984 852.552704 236.281856 852.552704 234.1632 853.244928 226.250752 853.850112 218.901504 854.844416 212.718592 855.709696 206.2336 857.135104 200.569856 858.907648 194.950144 860.637184 190.021632 863.275008 186.131456 865.696768 181.157888 867.296256 178.045952 869.890048 174.716928 871.921664 171.127808 874.816512 166.631424 880.438272 164.94592 883.076096 162.871296 885.366784 160.017408 891.290624 158.461952 896.22016 156.601344 901.146624 156.212224 905.470976 156.212224 911.133696 156.212224 913.598464 155.390976 917.618688 155.390976 921.726976 154.396672 925.7472 154.396672 929.33632 155.390976 933.269504 156.212224 936.77056 158.461952 943.516672 160.017408 946.715648 162.006016 949.9136 164.210688 953.069568 166.631424 955.838464 169.875456 958.993408 172.296192 961.5872 179.472384 966.948864 186.692608 971.444224 194.950144 975.50848 203.855872 979.139584 213.279744 983.02976 223.742976 985.452544 234.1632 988.9536 245.446656 991.289344 256.688128 992.974848 268.273664 994.748416 280.249344 996.477952 303.855616 998.940672 328.195072 999.3728 350.63296 999.3728 361.182208 999.3728 371.299328 999.3728 381.847552 998.940672 390.884352 997.905408 399.617024 997.213184 407.788544 996.477952 420.931584 993.883136 430.398464 991.289344 439.392256 988.9536 455.993344 981.994496 463.516672 979.139584 470.69184 975.50848 482.53952 968.85248 493.216768 963.489792 501.129216 958.43328 506.921984 953.069568 515.95776 954.063872 522.96192 954.843136 536.79616 955.838464 543.281152 955.838464 548.770816 955.838464 552.96512 956.70272 557.246464 958.43328 564.033536 960.893952 571.597824 963.489792 585.996288 967.986176 600.694784 973.345792 615.005184 977.496064 629.445632 980.438016 644.187136 984.155136 659.448832 986.359808 673.931264 987.959296 688.458752 989.990912 702.03392 991.289344 716.560384 992.108544 730.481664 992.108544 744.013824 992.108544 756.854784 992.108544 769.823744 990.554112 782.534656 989.990912 794.769408 987.959296 806.052864 985.452544 817.337344 983.02976 828.147712 980.438016 832.641024 979.139584 837.6576 977.496064 847.040512 973.778944 855.384064 969.887744 863.25248 965.823488 870.601728 961.5872 877.08672 956.70272 879.637504 954.063872 882.707456 950.4768 886.64064 945.677312 890.92096 939.754496 892.478464 936.77056 893.169664 934.264832 894.984192 931.064832 895.676416 927.60576 895.676416 924.275712 896.54272 920.947712 895.676416 916.063232 894.984192 911.868928 893.169664 906.940416 891.742208 902.87616 889.061376 897.946624 885.820416 893.452288 882.707456 889.561088 878.513152 886.275072 869.866496 878.751744 860.182528 871.488512 850.41152 865.696768 840.121344 859.772928 816.603136 848.186368 810.9824 844.727296 809.426944 843.127808 808.430592 842.090496 819.759104 830.675968 824.644608 825.056256 828.70784 819.867648 836.619264 808.411136 844.09856 796.694528 850.41152 786.275328 856.377344 776.288256 864.375808 756.31616 870.601728 739.714048 874.707968 727.955456 877.08672 724.063232 878.513152 720.907264 880.97792 719.004672 882.015232 719.004672 882.707456 719.438848 888.759296 731.456512 894.163968 743.042048 897.968128 749.572096 901.901312 755.190784 905.793536 762.107904 910.808064 768.941056 915.001344 773.696512 917.552128 776.288256 920.059904 778.625024 922.351616 780.352512 924.557312 781.953024 929.398784 784.417792 931.90656 785.282048 933.593088 785.282048 935.839744 785.282048 938.391552 784.417792 941.548544 782.81728 945.050624 781.216768 947.945472 778.625024 950.668288 775.597056 953.73824 771.835904 956.158976 768.941056 958.88384 764.269568 960.917504 760.510464 963.337216 755.190784 964.6336 750.695424 968.136704 739.714048 970.426368 727.565312 972.068864 714.097664 973.193216 706.27328 973.193216 699.766784 973.193216 692.805632 973.193216 684.288Z\" p-id=\"996\"></path>","viewBox":"0 0 1024 1024"}}]}],"colorPicker":true,"homeToolBar":[{"icon":"more_vert","items":[{"title":"RSS","type":"link","href":"/atom.xml","icon":"rss_feed"}]}],"footer":["Copyright © 2016 - 2017 EYHN",["拼命想抓住一些东西！","带你装逼带你飞！"]]}}
+  </script>
+  <script>lsloader.load("vendor.js","/vendor.js")</script>
+  <script>lsloader.load("bundle.js","/bundle.js")</script>
+  
+    <script type="text/javascript" src="/live2d/script.js"></script>
+    <canvas id="live2dcanvas" width="300" height="600" class="live2d"></canvas>
+    <style>
+      #live2dcanvas {
+        position: fixed;
+        right: -60px;
+        z-index: 999;
+        pointer-events: none;
+        bottom: -60px;
+      }
+    </style>
+    <script>loadlive2d("live2dcanvas" ,"/live2d/assets/Epsilon2.1/Epsilon2.1.model.json")</script>
+  
+</body>
+</html>
