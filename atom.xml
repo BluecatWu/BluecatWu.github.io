@@ -161,317 +161,6 @@
   </entry>
   
   <entry>
-    <title>HTML加载速度</title>
-    <link href="http://sheltonWu.com/2017/07/14/8/"/>
-    <id>http://sheltonWu.com/2017/07/14/8/</id>
-    <published>2017-07-14T12:12:30.000Z</published>
-    <updated>2017-08-12T06:01:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>##1.加快页面的加载速度##</p>
-<ol>
-<li>页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script和css移到外部文件，可以使用HTML Tidy来给HTML减肥，还可以使用一些压缩工具来给JavaScript减肥</li>
-<li>减少文件数量。减少页面上引用的文件数量可以减少HTTP连接数。许多JavaScript、CSS文件可以合并最好合并，人家财帮子都把自己的JavaScript. functions和Prototype.js合并到一个base.js文件里去了</li>
-<li>减少域名查询。DNS查询和解析域名也是消耗时间的，所以要减少对外部JavaScript、CSS、图片等资源的引用，不同域名的使用越少越好</li>
-<li>缓存重用数据。使用缓存吧</li>
-<li>优化页面元素加载顺序。首先加载页面最初显示的内容和与之相关的JavaScript和CSS，然后加载DHTML相关的东西，像什么不是最初显示相关的图片、flash、视频等很肥的资源就最后加载</li>
-<li>减少inline JavaScript的数量。浏览器parser会假设inline JavaScript会改变页面结构，所以使用inline JavaScript开销较大，不要使用document.write()这种输出内容的方法，使用现代W3C DOM方法来为现代浏览器处理页面内容</li>
-<li>使用现代CSS和合法的标签。使用现代CSS来减少标签和图像，例如使用现代CSS+文字完全可以替代一些只有文字的图片，使用合法的标签避免浏览器解析HTML时做“error correction”等操作，还可以被HTML Tidy来给HTML减肥</li>
-<li>Chunk your content。不要使用嵌套tables</li>
-<li>指定图像和tables的大小。如果浏览器可以立即决定图像或tables的大小，那么它就可以马上显示页面而不要重新做一些布局安排的工作，这不仅加快了页面的显示，也预防了页面完成加载后布局的一些不当的改变。</li>
-<li>根据用户浏览器明智的选择策略。IE、Firefox、Safari等等等等</li>
-<li>页面结构的例子</li>
-</ol>
-<h1 id="HTML页面加载和解析流程"><a href="#HTML页面加载和解析流程" class="headerlink" title="HTML页面加载和解析流程"></a>HTML页面加载和解析流程</h1><ol>
-<li>用户输入网址（假设是个html页面，并且是第一次访问），浏览器向服务器发出请求，服务器返回html文件；</li>
-<li>浏览器开始载入html代码，发现＜head＞标签内有一个＜link＞标签引用外部CSS文件；</li>
-<li>浏览器又发出CSS文件的请求，服务器返回这个CSS文件；</li>
-<li>浏览器继续载入html中＜body＞部分的代码，并且CSS文件已经拿到手了，可以开始渲染页面了；</li>
-<li>浏览器在代码中发现一个＜img＞标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码；</li>
-<li>服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码；</li>
-<li>浏览器发现了一个包含一行Javascript代码的＜script＞标签，赶快运行它；</li>
-<li>Javascript脚本执行了这条语句，它命令浏览器隐藏掉代码中的某个＜div＞ （style.display=”none”）。杯具啊，突然就少了这么一个元素，浏览器不得不重新渲染这部分代码；</li>
-<li>终于等到了＜/html＞的到来，浏览器泪流满面……</li>
-<li>等等，还没完，用户点了一下界面中的“换肤”按钮，Javascript让浏览器换了一下＜link＞标签的CSS路径；</li>
-<li>浏览器召集了在座的各位＜div＞＜span＞＜ul＞＜li＞们，“大伙儿收拾收拾行李，咱得重新来过……”，浏览器向服务器请求了新的CSS文件，重新渲染页面。</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;##1.加快页面的加载速度##&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script和css移到外部文件，可以使用HTML Tidy来给HTML减肥，还可以使用一些压缩工具来给JavaScript减肥&lt;
-    
-    </summary>
-    
-      <category term="HTML" scheme="http://sheltonWu.com/categories/HTML/"/>
-    
-    
-      <category term="面试题" scheme="http://sheltonWu.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    
-      <category term="HTML" scheme="http://sheltonWu.com/tags/HTML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常见面试题</title>
-    <link href="http://sheltonWu.com/2017/07/14/11/"/>
-    <id>http://sheltonWu.com/2017/07/14/11/</id>
-    <published>2017-07-14T12:12:30.000Z</published>
-    <updated>2017-08-12T06:02:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>##1.get和post的区别##</p>
-<ul>
-<li>get向指定的资源请求数据,请求的数据会附在URL之后,就是把数据放置在请求行（request line）中），以?分割URL和传输数据，多个参数用&amp;连接；</li>
-<li><p>post向指定的资源提交要被处理的数据<br>get方法，查询请求是在url中显示的，有长度限制，get方法是安全幂等的。而post方法请求是封装在http消息包体中</p>
-<a id="more"></a>
-<p>&amp;|get|post<br>—|—|—-<br>后退/刷新|无害|请求重新提交<br>书签|可做书签|不可做<br>缓存|可被缓存|不能被缓存<br>历史|保留在浏览器记录里|不保留<br>对数据长度限制|限制（2048字符）|不限制<br>安全性|url中暴露数据|相对安全<br>可见性|url中可见|不可见</p>
-<p>总结：<br>①. 对于get来说，是向服务器端请求数据，其请求在url中可见，其长度有限制（2048字符）个体方法是安全幂等，这里的安全是指用于获取信息而非修改信息，幂等是指每次请求得到的结果都一样。<br>②. 对于post来说，是向服务器端提交数据，每次刷新或者后退都会重新提交，post请求的数据封装在http请求的首部里。</p>
-</li>
-</ul>
-<p>##2. HTTP 状态码##</p>
-<ul>
-<li><code>1XX</code>代表请求已经被接收；</li>
-<li><code>2xx</code>代表请求已成功被服务器接收、理解、并接受。常用的200表示请求已成功，请求所希望的响应头或数据体将随此响应返回；</li>
-<li><code>3xx</code>代表重定向。</li>
-<li><code>4xx</code>代表客户端错误。404表示网页不存在。</li>
-<li><code>5xx</code>代表服务器错误。500表示服务器内部错误，503表示服务器暂时不可用</li>
-</ul>
-<p>##3.前端MVC框架##<br> MVC（模型-视图-控制器）<br> Model(模型)主要与业务数据有关。<br> View(视图)是关于构件和维护一个DOM元素。应用程序数据的可视化表示。<br> Controller(控制器）用户更新视图，controller更新model.(网上没有这类型的详细文章，这里可以好好写一写，画画图，各个框架MVC之间的异同。)</p>
-<p> 如<a href="http://www.zhihu.com/question/20135390" target="_blank" rel="external">知乎</a>，把数据请求和数据操作放在model中，对视图的操作和改变放在view中，事件绑定放在controller中。</p>
-<p>##4.闭包##<br>   请见<a href="http://padding.me/blog/2014/04/20/what-is-closure/" target="_blank" rel="external">隔壁</a>。</p>
-<p>##5.DOCTYPE的作用？严格模式与混杂模式如何区分？它们有什么意义？<br> DOCTYPE声明位于HTML文档顶端，告诉浏览器应该用什么文档类型规范来解析这个文档；<br> 严格模式的排版和JS运作模式是以该浏览器支持的最高标准运行；而混杂模式中，页面以较宽松的向后兼容的模式显示。模拟老式浏览器的行为以防止站点无法工作。<br>；DOCTYPE不存在或者格式不正确，则浏览器以混杂模式呈现文档。</p>
-<p>##6.行内元素有哪些？块级元素有哪些？空（void  )元素有哪些？##</p>
-<p>##7.link和@import的区别 ##</p>
-<p>##8.浏览器的内核分别是什么 ##</p>
-<p>##9.常见兼容性问题 ##</p>
-<ul>
-<li>浏览器的<code>padding</code>和<code>marigin</code>不同。</li>
-</ul>
-<p>##10.语义化的理解 ##</p>
-<p>##11.HTML5的离线存储 ##<br> localStorage 长期存储数据，浏览器关闭后数据不丢失；而sessionStorage数据在浏览器关闭后自动删除。</p>
-<p>##12.cookie和session的区别##<br>  ① cookie数据存在客户的浏览器上，session数据存放在服务器端<br>  ② cookie不安全<br>  ③ session会在一定时间内保存在服务器端，访问增多，占用服务器性能。<br>  ④ 单个cookie保存的数据不超过4K</p>
-<p>##13.(写)描述一段语义的html代码吧。##</p>
-<p>##14.frame有那些缺点？##</p>
-<p>##15.请描述一下 cookies，sessionStorage 和 localStorage 的区别？##<br>cookie在浏览器和服务器间来回传递。 sessionStorage和localStorage不会<br>sessionStorage和localStorage的存储空间更大；<br>sessionStorage和localStorage有更多丰富易用的接口；<br>sessionStorage和localStorage各自独立的存储空间；</p>
-<p>##16.介绍一下CSS的盒子模型？</p>
-<p>  ① 有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 padding;</p>
-<p>  ② 盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border).</p>
-<p>##17.CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？##<br>!important&gt;id&gt;class&gt;tag</p>
-<p>##18.如何居中div？如何居中一个浮动元素？ ##</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;##1.get和post的区别##&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;get向指定的资源请求数据,请求的数据会附在URL之后,就是把数据放置在请求行（request line）中），以?分割URL和传输数据，多个参数用&amp;amp;连接；&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;post向指定的资源提交要被处理的数据&lt;br&gt;get方法，查询请求是在url中显示的，有长度限制，get方法是安全幂等的。而post方法请求是封装在http消息包体中&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="面试题" scheme="http://sheltonWu.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HTML常见问题总结</title>
-    <link href="http://sheltonWu.com/2017/07/14/5/"/>
-    <id>http://sheltonWu.com/2017/07/14/5/</id>
-    <published>2017-07-14T12:12:30.000Z</published>
-    <updated>2017-08-12T06:00:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li><p>Q: <code>doctype</code>（文档类型）的作用是什么？</p>
-<a id="more"></a>
-<p>A: 在HTML中 <code>doctype</code> 有两个主要目的。</p>
-<ul>
-<li><p>对文档进行有效性验证:</p>
-<p>它告诉用户代理和校验器这个文档是按照什么DTD 写的。这个动作是被动的，每次页面加载时，浏览器并不会下载DTD 并检查合法性，只有当手动校验页面时才启用。</p>
-</li>
-<li><p>决定浏览器的呈现模式:</p>
-<p>对于实际操作，通知浏览器读取文档时用哪种解析算法。如果没有写，则浏览器则根据自身的规则对代码进行解析，可能会严重影响HTML 排版布局。浏览器有三种方式解析HTML文档。</p>
-<ul>
-<li>非怪异（标准）模式</li>
-<li>怪异模式</li>
-<li>部分怪异（近乎标准）模式</li>
-</ul>
-</li>
-</ul>
-<p>关于IE浏览器的文档模式，浏览器模式，严格模式，怪异模式，DOCTYPE标签，可详细阅读<a href="http://padding.me/blog/2014/07/04/mode-or-standard/" target="_blank" rel="external">模式？标准！</a>的内容。</p>
-</li>
-<li><p>Q: 浏览器标准模式和怪异模式之间的区别是什么？</p>
-<p>A: 在“标准模式”(Standards Mode) 页面按照 HTML 与 CSS 的定义渲染，而在“怪异模式”(Quirks Mode)就是浏览器为了兼容很早之前针对旧版本浏览器设计、并未严格遵循 W3C 标准的网页而产生的一种页面渲染模式。浏览器基于页面中文件类型描述的存在以决定采用哪种渲染模式；如果存在一个完整的<code>DOCTYPE</code>则浏览器将会采用标准模式，而如果它缺失则浏览器将会采用怪异模式。</p>
-<p>强烈建议阅读加深理解：<a href="http://www.ibm.com/developerworks/cn/web/1310_shatao_quirks/" target="_blank" rel="external">怪异模式（Quirks Mode）对 HTML 页面的影响</a>，这里列下浏览器标准模式和怪异模式的区别：</p>
-<ol>
-<li><p>盒模型：</p>
-<p>在怪异模式下，盒模型为IE盒模型而非标准模式下的W3C 盒模型：在 IE 盒模型中，<br>box width = content width + padding left + padding right + border left + border right，<br>box height = content height + padding top + padding bottom + border top + border bottom。<br>而在 W3C 标准的盒模型中，box 的大小就是 content 的大小。</p>
-</li>
-<li><p>图片元素的垂直对齐方式:</p>
-<p>对于<code>inline</code>元素和<code>table-cell</code>元素，在 IE Standards Mode 下 vertical-align 属性默认取值为<code>baseline</code>。而当<code>inline</code>元素的内容只有图片时，如<code>table</code>的单元格<code>table-cell</code>。在 IE Quirks Mode 下，<code>table</code>单元格中的图片的 <code>vertical-align</code> 属性默认为<code>bottom</code>，因此，在图片底部会有几像素的空间。</p>
-</li>
-<li><p><code>&lt;table&gt;</code>元素中的字体:</p>
-<p>CSS 中，描述<code>font</code>的属性有<code>font-family</code>，<code>font-size</code>，<code>font-style</code>，<code>font-weigh</code>,上述属性都是可以继承的。而在 IE Quirks Mode 下，对于<code>table</code> 元素，字体的某些属性将不会从<code>body</code>或其他封闭元素继承到<code>table</code>中，特别是 <code>font-size</code>属性。</p>
-</li>
-<li><p>内联元素的尺寸:</p>
-<p>在 IE Standards Mode 下，non-replaced inline 元素无法自定义大小，而在 IE Quirks Mode 下，定义这些元素的<code>width</code>和<code>height</code> 属性，能够影响该元素显示的大小尺寸。</p>
-</li>
-<li><p>元素的百分比高度:</p>
-<p>CSS 中对于元素的百分比高度规定如下，百分比为元素包含块的高度，不可为负值。如果包含块的高度没有显式给出，该值等同于“auto”（即取决于内容的高度）。所以百分比的高度必须在父元素有声明高度时使用。</p>
-<p>当一个元素使用百分比高度时，在 IE Standards Mode 下，高度取决于内容的变化，而在 Quirks Mode 下，百分比高度则被正确应用。</p>
-</li>
-<li><p>元素溢出的处理：</p>
-<p>在 IE Standard Mode 下，<code>overflow</code>取默认值 <code>visible</code>，即溢出可见，这种情况下，溢出内容不会被裁剪，呈现在元素框外。而在 Quirks Mode 下，该溢出被当做扩展<code>box</code>来对待，即元素的大小由其内容决定，溢出不会被裁剪，元素框自动调整，包含溢出内容。</p>
-</li>
-</ol>
-<p>另可参考阅读：<a href="https://www.cs.tut.fi/~jkorpela/quirks-mode.html" target="_blank" rel="external">https://www.cs.tut.fi/~jkorpela/quirks-mode.html</a></p>
-</li>
-</ul>
-<ul>
-<li><p>Q: 使用 XHTML 的局限有哪些？</p>
-<ul>
-<li><p>如果页面使用 ‘application/xhtml+xml’ 会有什么问题吗？</p>
-<p>A: xhtml 语法要求严格，必须有<code>head</code>、<code>body</code> 每个dom 必须要闭合。空标签也必须闭合。例如<code>&lt;img /&gt;</code>, <code>&lt;br/&gt;</code>, <code>&lt;input /&gt;</code>等。另外要在属性值上使用双引号。一旦遇到错误，立刻停止解析，并显示错误信息。<br>如果页面使用’application/xhtml+xml’,一些老的浏览器会不兼容。</p>
-</li>
-</ul>
-</li>
-<li><p>Q: 如果网页内容需要支持多语言，你会怎么做？</p>
-<ul>
-<li><p>在设计和开发多语言网站时，有哪些问题你必须要考虑？</p>
-<p>A: 编码使用<code>UTF-8</code>，空间域名需要支持多浏览地址,准备多套模板。<br>在设计和开发多语言网站时，需要考虑</p>
-<ul>
-<li>应用字符集的选择</li>
-<li>语言书写习惯&amp;导航结构</li>
-<li>数据库驱动型网站</li>
-<li>css 盒子会因为内容尺寸不一样出现不对齐偏移</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Q: <code>data-</code>属性的作用是什么？</p>
-<p>A: <code>data-</code>为前端开发者提供自定义的属性，这些属性集可以通过对象的<code>dataset</code>属性获取，不支持该属性的浏览器可以通过<code>getAttribute</code>方法获取:</p>
-<p><code>&lt;div data-author=&quot;david&quot; data-time=&quot;2011-06-20&quot; data-comment-num=&quot;10&quot;&gt;...&lt;/div&gt;</code></p>
-<p><code>div.dataset.commentNum; // 10</code></p>
-<p>需要注意的是，<code>data-</code>之后的以连字符分割的多个单词组成的属性，获取的时候使用驼峰风格。并不是所有的浏览器都支持.<code>dataset</code>属性，测试的浏览器中只有Chrome 和Opera 支持。</p>
-<p>即：当没有合适的属性和元素时，自定义的 data 属性是能够存储页面或 App 的私有的自定义数据。</p>
-<blockquote>
-<p>Custom data attributes are intended to store custom data private to the page or application, for which there are no more appropriate attributes or elements.</p>
-</blockquote>
-</li>
-<li><p>Q:如果把 HTML5 看作做一个开放平台，那它的构建模块有哪些？</p>
-<p>A: 开放网络平台:</p>
-<blockquote>
-<p>The Open Web Platform is the collection of open (royalty-free) technologies which enables the Web. Using the Open Web Platform, everyone has the right to implement a software component of the Web without requiring any approvals or waiving license fees.</p>
-</blockquote>
-<p>开放网络平台（Open Web Platform）是一些开放的（免版权）技术的集合，这些技术激活了互联网。使用开放网络平台时，每个人都有权实现 Web 上的一个组件，而不用向任何人索取许可和证书。</p>
-</li>
-</ul>
-<p>  将 HTML5 看做开放网络平台，那它的构建模块有哪些？我想，所谓构建模块，指的应该是开放网络平台这个技术集合中的技术。</p>
-<ul>
-<li>HTML</li>
-<li>DOM</li>
-<li>CSS</li>
-<li>SVG</li>
-<li>MathML</li>
-<li><p>Web APIs</p>
-<ul>
-<li>Canvas WebGL</li>
-<li>Audio</li>
-<li>Web Storage</li>
-<li>File, File System</li>
-<li>History, contentEditable, Drag &amp; Drop, HTML Editing Commands</li>
-<li>Web Sockets</li>
-<li>Web Workers</li>
-<li>Server-Send Events</li>
-<li>XMLHttpRequest</li>
-<li>Geolocation, Device Orientation</li>
-<li>DOM Events, Touch Events, Progress Events</li>
-<li>Custom application development</li>
-<li>Clipboard and events</li>
-<li>Web Notifications, Web Messaging</li>
-<li>Offine Web Applications</li>
-<li>Media Capture API</li>
-<li>Timing control for script-based animations, Page Visibility, Navigation + Timing, Resource Timing</li>
-<li>Selectors</li>
-<li>DOM Traversal, DOM XPath, Element Traversal</li>
-<li>EcmaScript / JavaScript</li>
-<li>HTTP</li>
-<li>URI</li>
-<li>Media Accessibility Checklist</li>
-</ul>
-<p>该答案引自: <a href="http://witcher42.github.io/2014/06/03/open-web-platform/" target="_blank" rel="external">http://witcher42.github.io/2014/06/03/open-web-platform/</a></p>
-</li>
-</ul>
-<ul>
-<li><p>Q: 请描述一下 cookies，sessionStorage 和 localStorage 的区别？</p>
-<p>A: sessionStorage 和 localStorage 是HTML5 Web Storage API 提供的，可以方便的在web请求之间保存数据。有了本地数据，就可以避免数据在浏览器和服务器间不必要地来回传递。</p>
-<p>sessionStorage、localStorage、cookie都是在浏览器端存储的数据，其中sessionStorage 的概念很特别，引入了一个“浏览器窗口”的概念。sessionStorage 是在同源的同窗口（或tab）中，始终存在的数据。也就是说只要这个浏览器窗口没有关闭，即使刷新页面或进入同源另一页面，数据仍然存在。关闭窗口后，sessionStorage 即被销毁。同时“独立”打开的不同窗口，即使是同一页面，sessionStorage 对象也是不同的</p>
-<p>cookies会发送到服务器端。其余两个不会。</p>
-<p>Microsoft 指出 Internet Explorer 8 增加cookie 限制为每个域名50个，但IE7 似乎也允许每个域名50个cookie。Firefox 每个域名cookie 限制为50个。Opera每个域名cookie 限制为30个。Firefox 和Safari 允许cookie 多达4097个字节，包括名（name）、值（value）和等号。Opera 许cookie 多达4096个字节，包括：名（name）、值（value）和等号。Internet Explorer 允许cookie 多达4095个字节，包括：名（name）、值（value）和等号。</p>
-<ul>
-<li>Cookie<ul>
-<li>每个域名存储量比较小（各浏览器不同，大致4K）</li>
-<li>所有域名的存储量有限制（各浏览器不同，大致4K）</li>
-<li>有个数限制（各浏览器不同）</li>
-<li>会随请求发送到服务器</li>
-</ul>
-</li>
-<li>LocalStorage<ul>
-<li>永久存储</li>
-<li>单个域名存储量比较大（推荐5MB，各浏览器不同）</li>
-<li>总体数量无限制</li>
-</ul>
-</li>
-<li>SessionStorage<ul>
-<li>只在 Session 内有效</li>
-<li>存储量更大（推荐没有限制，但是实际上各浏览器也不同）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>请描述一下 <code>GET</code> 和 <code>POST</code> 的区别?</p>
-<p>A: 区别如下：</p>
-<ul>
-<li>get 向指定的资源请求数据,请求的数据会附在URL 之后,就是把数据放置在请求行（request line）中），以?分割URL和传输数据，多个参数用&amp;连接；</li>
-<li><p>post 向指定的资源提交要被处理的数据。get 方法，查询请求是在url中显示的，有长度限制，get 方法是安全幂等的。而post 方法请求是封装在http 消息包体中</p>
-<p>&amp;|get|post<br>—|—|—-<br>后退/刷新|无害|请求重新提交<br>书签|可做书签|不可做<br>缓存|可被缓存|不能被缓存<br>历史|保留在浏览器记录里|不保留<br>对数据长度限制|限制（2048字符）|不限制<br>安全性|url中暴露数据|相对安全<br>可见性|url中可见|不可见</p>
-</li>
-</ul>
-<p>总结：</p>
-<ul>
-<li>对于get 来说，是向服务器端请求数据，其请求在url 中可见，其长度有限制（2048字符）个体方法是安全幂等，这里的安全是指用于获取信息而非修改信息，幂等是指每次请求得到的结果都一样。</li>
-<li>对于post 来说，是向服务器端提交数据，每次刷新或者后退都会重新提交，post 请求的数据封装在http 请求的首部里。</li>
-</ul>
-</li>
-</ul>
-<p>tips: 以上部分答案参考自：</p>
-<ul>
-<li><a href="http://padding.me" target="_blank" rel="external">paddingme</a></li>
-<li><a href="http://witcher42.github.io/" target="_blank" rel="external">Witcher42</a></li>
-<li><a href="http://camnpr.com/" target="_blank" rel="external">郑州网建</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Q: &lt;code&gt;doctype&lt;/code&gt;（文档类型）的作用是什么？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="面试题" scheme="http://sheltonWu.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    
-      <category term="HTML" scheme="http://sheltonWu.com/tags/HTML/"/>
-    
-  </entry>
-  
-  <entry>
     <title>css常见问题总结</title>
     <link href="http://sheltonWu.com/2017/07/14/6/"/>
     <id>http://sheltonWu.com/2017/07/14/6/</id>
@@ -647,9 +336,9 @@ section {
       <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
     
     
-      <category term="CSS" scheme="http://sheltonWu.com/tags/CSS/"/>
-    
       <category term="面试题" scheme="http://sheltonWu.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+      <category term="CSS" scheme="http://sheltonWu.com/tags/CSS/"/>
     
   </entry>
   
@@ -770,222 +459,6 @@ A: 正确
       <category term="面试题" scheme="http://sheltonWu.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
       <category term="HTML" scheme="http://sheltonWu.com/tags/HTML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS常见问题总结</title>
-    <link href="http://sheltonWu.com/2017/07/14/7/"/>
-    <id>http://sheltonWu.com/2017/07/14/7/</id>
-    <published>2017-07-14T12:12:30.000Z</published>
-    <updated>2017-08-12T06:01:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li><p>Q：解释下事件代理。</p>
-<p>A: 当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。</p>
-</li>
-</ul>
-<a id="more"></a>
-<pre><code>var delegate = function(client, clientMethod) {
-    return function() {
-        return clientMethod.apply(client, arguments);
-    }
-}
-
-var agentMethod = delegate (client, clientMethod);
-agentMethod();
-</code></pre><p>  相关阅读：</p>
-<ul>
-<li><a href="http://www.cnblogs.com/owenChen/archive/2013/02/18/2915521.html" target="_blank" rel="external">JavaScript事件代理和委托（Delegation）</a></li>
-<li><a href="http://www.cnblogs.com/owenChen/archive/2013/02/18/2915521.html" target="_blank" rel="external">事件代理</a></li>
-<li><a href="http://tangram.baidu.com/article/138" target="_blank" rel="external">事件代理的应用</a></li>
-</ul>
-<ul>
-<li>Q: 解释下 JavaScript 中 <code>this</code> 是如何工作的。</li>
-</ul>
-<p>  A: <code>this</code> 在 JavaScript 中主要由以下五种使用场景。</p>
-<ul>
-<li>作为函数调用，<code>this</code> 绑定全局对象，浏览器环境全局对象为 window 。<ul>
-<li>内部函数内部函数的 <code>this</code> 也绑定全局对象，应该绑定到其外层函数对应的对象上，这是 JavaScript的缺陷，用<code>that</code>替换。</li>
-</ul>
-</li>
-<li>作为构造函数使用，<code>this</code> 绑定到新创建的对象。</li>
-<li>作为对象方法使用，<code>this</code> 绑定到该对象。</li>
-<li><p>使用<code>apply</code>或<code>call</code>调用 <code>this</code> 将会被显式设置为函数调用的第一个参数。</p>
-<p>参考阅读：</p>
-<ul>
-<li><a href="http://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/#ibm-pcon" target="_blank" rel="external">深入浅出 JavaScript 中的 this</a></li>
-<li><a href="http://bonsaiden.github.io/JavaScript-Garden/zh/#function.this" target="_blank" rel="external">this 的工作原理</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>Q: 解释下原型继承的原理。</p>
-<p>A:原型继承的基础是原型链查找。<br>原型链查找基本概念：</p>
-<ol>
-<li>每一个函数 F 都有一个原型对象（prototype）F.prototype</li>
-<li>每一个函数都可以通过 new 关键字化身成为一个类构造函数，new F 会产生一个对象 O</li>
-<li>在调用对象的某个属性或者方法，比如 <a href="http://O.xxx" target="_blank" rel="external">http://O.xxx</a> 的时候，会首先查找对象自身是否有这个方法或者属性，如果没找到就会去对象的构造函数的原型对象中查找（注意有两个定语），也就是查找 O 的构造函数 F 的原型对象 <a href="http://F.prototype.xxx" target="_blank" rel="external">http://F.prototype.xxx</a></li>
-<li>F.prototype 也是一个对象，查找 <a href="http://F.prototype.xxx" target="_blank" rel="external">http://F.prototype.xxx</a> 的时候会重复第 3 步的过程</li>
-</ol>
-<p>参考：</p>
-<ul>
-<li><a href="http://www.jianshu.com/p/d2742610ec30#" target="_blank" rel="external">深入理解javascript原型继承</a></li>
-<li><a href="http://www.ituring.com.cn/article/56184" target="_blank" rel="external">JavaScript原型继承工作原理</a></li>
-<li><a href="http://javascript.crockford.com/prototypal.html" target="_blank" rel="external">Prototypal Inheritance in JavaScript</a></li>
-</ul>
-</li>
-<li><p>Q: 你是如何测试JavaScript代码的？</p>
-</li>
-<li><p>A: AMD vs. CommonJS？</p>
-<p>Q: 可参考: <a href="http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs" target="_blank" rel="external">http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs</a></p>
-</li>
-<li><p>Q: 什么是哈希表？</p>
-<p>A: 哈希表是根据关键字（Key value）而直接访问在内存存储位置的数据结构。也就是说，它通过把键值通过一个函数的计算，映射到表中一个位置来访问记录，这加快了查找速度。这个映射函数称做散列函数，存放记录的数组称做散列表。</p>
-</li>
-<li><p>Q: 解释下为什么接下来这段代码不是 IIFE(立即调用的函数表达式)：<code>function foo(){ }();</code>.</p>
-<ul>
-<li>要做哪些改动使它变成 IIFE?</li>
-</ul>
-<p>A: 可参考 <a href="http://roshanca.com/2014/web-develop-styleguide-javascript/" target="_blank" rel="external">前端编码风格规范之 JavaScript 规范</a></p>
-<p>总是将代码包裹成一个 IIFE(Immediately-Invoked Function Expression)，用以创建独立隔绝的定义域。这一举措可防止全局命名空间被污染。</p>
-<p>IIFE 还可确保你的代码不会轻易被其它全局命名空间里的代码所修改（i.e. 第三方库，window 引用，被覆盖的未定义的关键字等等）。</p>
-<p>  不推荐</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var x = 10,</div><div class="line">    y = 100;</div><div class="line"></div><div class="line">// Declaring variables in the global scope is resulting in global scope pollution. All variables declared like this</div><div class="line">// will be stored in the window object. This is very unclean and needs to be avoided.</div><div class="line">console.log(window.x + &apos; &apos; + window.y);</div></pre></td></tr></table></figure>
-<p>  推荐</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// We declare a IIFE and pass parameters into the function that we will use from the global space</div><div class="line">(function(log, w, undefined)&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  var x = 10,</div><div class="line">      y = 100;</div><div class="line"></div><div class="line">  // Will output &apos;true true&apos;</div><div class="line">  log((w.x === undefined) + &apos; &apos; + (w.y === undefined));</div><div class="line"></div><div class="line">&#125;(window.console.log, window));</div></pre></td></tr></table></figure>
-<p>  IIFE（立即执行的函数表达式）:无论何时，想要创建一个新的封闭的定义域，那就用 IIFE。它不仅避免了干扰，也使得内存在执行完后立即释放。</p>
-<p>  所有脚本文件建议都从 IIFE 开始。</p>
-<p>  立即执行的函数表达式的执行括号应该写在外包括号内。虽然写在内还是写在外都是有效的，但写在内使得整个表达式看起来更像一个整体，因此推荐这么做。</p>
-<p>  不推荐</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;&#125;)();</div></pre></td></tr></table></figure>
-<p>  推荐</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;&#125;());</div></pre></td></tr></table></figure>
-<p>  so，用下列写法来格式化你的 IIFE 代码：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  // Code goes here</div><div class="line"></div><div class="line">&#125;());</div></pre></td></tr></table></figure>
-<p>  如果你想引用全局变量或者是外层 IIFE 的变量，可以通过下列方式传参：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(function($, w, d)&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  $(function() &#123;</div><div class="line">    w.alert(d.querySelectorAll(&apos;div&apos;).length);</div><div class="line">  &#125;);</div><div class="line">&#125;(jQuery, window, document));</div></pre></td></tr></table></figure>
-</li>
-<li><p>Q: 描述以下变量的区别：<code>null</code>，<code>undefined</code> 或 <code>undeclared</code>？</p>
-<ul>
-<li>该如何检测它们？</li>
-</ul>
-</li>
-</ul>
-<p>  A: <code>undefined</code>是Js语言类型，而<code>undeclared</code>是一种Js语法错误。在JavaScript中，有两个表示‘空’的值<code>undefined</code>和<code>null</code>，<code>undefined</code>是一个值为<code>undefined</code> 的类型。JavaScript语言也定义了一个全局变量，它的值是 <code>undefined</code>，这个变量也被称为<code>undefined</code>。 但是这个变量不是一个常量，也不是一个关键字。这意味着它的值可以轻易被覆盖。为了避免可能对<code>undefined</code>值的改变，一个常用的技巧是使用一个传递到匿名包装器的额外参数。在调用时，这个参数不会获取任何值。如下例子：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var undefined = 123;</div><div class="line">(function(something, foo, undefined) &#123;</div><div class="line">// 局部作用域里的 undefined 变量重新获得了 `undefined` 值</div><div class="line">&#125;)(&apos;Hello World&apos;, 42);</div></pre></td></tr></table></figure>
-<pre><code>待修改。
-</code></pre><ul>
-<li><a href="http://stackoverflow.com/questions/6429225/javascript-null-or-undefined" target="_blank" rel="external">http://stackoverflow.com/questions/6429225/javascript-null-or-undefined</a></li>
-<li><a href="http://www.zhihu.com/question/19966545" target="_blank" rel="external">http://www.zhihu.com/question/19966545</a></li>
-</ul>
-<ul>
-<li><p>什么是闭包，如何使用它，为什么要使用它？</p>
-</li>
-<li><p>请举出一个匿名函数的典型用例？</p>
-</li>
-<li><p>解释 “JavaScript 模块模式” 以及你在何时使用它。</p>
-<ul>
-<li>如果有提到无污染的命名空间，可以考虑加分。</li>
-<li>如果你的模块没有自己的命名空间会怎么样？</li>
-</ul>
-</li>
-<li><p>你是如何组织自己的代码？是使用模块模式，还是使用经典继承的方法？</p>
-</li>
-<li><p>Q: 请指出 JavaScript 宿主对象和原生对象的区别？</p>
-<p> A: 宿主对象是指DOM和BOM。原生对象是Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、Math等对象。</p>
-</li>
-<li><p>Q:指出下列代码的区别：</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> person = Person();</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
-<p>A: 第一行是定义了一个函数 Person()；第二行代码是执行函数 Person() 并将其返回值复制给变量 person，如果 Person() 是一个构造器函数的话，新的对象将不会被创建，并且 this 将被绑定到全局对象上；第三行代码是用构造函数 Person() 构造一个实例对象 person。</p>
-</li>
-</ul>
-<ul>
-<li><p>Q:<code>.call</code> 和 <code>.apply</code> 的区别是什么？</p>
-<p>A: <a href="http://www.cnblogs.com/fighting_cp/archive/2010/09/20/1831844.html" target="_blank" rel="external">关于javascript中apply()和call()方法的区别</a></p>
-</li>
-<li><p>请解释 <code>Function.prototype.bind</code> 的作用？</p>
-</li>
-<li><p>你何时优化自己的代码？</p>
-</li>
-<li><p>你能解释一下 JavaScript 中的继承是如何工作的吗？</p>
-</li>
-<li><p>在什么时候你会使用 <code>document.write()</code>？</p>
-<ul>
-<li>大多数生成的广告代码依旧使用 <code>document.write()</code>，虽然这种用法会让人很不爽。</li>
-</ul>
-</li>
-<li><p>请指出浏览器特性检测，特性推断和浏览器 UA 字符串嗅探的区别？</p>
-</li>
-<li><p>请尽可能详尽的解释 AJAX 的工作原理。</p>
-<p>Q: Ajax 全称为 Asynchronous JavaScript and XML（异步 JavaScript 和 XML），是一种创建交互式网页应用的网页开发技术。<br>  Ajax 的原理简单来说通过 XmlHttpRequest 对象来向服务器发异步请求，从服务器获得数据，然后用 JavaScript来操作 DOM 而更新页面。这其中最关键的一步就是从服务器获得请求数据。</p>
-<p>  以往我们浏览网页的原理是由 Client 向 Server 提交页面申请，再由 Server 将申请通过 HTTP 传回给 Client 生成浏览页面：</p>
-<p>  <img src="http://yianbin.qiniudn.com/fe-ajax-a.png" alt="Ajax 原理图"></p>
-<p>  使用 Ajax 后的工作原理如下图，可见通过 Ajax 在用户交互方面有了很大改进，用户可以不用为提交了 Form 而长时间等待服务器应答，而且通过 Ajax 也可以开发出华丽的 Web 交互页面。</p>
-<p>  <img src="http://yianbin.qiniudn.com/fe-ajax-b.png" alt="Ajax 原理图"></p>
-<p>  转自：<a href="https://github.com/infp/Front-end-Interview/blob/master/source/javascript.md#21%E8%AF%B7%E5%B0%BD%E5%8F%AF%E8%83%BD%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%A7%A3%E9%87%8A-ajax-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86" target="_blank" rel="external">AJAX 的工作原理</a></p>
-</li>
-<li><p>请解释 JSONP 的工作原理，以及它为什么不是真正的 AJAX。</p>
-</li>
-<li><p>你使用过 JavaScript 模板系统吗？</p>
-<ul>
-<li>如有使用过，请谈谈你都使用过哪些库，比如 Mustache.js，Handlebars 等等。</li>
-</ul>
-</li>
-<li><p>请解释变量声明提升。</p>
-</li>
-<li><p>请描述下事件冒泡机制。</p>
-</li>
-<li><p>“attribute” 和 “property” 的区别是什么？</p>
-</li>
-<li><p>为什么扩展 JavaScript 内置对象不是好的做法？</p>
-</li>
-<li><p>为什么扩展 JavaScript 内置对象是好的做法？</p>
-</li>
-<li><p>请指出 document load 和 document ready 两个事件的区别。</p>
-</li>
-<li><p>Q: <code>==</code> 和 <code>===</code> 有什么不同？</p>
-<p>A: <code>==</code>（相等运算法），<code>===</code>（严格相等运算符） JavaScript 对象的比较是引用的比较，非值的比较，对象和其本身相等，和其他任何对象不相等。 <code>===</code> 首先计算其操作数的值，然后比较，比较过程无任何类型转换。 <code>==</code> 如果两个操作数不是同一类型的，则相等运算符进行一些类型转换进行比较。 <code>==</code> 这里截取 <a href="http://dorey.github.io/JavaScript-Equality-Table" target="_blank" rel="external">JavaScript 相等表格</a>上的的两张图片让大家更为直观的感受下。</p>
-<p><img src="http://paddingme.qiniudn.com/1396461120383-2.png" alt=""></p>
-<p><img src="http://paddingme.qiniudn.com/1396464279990-1.png" alt=""></p>
-<p>引用下<a href="http://weibo.com/wintercn" target="_blank" rel="external">温特大大</a>的总结就是：<strong>只要记住 <code>null</code> 只和<code>undefined</code> 相等，有 <code>number</code> 都转 <code>number</code>，有 <code>boolean</code> 也转 <code>number</code>，有 <code>string</code> 都转 <code>string</code>，对象互相不等，<code>NaN</code> 互相不等就可以了</strong>。</p>
-</li>
-<li><p>你如何从浏览器的 URL 中获取查询字符串参数。</p>
-</li>
-<li><p>请解释一下 JavaScript 的同源策略。</p>
-</li>
-<li><p>请描述一下 JavaScript 的继承模式。</p>
-</li>
-<li><p>如何实现下列代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].duplicator(); <span class="comment">// [1,2,3,4,5,1,2,3,4,5]</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>描述一种 JavaScript 中实现 memoization(避免重复运算)的策略。</p>
-</li>
-<li><p>什么是三元表达式？“三元” 表示什么意思？</p>
-</li>
-<li><p>函数的参数元是什么？</p>
-</li>
-<li><p>什么是 <code>&quot;use strict&quot;;</code> ? 使用它的好处和坏处分别是什么？</p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Q：解释下事件代理。&lt;/p&gt;
-&lt;p&gt;A: 当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="面试题" scheme="http://sheltonWu.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    
-      <category term="JS" scheme="http://sheltonWu.com/tags/JS/"/>
     
   </entry>
   
@@ -1222,9 +695,9 @@ HTML，CSS都对大小写不敏感，但为了更好的可读性和团队协作�
       <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
     
     
-      <category term="CSS" scheme="http://sheltonWu.com/tags/CSS/"/>
-    
       <category term="面试题" scheme="http://sheltonWu.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+      <category term="CSS" scheme="http://sheltonWu.com/tags/CSS/"/>
     
   </entry>
   
@@ -1269,6 +742,533 @@ HTML，CSS都对大小写不敏感，但为了更好的可读性和团队协作�
     
     
       <category term="Markdown" scheme="http://sheltonWu.com/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS常见问题总结</title>
+    <link href="http://sheltonWu.com/2017/07/14/7/"/>
+    <id>http://sheltonWu.com/2017/07/14/7/</id>
+    <published>2017-07-14T12:12:30.000Z</published>
+    <updated>2017-08-12T06:01:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li><p>Q：解释下事件代理。</p>
+<p>A: 当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。</p>
+</li>
+</ul>
+<a id="more"></a>
+<pre><code>var delegate = function(client, clientMethod) {
+    return function() {
+        return clientMethod.apply(client, arguments);
+    }
+}
+
+var agentMethod = delegate (client, clientMethod);
+agentMethod();
+</code></pre><p>  相关阅读：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/owenChen/archive/2013/02/18/2915521.html" target="_blank" rel="external">JavaScript事件代理和委托（Delegation）</a></li>
+<li><a href="http://www.cnblogs.com/owenChen/archive/2013/02/18/2915521.html" target="_blank" rel="external">事件代理</a></li>
+<li><a href="http://tangram.baidu.com/article/138" target="_blank" rel="external">事件代理的应用</a></li>
+</ul>
+<ul>
+<li>Q: 解释下 JavaScript 中 <code>this</code> 是如何工作的。</li>
+</ul>
+<p>  A: <code>this</code> 在 JavaScript 中主要由以下五种使用场景。</p>
+<ul>
+<li>作为函数调用，<code>this</code> 绑定全局对象，浏览器环境全局对象为 window 。<ul>
+<li>内部函数内部函数的 <code>this</code> 也绑定全局对象，应该绑定到其外层函数对应的对象上，这是 JavaScript的缺陷，用<code>that</code>替换。</li>
+</ul>
+</li>
+<li>作为构造函数使用，<code>this</code> 绑定到新创建的对象。</li>
+<li>作为对象方法使用，<code>this</code> 绑定到该对象。</li>
+<li><p>使用<code>apply</code>或<code>call</code>调用 <code>this</code> 将会被显式设置为函数调用的第一个参数。</p>
+<p>参考阅读：</p>
+<ul>
+<li><a href="http://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/#ibm-pcon" target="_blank" rel="external">深入浅出 JavaScript 中的 this</a></li>
+<li><a href="http://bonsaiden.github.io/JavaScript-Garden/zh/#function.this" target="_blank" rel="external">this 的工作原理</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Q: 解释下原型继承的原理。</p>
+<p>A:原型继承的基础是原型链查找。<br>原型链查找基本概念：</p>
+<ol>
+<li>每一个函数 F 都有一个原型对象（prototype）F.prototype</li>
+<li>每一个函数都可以通过 new 关键字化身成为一个类构造函数，new F 会产生一个对象 O</li>
+<li>在调用对象的某个属性或者方法，比如 <a href="http://O.xxx" target="_blank" rel="external">http://O.xxx</a> 的时候，会首先查找对象自身是否有这个方法或者属性，如果没找到就会去对象的构造函数的原型对象中查找（注意有两个定语），也就是查找 O 的构造函数 F 的原型对象 <a href="http://F.prototype.xxx" target="_blank" rel="external">http://F.prototype.xxx</a></li>
+<li>F.prototype 也是一个对象，查找 <a href="http://F.prototype.xxx" target="_blank" rel="external">http://F.prototype.xxx</a> 的时候会重复第 3 步的过程</li>
+</ol>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.jianshu.com/p/d2742610ec30#" target="_blank" rel="external">深入理解javascript原型继承</a></li>
+<li><a href="http://www.ituring.com.cn/article/56184" target="_blank" rel="external">JavaScript原型继承工作原理</a></li>
+<li><a href="http://javascript.crockford.com/prototypal.html" target="_blank" rel="external">Prototypal Inheritance in JavaScript</a></li>
+</ul>
+</li>
+<li><p>Q: 你是如何测试JavaScript代码的？</p>
+</li>
+<li><p>A: AMD vs. CommonJS？</p>
+<p>Q: 可参考: <a href="http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs" target="_blank" rel="external">http://stackoverflow.com/questions/16521471/relation-between-commonjs-amd-and-requirejs</a></p>
+</li>
+<li><p>Q: 什么是哈希表？</p>
+<p>A: 哈希表是根据关键字（Key value）而直接访问在内存存储位置的数据结构。也就是说，它通过把键值通过一个函数的计算，映射到表中一个位置来访问记录，这加快了查找速度。这个映射函数称做散列函数，存放记录的数组称做散列表。</p>
+</li>
+<li><p>Q: 解释下为什么接下来这段代码不是 IIFE(立即调用的函数表达式)：<code>function foo(){ }();</code>.</p>
+<ul>
+<li>要做哪些改动使它变成 IIFE?</li>
+</ul>
+<p>A: 可参考 <a href="http://roshanca.com/2014/web-develop-styleguide-javascript/" target="_blank" rel="external">前端编码风格规范之 JavaScript 规范</a></p>
+<p>总是将代码包裹成一个 IIFE(Immediately-Invoked Function Expression)，用以创建独立隔绝的定义域。这一举措可防止全局命名空间被污染。</p>
+<p>IIFE 还可确保你的代码不会轻易被其它全局命名空间里的代码所修改（i.e. 第三方库，window 引用，被覆盖的未定义的关键字等等）。</p>
+<p>  不推荐</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var x = 10,</div><div class="line">    y = 100;</div><div class="line"></div><div class="line">// Declaring variables in the global scope is resulting in global scope pollution. All variables declared like this</div><div class="line">// will be stored in the window object. This is very unclean and needs to be avoided.</div><div class="line">console.log(window.x + &apos; &apos; + window.y);</div></pre></td></tr></table></figure>
+<p>  推荐</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// We declare a IIFE and pass parameters into the function that we will use from the global space</div><div class="line">(function(log, w, undefined)&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  var x = 10,</div><div class="line">      y = 100;</div><div class="line"></div><div class="line">  // Will output &apos;true true&apos;</div><div class="line">  log((w.x === undefined) + &apos; &apos; + (w.y === undefined));</div><div class="line"></div><div class="line">&#125;(window.console.log, window));</div></pre></td></tr></table></figure>
+<p>  IIFE（立即执行的函数表达式）:无论何时，想要创建一个新的封闭的定义域，那就用 IIFE。它不仅避免了干扰，也使得内存在执行完后立即释放。</p>
+<p>  所有脚本文件建议都从 IIFE 开始。</p>
+<p>  立即执行的函数表达式的执行括号应该写在外包括号内。虽然写在内还是写在外都是有效的，但写在内使得整个表达式看起来更像一个整体，因此推荐这么做。</p>
+<p>  不推荐</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;&#125;)();</div></pre></td></tr></table></figure>
+<p>  推荐</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(function()&#123;&#125;());</div></pre></td></tr></table></figure>
+<p>  so，用下列写法来格式化你的 IIFE 代码：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(function()&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  // Code goes here</div><div class="line"></div><div class="line">&#125;());</div></pre></td></tr></table></figure>
+<p>  如果你想引用全局变量或者是外层 IIFE 的变量，可以通过下列方式传参：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(function($, w, d)&#123;</div><div class="line">  &apos;use strict&apos;;</div><div class="line"></div><div class="line">  $(function() &#123;</div><div class="line">    w.alert(d.querySelectorAll(&apos;div&apos;).length);</div><div class="line">  &#125;);</div><div class="line">&#125;(jQuery, window, document));</div></pre></td></tr></table></figure>
+</li>
+<li><p>Q: 描述以下变量的区别：<code>null</code>，<code>undefined</code> 或 <code>undeclared</code>？</p>
+<ul>
+<li>该如何检测它们？</li>
+</ul>
+</li>
+</ul>
+<p>  A: <code>undefined</code>是Js语言类型，而<code>undeclared</code>是一种Js语法错误。在JavaScript中，有两个表示‘空’的值<code>undefined</code>和<code>null</code>，<code>undefined</code>是一个值为<code>undefined</code> 的类型。JavaScript语言也定义了一个全局变量，它的值是 <code>undefined</code>，这个变量也被称为<code>undefined</code>。 但是这个变量不是一个常量，也不是一个关键字。这意味着它的值可以轻易被覆盖。为了避免可能对<code>undefined</code>值的改变，一个常用的技巧是使用一个传递到匿名包装器的额外参数。在调用时，这个参数不会获取任何值。如下例子：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var undefined = 123;</div><div class="line">(function(something, foo, undefined) &#123;</div><div class="line">// 局部作用域里的 undefined 变量重新获得了 `undefined` 值</div><div class="line">&#125;)(&apos;Hello World&apos;, 42);</div></pre></td></tr></table></figure>
+<pre><code>待修改。
+</code></pre><ul>
+<li><a href="http://stackoverflow.com/questions/6429225/javascript-null-or-undefined" target="_blank" rel="external">http://stackoverflow.com/questions/6429225/javascript-null-or-undefined</a></li>
+<li><a href="http://www.zhihu.com/question/19966545" target="_blank" rel="external">http://www.zhihu.com/question/19966545</a></li>
+</ul>
+<ul>
+<li><p>什么是闭包，如何使用它，为什么要使用它？</p>
+</li>
+<li><p>请举出一个匿名函数的典型用例？</p>
+</li>
+<li><p>解释 “JavaScript 模块模式” 以及你在何时使用它。</p>
+<ul>
+<li>如果有提到无污染的命名空间，可以考虑加分。</li>
+<li>如果你的模块没有自己的命名空间会怎么样？</li>
+</ul>
+</li>
+<li><p>你是如何组织自己的代码？是使用模块模式，还是使用经典继承的方法？</p>
+</li>
+<li><p>Q: 请指出 JavaScript 宿主对象和原生对象的区别？</p>
+<p> A: 宿主对象是指DOM和BOM。原生对象是Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、Math等对象。</p>
+</li>
+<li><p>Q:指出下列代码的区别：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> person = Person();</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
+<p>A: 第一行是定义了一个函数 Person()；第二行代码是执行函数 Person() 并将其返回值复制给变量 person，如果 Person() 是一个构造器函数的话，新的对象将不会被创建，并且 this 将被绑定到全局对象上；第三行代码是用构造函数 Person() 构造一个实例对象 person。</p>
+</li>
+</ul>
+<ul>
+<li><p>Q:<code>.call</code> 和 <code>.apply</code> 的区别是什么？</p>
+<p>A: <a href="http://www.cnblogs.com/fighting_cp/archive/2010/09/20/1831844.html" target="_blank" rel="external">关于javascript中apply()和call()方法的区别</a></p>
+</li>
+<li><p>请解释 <code>Function.prototype.bind</code> 的作用？</p>
+</li>
+<li><p>你何时优化自己的代码？</p>
+</li>
+<li><p>你能解释一下 JavaScript 中的继承是如何工作的吗？</p>
+</li>
+<li><p>在什么时候你会使用 <code>document.write()</code>？</p>
+<ul>
+<li>大多数生成的广告代码依旧使用 <code>document.write()</code>，虽然这种用法会让人很不爽。</li>
+</ul>
+</li>
+<li><p>请指出浏览器特性检测，特性推断和浏览器 UA 字符串嗅探的区别？</p>
+</li>
+<li><p>请尽可能详尽的解释 AJAX 的工作原理。</p>
+<p>Q: Ajax 全称为 Asynchronous JavaScript and XML（异步 JavaScript 和 XML），是一种创建交互式网页应用的网页开发技术。<br>  Ajax 的原理简单来说通过 XmlHttpRequest 对象来向服务器发异步请求，从服务器获得数据，然后用 JavaScript来操作 DOM 而更新页面。这其中最关键的一步就是从服务器获得请求数据。</p>
+<p>  以往我们浏览网页的原理是由 Client 向 Server 提交页面申请，再由 Server 将申请通过 HTTP 传回给 Client 生成浏览页面：</p>
+<p>  <img src="http://yianbin.qiniudn.com/fe-ajax-a.png" alt="Ajax 原理图"></p>
+<p>  使用 Ajax 后的工作原理如下图，可见通过 Ajax 在用户交互方面有了很大改进，用户可以不用为提交了 Form 而长时间等待服务器应答，而且通过 Ajax 也可以开发出华丽的 Web 交互页面。</p>
+<p>  <img src="http://yianbin.qiniudn.com/fe-ajax-b.png" alt="Ajax 原理图"></p>
+<p>  转自：<a href="https://github.com/infp/Front-end-Interview/blob/master/source/javascript.md#21%E8%AF%B7%E5%B0%BD%E5%8F%AF%E8%83%BD%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%A7%A3%E9%87%8A-ajax-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86" target="_blank" rel="external">AJAX 的工作原理</a></p>
+</li>
+<li><p>请解释 JSONP 的工作原理，以及它为什么不是真正的 AJAX。</p>
+</li>
+<li><p>你使用过 JavaScript 模板系统吗？</p>
+<ul>
+<li>如有使用过，请谈谈你都使用过哪些库，比如 Mustache.js，Handlebars 等等。</li>
+</ul>
+</li>
+<li><p>请解释变量声明提升。</p>
+</li>
+<li><p>请描述下事件冒泡机制。</p>
+</li>
+<li><p>“attribute” 和 “property” 的区别是什么？</p>
+</li>
+<li><p>为什么扩展 JavaScript 内置对象不是好的做法？</p>
+</li>
+<li><p>为什么扩展 JavaScript 内置对象是好的做法？</p>
+</li>
+<li><p>请指出 document load 和 document ready 两个事件的区别。</p>
+</li>
+<li><p>Q: <code>==</code> 和 <code>===</code> 有什么不同？</p>
+<p>A: <code>==</code>（相等运算法），<code>===</code>（严格相等运算符） JavaScript 对象的比较是引用的比较，非值的比较，对象和其本身相等，和其他任何对象不相等。 <code>===</code> 首先计算其操作数的值，然后比较，比较过程无任何类型转换。 <code>==</code> 如果两个操作数不是同一类型的，则相等运算符进行一些类型转换进行比较。 <code>==</code> 这里截取 <a href="http://dorey.github.io/JavaScript-Equality-Table" target="_blank" rel="external">JavaScript 相等表格</a>上的的两张图片让大家更为直观的感受下。</p>
+<p><img src="http://paddingme.qiniudn.com/1396461120383-2.png" alt=""></p>
+<p><img src="http://paddingme.qiniudn.com/1396464279990-1.png" alt=""></p>
+<p>引用下<a href="http://weibo.com/wintercn" target="_blank" rel="external">温特大大</a>的总结就是：<strong>只要记住 <code>null</code> 只和<code>undefined</code> 相等，有 <code>number</code> 都转 <code>number</code>，有 <code>boolean</code> 也转 <code>number</code>，有 <code>string</code> 都转 <code>string</code>，对象互相不等，<code>NaN</code> 互相不等就可以了</strong>。</p>
+</li>
+<li><p>你如何从浏览器的 URL 中获取查询字符串参数。</p>
+</li>
+<li><p>请解释一下 JavaScript 的同源策略。</p>
+</li>
+<li><p>请描述一下 JavaScript 的继承模式。</p>
+</li>
+<li><p>如何实现下列代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].duplicator(); <span class="comment">// [1,2,3,4,5,1,2,3,4,5]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>描述一种 JavaScript 中实现 memoization(避免重复运算)的策略。</p>
+</li>
+<li><p>什么是三元表达式？“三元” 表示什么意思？</p>
+</li>
+<li><p>函数的参数元是什么？</p>
+</li>
+<li><p>什么是 <code>&quot;use strict&quot;;</code> ? 使用它的好处和坏处分别是什么？</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Q：解释下事件代理。&lt;/p&gt;
+&lt;p&gt;A: 当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="面试题" scheme="http://sheltonWu.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+      <category term="JS" scheme="http://sheltonWu.com/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML加载速度</title>
+    <link href="http://sheltonWu.com/2017/07/14/8/"/>
+    <id>http://sheltonWu.com/2017/07/14/8/</id>
+    <published>2017-07-14T12:12:30.000Z</published>
+    <updated>2017-08-12T06:01:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>##1.加快页面的加载速度##</p>
+<ol>
+<li>页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script和css移到外部文件，可以使用HTML Tidy来给HTML减肥，还可以使用一些压缩工具来给JavaScript减肥</li>
+<li>减少文件数量。减少页面上引用的文件数量可以减少HTTP连接数。许多JavaScript、CSS文件可以合并最好合并，人家财帮子都把自己的JavaScript. functions和Prototype.js合并到一个base.js文件里去了</li>
+<li>减少域名查询。DNS查询和解析域名也是消耗时间的，所以要减少对外部JavaScript、CSS、图片等资源的引用，不同域名的使用越少越好</li>
+<li>缓存重用数据。使用缓存吧</li>
+<li>优化页面元素加载顺序。首先加载页面最初显示的内容和与之相关的JavaScript和CSS，然后加载DHTML相关的东西，像什么不是最初显示相关的图片、flash、视频等很肥的资源就最后加载</li>
+<li>减少inline JavaScript的数量。浏览器parser会假设inline JavaScript会改变页面结构，所以使用inline JavaScript开销较大，不要使用document.write()这种输出内容的方法，使用现代W3C DOM方法来为现代浏览器处理页面内容</li>
+<li>使用现代CSS和合法的标签。使用现代CSS来减少标签和图像，例如使用现代CSS+文字完全可以替代一些只有文字的图片，使用合法的标签避免浏览器解析HTML时做“error correction”等操作，还可以被HTML Tidy来给HTML减肥</li>
+<li>Chunk your content。不要使用嵌套tables</li>
+<li>指定图像和tables的大小。如果浏览器可以立即决定图像或tables的大小，那么它就可以马上显示页面而不要重新做一些布局安排的工作，这不仅加快了页面的显示，也预防了页面完成加载后布局的一些不当的改变。</li>
+<li>根据用户浏览器明智的选择策略。IE、Firefox、Safari等等等等</li>
+<li>页面结构的例子</li>
+</ol>
+<h1 id="HTML页面加载和解析流程"><a href="#HTML页面加载和解析流程" class="headerlink" title="HTML页面加载和解析流程"></a>HTML页面加载和解析流程</h1><ol>
+<li>用户输入网址（假设是个html页面，并且是第一次访问），浏览器向服务器发出请求，服务器返回html文件；</li>
+<li>浏览器开始载入html代码，发现＜head＞标签内有一个＜link＞标签引用外部CSS文件；</li>
+<li>浏览器又发出CSS文件的请求，服务器返回这个CSS文件；</li>
+<li>浏览器继续载入html中＜body＞部分的代码，并且CSS文件已经拿到手了，可以开始渲染页面了；</li>
+<li>浏览器在代码中发现一个＜img＞标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码；</li>
+<li>服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码；</li>
+<li>浏览器发现了一个包含一行Javascript代码的＜script＞标签，赶快运行它；</li>
+<li>Javascript脚本执行了这条语句，它命令浏览器隐藏掉代码中的某个＜div＞ （style.display=”none”）。杯具啊，突然就少了这么一个元素，浏览器不得不重新渲染这部分代码；</li>
+<li>终于等到了＜/html＞的到来，浏览器泪流满面……</li>
+<li>等等，还没完，用户点了一下界面中的“换肤”按钮，Javascript让浏览器换了一下＜link＞标签的CSS路径；</li>
+<li>浏览器召集了在座的各位＜div＞＜span＞＜ul＞＜li＞们，“大伙儿收拾收拾行李，咱得重新来过……”，浏览器向服务器请求了新的CSS文件，重新渲染页面。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##1.加快页面的加载速度##&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;页面减肥。页面的肥瘦是影响加载速度最重要的因素删除不必要的空格、注释。将inline的script和css移到外部文件，可以使用HTML Tidy来给HTML减肥，还可以使用一些压缩工具来给JavaScript减肥&lt;
+    
+    </summary>
+    
+      <category term="HTML" scheme="http://sheltonWu.com/categories/HTML/"/>
+    
+    
+      <category term="面试题" scheme="http://sheltonWu.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+      <category term="HTML" scheme="http://sheltonWu.com/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML常见问题总结</title>
+    <link href="http://sheltonWu.com/2017/07/14/5/"/>
+    <id>http://sheltonWu.com/2017/07/14/5/</id>
+    <published>2017-07-14T12:12:30.000Z</published>
+    <updated>2017-08-12T06:00:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li><p>Q: <code>doctype</code>（文档类型）的作用是什么？</p>
+<a id="more"></a>
+<p>A: 在HTML中 <code>doctype</code> 有两个主要目的。</p>
+<ul>
+<li><p>对文档进行有效性验证:</p>
+<p>它告诉用户代理和校验器这个文档是按照什么DTD 写的。这个动作是被动的，每次页面加载时，浏览器并不会下载DTD 并检查合法性，只有当手动校验页面时才启用。</p>
+</li>
+<li><p>决定浏览器的呈现模式:</p>
+<p>对于实际操作，通知浏览器读取文档时用哪种解析算法。如果没有写，则浏览器则根据自身的规则对代码进行解析，可能会严重影响HTML 排版布局。浏览器有三种方式解析HTML文档。</p>
+<ul>
+<li>非怪异（标准）模式</li>
+<li>怪异模式</li>
+<li>部分怪异（近乎标准）模式</li>
+</ul>
+</li>
+</ul>
+<p>关于IE浏览器的文档模式，浏览器模式，严格模式，怪异模式，DOCTYPE标签，可详细阅读<a href="http://padding.me/blog/2014/07/04/mode-or-standard/" target="_blank" rel="external">模式？标准！</a>的内容。</p>
+</li>
+<li><p>Q: 浏览器标准模式和怪异模式之间的区别是什么？</p>
+<p>A: 在“标准模式”(Standards Mode) 页面按照 HTML 与 CSS 的定义渲染，而在“怪异模式”(Quirks Mode)就是浏览器为了兼容很早之前针对旧版本浏览器设计、并未严格遵循 W3C 标准的网页而产生的一种页面渲染模式。浏览器基于页面中文件类型描述的存在以决定采用哪种渲染模式；如果存在一个完整的<code>DOCTYPE</code>则浏览器将会采用标准模式，而如果它缺失则浏览器将会采用怪异模式。</p>
+<p>强烈建议阅读加深理解：<a href="http://www.ibm.com/developerworks/cn/web/1310_shatao_quirks/" target="_blank" rel="external">怪异模式（Quirks Mode）对 HTML 页面的影响</a>，这里列下浏览器标准模式和怪异模式的区别：</p>
+<ol>
+<li><p>盒模型：</p>
+<p>在怪异模式下，盒模型为IE盒模型而非标准模式下的W3C 盒模型：在 IE 盒模型中，<br>box width = content width + padding left + padding right + border left + border right，<br>box height = content height + padding top + padding bottom + border top + border bottom。<br>而在 W3C 标准的盒模型中，box 的大小就是 content 的大小。</p>
+</li>
+<li><p>图片元素的垂直对齐方式:</p>
+<p>对于<code>inline</code>元素和<code>table-cell</code>元素，在 IE Standards Mode 下 vertical-align 属性默认取值为<code>baseline</code>。而当<code>inline</code>元素的内容只有图片时，如<code>table</code>的单元格<code>table-cell</code>。在 IE Quirks Mode 下，<code>table</code>单元格中的图片的 <code>vertical-align</code> 属性默认为<code>bottom</code>，因此，在图片底部会有几像素的空间。</p>
+</li>
+<li><p><code>&lt;table&gt;</code>元素中的字体:</p>
+<p>CSS 中，描述<code>font</code>的属性有<code>font-family</code>，<code>font-size</code>，<code>font-style</code>，<code>font-weigh</code>,上述属性都是可以继承的。而在 IE Quirks Mode 下，对于<code>table</code> 元素，字体的某些属性将不会从<code>body</code>或其他封闭元素继承到<code>table</code>中，特别是 <code>font-size</code>属性。</p>
+</li>
+<li><p>内联元素的尺寸:</p>
+<p>在 IE Standards Mode 下，non-replaced inline 元素无法自定义大小，而在 IE Quirks Mode 下，定义这些元素的<code>width</code>和<code>height</code> 属性，能够影响该元素显示的大小尺寸。</p>
+</li>
+<li><p>元素的百分比高度:</p>
+<p>CSS 中对于元素的百分比高度规定如下，百分比为元素包含块的高度，不可为负值。如果包含块的高度没有显式给出，该值等同于“auto”（即取决于内容的高度）。所以百分比的高度必须在父元素有声明高度时使用。</p>
+<p>当一个元素使用百分比高度时，在 IE Standards Mode 下，高度取决于内容的变化，而在 Quirks Mode 下，百分比高度则被正确应用。</p>
+</li>
+<li><p>元素溢出的处理：</p>
+<p>在 IE Standard Mode 下，<code>overflow</code>取默认值 <code>visible</code>，即溢出可见，这种情况下，溢出内容不会被裁剪，呈现在元素框外。而在 Quirks Mode 下，该溢出被当做扩展<code>box</code>来对待，即元素的大小由其内容决定，溢出不会被裁剪，元素框自动调整，包含溢出内容。</p>
+</li>
+</ol>
+<p>另可参考阅读：<a href="https://www.cs.tut.fi/~jkorpela/quirks-mode.html" target="_blank" rel="external">https://www.cs.tut.fi/~jkorpela/quirks-mode.html</a></p>
+</li>
+</ul>
+<ul>
+<li><p>Q: 使用 XHTML 的局限有哪些？</p>
+<ul>
+<li><p>如果页面使用 ‘application/xhtml+xml’ 会有什么问题吗？</p>
+<p>A: xhtml 语法要求严格，必须有<code>head</code>、<code>body</code> 每个dom 必须要闭合。空标签也必须闭合。例如<code>&lt;img /&gt;</code>, <code>&lt;br/&gt;</code>, <code>&lt;input /&gt;</code>等。另外要在属性值上使用双引号。一旦遇到错误，立刻停止解析，并显示错误信息。<br>如果页面使用’application/xhtml+xml’,一些老的浏览器会不兼容。</p>
+</li>
+</ul>
+</li>
+<li><p>Q: 如果网页内容需要支持多语言，你会怎么做？</p>
+<ul>
+<li><p>在设计和开发多语言网站时，有哪些问题你必须要考虑？</p>
+<p>A: 编码使用<code>UTF-8</code>，空间域名需要支持多浏览地址,准备多套模板。<br>在设计和开发多语言网站时，需要考虑</p>
+<ul>
+<li>应用字符集的选择</li>
+<li>语言书写习惯&amp;导航结构</li>
+<li>数据库驱动型网站</li>
+<li>css 盒子会因为内容尺寸不一样出现不对齐偏移</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Q: <code>data-</code>属性的作用是什么？</p>
+<p>A: <code>data-</code>为前端开发者提供自定义的属性，这些属性集可以通过对象的<code>dataset</code>属性获取，不支持该属性的浏览器可以通过<code>getAttribute</code>方法获取:</p>
+<p><code>&lt;div data-author=&quot;david&quot; data-time=&quot;2011-06-20&quot; data-comment-num=&quot;10&quot;&gt;...&lt;/div&gt;</code></p>
+<p><code>div.dataset.commentNum; // 10</code></p>
+<p>需要注意的是，<code>data-</code>之后的以连字符分割的多个单词组成的属性，获取的时候使用驼峰风格。并不是所有的浏览器都支持.<code>dataset</code>属性，测试的浏览器中只有Chrome 和Opera 支持。</p>
+<p>即：当没有合适的属性和元素时，自定义的 data 属性是能够存储页面或 App 的私有的自定义数据。</p>
+<blockquote>
+<p>Custom data attributes are intended to store custom data private to the page or application, for which there are no more appropriate attributes or elements.</p>
+</blockquote>
+</li>
+<li><p>Q:如果把 HTML5 看作做一个开放平台，那它的构建模块有哪些？</p>
+<p>A: 开放网络平台:</p>
+<blockquote>
+<p>The Open Web Platform is the collection of open (royalty-free) technologies which enables the Web. Using the Open Web Platform, everyone has the right to implement a software component of the Web without requiring any approvals or waiving license fees.</p>
+</blockquote>
+<p>开放网络平台（Open Web Platform）是一些开放的（免版权）技术的集合，这些技术激活了互联网。使用开放网络平台时，每个人都有权实现 Web 上的一个组件，而不用向任何人索取许可和证书。</p>
+</li>
+</ul>
+<p>  将 HTML5 看做开放网络平台，那它的构建模块有哪些？我想，所谓构建模块，指的应该是开放网络平台这个技术集合中的技术。</p>
+<ul>
+<li>HTML</li>
+<li>DOM</li>
+<li>CSS</li>
+<li>SVG</li>
+<li>MathML</li>
+<li><p>Web APIs</p>
+<ul>
+<li>Canvas WebGL</li>
+<li>Audio</li>
+<li>Web Storage</li>
+<li>File, File System</li>
+<li>History, contentEditable, Drag &amp; Drop, HTML Editing Commands</li>
+<li>Web Sockets</li>
+<li>Web Workers</li>
+<li>Server-Send Events</li>
+<li>XMLHttpRequest</li>
+<li>Geolocation, Device Orientation</li>
+<li>DOM Events, Touch Events, Progress Events</li>
+<li>Custom application development</li>
+<li>Clipboard and events</li>
+<li>Web Notifications, Web Messaging</li>
+<li>Offine Web Applications</li>
+<li>Media Capture API</li>
+<li>Timing control for script-based animations, Page Visibility, Navigation + Timing, Resource Timing</li>
+<li>Selectors</li>
+<li>DOM Traversal, DOM XPath, Element Traversal</li>
+<li>EcmaScript / JavaScript</li>
+<li>HTTP</li>
+<li>URI</li>
+<li>Media Accessibility Checklist</li>
+</ul>
+<p>该答案引自: <a href="http://witcher42.github.io/2014/06/03/open-web-platform/" target="_blank" rel="external">http://witcher42.github.io/2014/06/03/open-web-platform/</a></p>
+</li>
+</ul>
+<ul>
+<li><p>Q: 请描述一下 cookies，sessionStorage 和 localStorage 的区别？</p>
+<p>A: sessionStorage 和 localStorage 是HTML5 Web Storage API 提供的，可以方便的在web请求之间保存数据。有了本地数据，就可以避免数据在浏览器和服务器间不必要地来回传递。</p>
+<p>sessionStorage、localStorage、cookie都是在浏览器端存储的数据，其中sessionStorage 的概念很特别，引入了一个“浏览器窗口”的概念。sessionStorage 是在同源的同窗口（或tab）中，始终存在的数据。也就是说只要这个浏览器窗口没有关闭，即使刷新页面或进入同源另一页面，数据仍然存在。关闭窗口后，sessionStorage 即被销毁。同时“独立”打开的不同窗口，即使是同一页面，sessionStorage 对象也是不同的</p>
+<p>cookies会发送到服务器端。其余两个不会。</p>
+<p>Microsoft 指出 Internet Explorer 8 增加cookie 限制为每个域名50个，但IE7 似乎也允许每个域名50个cookie。Firefox 每个域名cookie 限制为50个。Opera每个域名cookie 限制为30个。Firefox 和Safari 允许cookie 多达4097个字节，包括名（name）、值（value）和等号。Opera 许cookie 多达4096个字节，包括：名（name）、值（value）和等号。Internet Explorer 允许cookie 多达4095个字节，包括：名（name）、值（value）和等号。</p>
+<ul>
+<li>Cookie<ul>
+<li>每个域名存储量比较小（各浏览器不同，大致4K）</li>
+<li>所有域名的存储量有限制（各浏览器不同，大致4K）</li>
+<li>有个数限制（各浏览器不同）</li>
+<li>会随请求发送到服务器</li>
+</ul>
+</li>
+<li>LocalStorage<ul>
+<li>永久存储</li>
+<li>单个域名存储量比较大（推荐5MB，各浏览器不同）</li>
+<li>总体数量无限制</li>
+</ul>
+</li>
+<li>SessionStorage<ul>
+<li>只在 Session 内有效</li>
+<li>存储量更大（推荐没有限制，但是实际上各浏览器也不同）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>请描述一下 <code>GET</code> 和 <code>POST</code> 的区别?</p>
+<p>A: 区别如下：</p>
+<ul>
+<li>get 向指定的资源请求数据,请求的数据会附在URL 之后,就是把数据放置在请求行（request line）中），以?分割URL和传输数据，多个参数用&amp;连接；</li>
+<li><p>post 向指定的资源提交要被处理的数据。get 方法，查询请求是在url中显示的，有长度限制，get 方法是安全幂等的。而post 方法请求是封装在http 消息包体中</p>
+<p>&amp;|get|post<br>—|—|—-<br>后退/刷新|无害|请求重新提交<br>书签|可做书签|不可做<br>缓存|可被缓存|不能被缓存<br>历史|保留在浏览器记录里|不保留<br>对数据长度限制|限制（2048字符）|不限制<br>安全性|url中暴露数据|相对安全<br>可见性|url中可见|不可见</p>
+</li>
+</ul>
+<p>总结：</p>
+<ul>
+<li>对于get 来说，是向服务器端请求数据，其请求在url 中可见，其长度有限制（2048字符）个体方法是安全幂等，这里的安全是指用于获取信息而非修改信息，幂等是指每次请求得到的结果都一样。</li>
+<li>对于post 来说，是向服务器端提交数据，每次刷新或者后退都会重新提交，post 请求的数据封装在http 请求的首部里。</li>
+</ul>
+</li>
+</ul>
+<p>tips: 以上部分答案参考自：</p>
+<ul>
+<li><a href="http://padding.me" target="_blank" rel="external">paddingme</a></li>
+<li><a href="http://witcher42.github.io/" target="_blank" rel="external">Witcher42</a></li>
+<li><a href="http://camnpr.com/" target="_blank" rel="external">郑州网建</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Q: &lt;code&gt;doctype&lt;/code&gt;（文档类型）的作用是什么？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="知识总结" scheme="http://sheltonWu.com/categories/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="面试题" scheme="http://sheltonWu.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+      <category term="HTML" scheme="http://sheltonWu.com/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常见面试题</title>
+    <link href="http://sheltonWu.com/2017/07/14/11/"/>
+    <id>http://sheltonWu.com/2017/07/14/11/</id>
+    <published>2017-07-14T12:12:30.000Z</published>
+    <updated>2017-08-12T06:02:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>##1.get和post的区别##</p>
+<ul>
+<li>get向指定的资源请求数据,请求的数据会附在URL之后,就是把数据放置在请求行（request line）中），以?分割URL和传输数据，多个参数用&amp;连接；</li>
+<li><p>post向指定的资源提交要被处理的数据<br>get方法，查询请求是在url中显示的，有长度限制，get方法是安全幂等的。而post方法请求是封装在http消息包体中</p>
+<a id="more"></a>
+<p>&amp;|get|post<br>—|—|—-<br>后退/刷新|无害|请求重新提交<br>书签|可做书签|不可做<br>缓存|可被缓存|不能被缓存<br>历史|保留在浏览器记录里|不保留<br>对数据长度限制|限制（2048字符）|不限制<br>安全性|url中暴露数据|相对安全<br>可见性|url中可见|不可见</p>
+<p>总结：<br>①. 对于get来说，是向服务器端请求数据，其请求在url中可见，其长度有限制（2048字符）个体方法是安全幂等，这里的安全是指用于获取信息而非修改信息，幂等是指每次请求得到的结果都一样。<br>②. 对于post来说，是向服务器端提交数据，每次刷新或者后退都会重新提交，post请求的数据封装在http请求的首部里。</p>
+</li>
+</ul>
+<p>##2. HTTP 状态码##</p>
+<ul>
+<li><code>1XX</code>代表请求已经被接收；</li>
+<li><code>2xx</code>代表请求已成功被服务器接收、理解、并接受。常用的200表示请求已成功，请求所希望的响应头或数据体将随此响应返回；</li>
+<li><code>3xx</code>代表重定向。</li>
+<li><code>4xx</code>代表客户端错误。404表示网页不存在。</li>
+<li><code>5xx</code>代表服务器错误。500表示服务器内部错误，503表示服务器暂时不可用</li>
+</ul>
+<p>##3.前端MVC框架##<br> MVC（模型-视图-控制器）<br> Model(模型)主要与业务数据有关。<br> View(视图)是关于构件和维护一个DOM元素。应用程序数据的可视化表示。<br> Controller(控制器）用户更新视图，controller更新model.(网上没有这类型的详细文章，这里可以好好写一写，画画图，各个框架MVC之间的异同。)</p>
+<p> 如<a href="http://www.zhihu.com/question/20135390" target="_blank" rel="external">知乎</a>，把数据请求和数据操作放在model中，对视图的操作和改变放在view中，事件绑定放在controller中。</p>
+<p>##4.闭包##<br>   请见<a href="http://padding.me/blog/2014/04/20/what-is-closure/" target="_blank" rel="external">隔壁</a>。</p>
+<p>##5.DOCTYPE的作用？严格模式与混杂模式如何区分？它们有什么意义？<br> DOCTYPE声明位于HTML文档顶端，告诉浏览器应该用什么文档类型规范来解析这个文档；<br> 严格模式的排版和JS运作模式是以该浏览器支持的最高标准运行；而混杂模式中，页面以较宽松的向后兼容的模式显示。模拟老式浏览器的行为以防止站点无法工作。<br>；DOCTYPE不存在或者格式不正确，则浏览器以混杂模式呈现文档。</p>
+<p>##6.行内元素有哪些？块级元素有哪些？空（void  )元素有哪些？##</p>
+<p>##7.link和@import的区别 ##</p>
+<p>##8.浏览器的内核分别是什么 ##</p>
+<p>##9.常见兼容性问题 ##</p>
+<ul>
+<li>浏览器的<code>padding</code>和<code>marigin</code>不同。</li>
+</ul>
+<p>##10.语义化的理解 ##</p>
+<p>##11.HTML5的离线存储 ##<br> localStorage 长期存储数据，浏览器关闭后数据不丢失；而sessionStorage数据在浏览器关闭后自动删除。</p>
+<p>##12.cookie和session的区别##<br>  ① cookie数据存在客户的浏览器上，session数据存放在服务器端<br>  ② cookie不安全<br>  ③ session会在一定时间内保存在服务器端，访问增多，占用服务器性能。<br>  ④ 单个cookie保存的数据不超过4K</p>
+<p>##13.(写)描述一段语义的html代码吧。##</p>
+<p>##14.frame有那些缺点？##</p>
+<p>##15.请描述一下 cookies，sessionStorage 和 localStorage 的区别？##<br>cookie在浏览器和服务器间来回传递。 sessionStorage和localStorage不会<br>sessionStorage和localStorage的存储空间更大；<br>sessionStorage和localStorage有更多丰富易用的接口；<br>sessionStorage和localStorage各自独立的存储空间；</p>
+<p>##16.介绍一下CSS的盒子模型？</p>
+<p>  ① 有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 padding;</p>
+<p>  ② 盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border).</p>
+<p>##17.CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？##<br>!important&gt;id&gt;class&gt;tag</p>
+<p>##18.如何居中div？如何居中一个浮动元素？ ##</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##1.get和post的区别##&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;get向指定的资源请求数据,请求的数据会附在URL之后,就是把数据放置在请求行（request line）中），以?分割URL和传输数据，多个参数用&amp;amp;连接；&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;post向指定的资源提交要被处理的数据&lt;br&gt;get方法，查询请求是在url中显示的，有长度限制，get方法是安全幂等的。而post方法请求是封装在http消息包体中&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="面试题" scheme="http://sheltonWu.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
   </entry>
   
